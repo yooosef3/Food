@@ -1,0 +1,50 @@
+.container {
+  /* position: fixed; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.container div:last-of-type {
+  display: flex;
+  align-items: center;
+}
+
+.container img {
+  width: 200px;
+  margin-left: 10px;
+}
+
+.icon {
+  font-size: 1.6rem;
+  font-weight: 300 !important;
+  color: #323232;
+  transition: 0.2s linear;
+  margin-left: 15px;
+}
+
+.icon:hover,
+.cart:hover {
+  color: red;
+}
+
+.menuIcon {
+  font-size: 1.8rem;
+}
+
+.container .cart {
+  position: relative;
+  transition: all 0.2s linear;
+  margin-left: 10px;
+}
+
+.container span {
+  position: absolute;
+  color: green;
+  font-size: 20px;
+  font-weight: 800;
+  bottom: 12px;
+  left: 40px;
+}
