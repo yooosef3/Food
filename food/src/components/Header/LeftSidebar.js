@@ -1,50 +1,35 @@
+import {IoIosArrowDown} from 'react-icons/io'
 import { Link } from "react-router-dom";
 import React from "react";
-import styled from "styled-components";
-
-const Ul = styled.ul`
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  li {
-    padding: 0 20px;
-    font-size: 20px;
-    font-weight: 700;
-    color: #292929;
-    transition: all 0.2s linear;
-    &:hover {
-      color: red;
-    }
-  }
-`;
-
-const linkStyle = {
-    textDecoration: 'none'
-}
+import styles from './LeftSidebar.module.css'
 
 const LeftSidebar = () => {
   return (
-    <Ul>
-      <Link to="/" style={linkStyle}>
-        <li style={{ color: "red" }}>خانه</li>
+    <div className={styles.container}>
+      <Link to="/">
+        <li>خانه</li>
       </Link>
-      <Link to="/" style={linkStyle}>
+      <Link to="/">
         <li>صفحات</li>
+        <IoIosArrowDown />
       </Link>
-      <Link to="/" style={linkStyle}>
+      <Link to="/">
         <li>بلاگ</li>
+        <IoIosArrowDown />
       </Link>
-      <Link to="/" style={linkStyle}>
+      <Link to="/">
         <li>گالری</li>
+        <IoIosArrowDown />
       </Link>
-      <Link to="/" style={linkStyle}>
+      <Link to="/">
         <li>المان ها</li>
+        <IoIosArrowDown />
       </Link>
-      <Link to="/" style={linkStyle}>
+      <Link to="/">
         <li>فروشگاه</li>
+        <IoIosArrowDown />
       </Link>
-    </Ul>
+    </div>
   );
 };
 

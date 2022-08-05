@@ -1,4 +1,3 @@
-import { AiOutlineMenu } from "react-icons/ai";
 import { BsCart3 } from "react-icons/bs";
 import { CgMoreVertical } from "react-icons/cg";
 import LeftSidebar from "./LeftSidebar";
@@ -19,12 +18,11 @@ const Header = () => {
           </Link>
         <RiSearchLine className={styles.icon} />
       </div>
-      <LeftSidebar />
       <div>
         <Link to="/home">
           <img src={logo} alt="logo" />
         </Link>
-        <AiOutlineMenu className={styles.menuIcon} />
+      <LeftSidebar />
       </div>
     </header>
   );

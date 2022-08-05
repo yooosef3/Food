@@ -1,5 +1,5 @@
 .container {
-  /* position: fixed; */
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,16 +13,17 @@
 }
 
 .container img {
-  width: 200px;
-  margin-left: 10px;
+  width: 163px;
+  height: 35px;
+  margin-left: 40px;
 }
 
 .icon {
   font-size: 1.6rem;
   font-weight: 300 !important;
-  color: #323232;
+  color: #525252;
   transition: 0.2s linear;
-  margin-left: 15px;
+  margin-left: 12px;
 }
 
 .icon:hover,
@@ -37,7 +38,6 @@
 .container .cart {
   position: relative;
   transition: all 0.2s linear;
-  margin-left: 10px;
 }
 
 .container span {
