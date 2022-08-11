@@ -2,14 +2,21 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background-color: #fff;
-  padding: 10px;
+  justify-items: center;
+  background-color: #ffffff;
+  padding: 10px 20px 0;
+  margin: 0 auto !important;
+  z-index: 10;
+}
+
+.container div:first-of-type {
+  display: flex;
+  justify-items: center;
 }
 
 .container div:last-of-type {
   display: flex;
-  align-items: center;
+  justify-items: center;
 }
 
 .container img {
@@ -18,26 +25,33 @@
   margin-left: 40px;
 }
 
-.icon {
+.icon{
   font-size: 1.6rem;
-  font-weight: 300 !important;
+  font-weight: 300;
+  color: #525252;
+  transition: 0.2s linear;
+  margin-left: 12px;
+  margin-right: 10px;
+}
+
+.search {
+  font-size: 1.6rem;
+  font-weight: 300;
   color: #525252;
   transition: 0.2s linear;
   margin-left: 12px;
 }
 
+.search:hover,
 .icon:hover,
 .cart:hover {
-  color: red;
-}
-
-.menuIcon {
-  font-size: 1.8rem;
+  color: #e52029;
 }
 
 .container .cart {
   position: relative;
   transition: all 0.2s linear;
+  margin-right: 10px;
 }
 
 .container span {
@@ -45,6 +59,6 @@
   color: green;
   font-size: 20px;
   font-weight: 800;
-  bottom: 12px;
+  bottom: 18px;
   left: 40px;
 }

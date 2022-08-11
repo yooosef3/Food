@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-end;
+  position: absolute;
+  top: -22px;
+  right: 40px;
+  width: 30px;
+  gap: 3px;
+  cursor: pointer;
+  margin-left: 12px;
+  padding-top: 2px;
+}
+
+.clicked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-end;
+  position: absolute;
+  top: -22px;
+  right: 40px;
+  width: 30px;
+  gap: 3px;
+  cursor: pointer;
+  margin-left: 12px;
+  padding-top: 2px;
+}
+
+.container div {
+  background-color: black;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  font-weight: 300;
+  transition: 0.2s linear;
+  margin-left: 12px;
+}
+
+.clicked div {
+    background-color: black;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    font-weight: 300;
+    transition: 0.2s linear;
+    margin-left: 12px;
+  }
+
+.container:hover div,
+.clicked:hover div {
+  background-color: #e52029;
+}

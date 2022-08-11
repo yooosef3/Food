@@ -3,58 +3,187 @@
   flex-direction: column;
   position: absolute;
   padding-top: 70px;
-  border: 1px solid black;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
   top: 0;
-  /* left: -249px; */
+  left: -249px;
   height: 100vh;
   width: 248px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s linear;
 }
 
-.container a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 92%;
-    margin-bottom: 15px;
-    text-decoration: none;
-    margin-left: auto;
-    padding:0 10px;
-    transition: all .2s linear;
+.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  padding-top: 70px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 248px;
+  transition: all 0.3s linear;
+  z-index: -10;
+  overflow-y: auto;
 }
 
-
-.container a:hover *{
-    color: #ffff !important;
-
+.open p {
+  font-weight: 800;
 }
 
-.container a:hover{
-    background-color: #e52029;
-    
-}
-
-.container a > * {
-  color: #151515 ;
+.container div li,
+.open div li {
   list-style: none;
+  margin-bottom: 15px;
+  transition: all 0.2s linear;
+  padding: 5px 25px 0;
+} 
+
+.container div li a,
+.open div li a {
+  width: 100%;
+}
+
+.open ul,
+.container ul {
+  padding: 0;
+  margin: 0;
+  padding-top: 15px;
+  overflow: hidden;
+  background-color: #e8e8e87a;
+}
+
+.openDrop {
+  display: flex;
+  flex-direction: column;
+}
+
+.closeDrop {
+  display: none;
+}
+
+.open ul div:hover,
+.container ul div:hover {
+  background-color: #ffff;
+  cursor: text;
+}
+
+.open ul div:hover *,
+.container ul div:hover * {
+  color: #e52029;
+}
+
+.home div,
+.pages div,
+.blog div,
+.gallery div,
+.elements div,
+.shop div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  margin-top: 10px;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+
+.pages div a{
+  margin-left: 15px !important;
+}
+
+.arrowDown{
+  margin-left: 15px;
+  transform: rotate(360deg);
+  transition: all .3s linear;
+}
+
+.arrowUp {
+  margin-left: 15px;
+  transform: rotate(180deg);
+  transition: all .3s linear;
+}
+
+.pages,
+.blog,
+.gallery,
+.elements,
+.shop {
+  display: flex;
+  flex-direction: column;
+}
+
+.pages div a,
+.blog div a,
+.gallery div a,
+.elements div a,
+.shop div a {
+  text-decoration: none;
   font-size: 22px;
+  font-weight: 600;
+  color: black;
+  padding: 5px 10px 0;
+}
+
+.home div:hover,
+.pages div:hover,
+.blog div:hover,
+.gallery div:hover,
+.elements div:hover,
+.shop div:hover {
+  background-color: #e52029;
+}
+
+.home div:hover *,
+.pages div:hover *,
+.blog div:hover *,
+.gallery div:hover *,
+.elements div:hover *,
+.shop div:hover * {
+  color: #ffff;
+}
+
+.container div li:hover *,
+.open div li:hover * {
+  color: #ffff;
+}
+
+.container div li:hover,
+.open div li:hover {
+  background-color: #f7464f;
+  color: #ffff;
+}
+
+.container div li > *,
+.open div li > * {
+  color: #656161;
+  text-decoration: none;
+  cursor: pointer;
+  list-style: none;
+  font-size: 16px;
   font-weight: 700;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
   padding-top: 3%;
 }
 
-.container a:last-child{
-    font-size: 18px !important;
+.container div li a:hover {
+  color: #ffff;
 }
 
-.container a li:hover{
-    color: #ffff !important;
+.container .home li,
+.open .home li {
+  background-color: #e52029;
 }
 
-.container a:first-of-type li{
-    color: #ffff;
-}
-
-.container a:first-of-type{
-    background-color: #e52029;
-    margin-top: 20px;
+.open .home a,
+.container .home a {
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffff;
+  background-color: #e52029;
+  width: 100%;
+  padding: 5px 10px 0;
 }

@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  position: absolute;
+  left: 0px;
+  top: 12px;
+  flex-direction: column;
+  align-items: center;
+  width: 30px;
+  gap: 7px;
+  cursor: pointer;
+  padding-top: 5px;
+  z-index: 8;
+}
+
+.container div {
+  background-color: black;
+  width: 30px;
+  height: 3px;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  font-weight: 300;
+  transition: 0.2s linear;
+  margin-left: 12px;
+  transform-origin: 1px;
+}
+
+.container:hover div {
+  background-color: #e52029;
+}
+
+.clicked {
+  display: flex;
+  position: absolute;
+  left: 0px;
+  top: 12px;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-end;
+  width: 30px;
+  gap: 7px;
+  cursor: pointer;
+  padding-top: 5px;
+  transition: 0.2s linear;
+  z-index: 8;
+}
+
+.clicked div {
+  background-color: black;
+  width: 30px;
+  height: 3px;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  font-weight: 300;
+  transition: 0.2s linear;
+  transform-origin: 1px;
+  margin-left: 12px;
+}
+
+.clicked div:first-child {
+  transform: rotate(45deg);
+}
+
+.clicked div:nth-child(2) {
+  transform: translate(-100%);
+  opacity: 0;
+}
+
+.clicked div:last-child {
+  transform: rotate(-45deg);
+}
+
+.clicked:hover div {
+  background-color: #e52029;
+}
+
+@media (min-width: 998px){
+  .hamburger{
+    display: none !important;
+  }
+}
