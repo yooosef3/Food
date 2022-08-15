@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import LeftSidebar from "./LeftSidebar";
-import styles from "./LeftHamburger.module.css";
+import styles from "../../styles/header/LeftHamburger.module.css";
 
 const LeftHamburger = () => {
   const [open, setOpen] = useState(false);

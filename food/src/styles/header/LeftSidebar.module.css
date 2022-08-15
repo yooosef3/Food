@@ -4,12 +4,12 @@
   position: absolute;
   padding-top: 70px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  background-color: #ffff;
   top: 0;
   left: -249px;
   height: 100vh;
   width: 248px;
-  opacity: 0;
-  visibility: hidden;
+  z-index: -10 !important;
   transition: all 0.3s linear;
 }
 
@@ -19,6 +19,7 @@
   position: absolute;
   padding-top: 70px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  background-color: #ffff;
   top: 0;
   left: 0;
   height: 100vh;

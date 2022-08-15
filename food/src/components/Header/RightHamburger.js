@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import styles from './RightHamburger.module.css'
+import styles from '../../styles/header/RightHamburger.module.css'
 
 const RightHamburger = () => {
     

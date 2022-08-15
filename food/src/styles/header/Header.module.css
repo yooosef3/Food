@@ -3,10 +3,11 @@
   display: flex;
   justify-content: space-between;
   justify-items: center;
-  background-color: #ffffff;
+  background-color: #ffffff !important;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
   padding: 10px 20px 0;
   margin: 0 auto !important;
-  z-index: 10;
+  z-index: 1000 !important;
 }
 
 .container div:first-of-type {
@@ -40,6 +41,7 @@
   color: #525252;
   transition: 0.2s linear;
   margin-left: 12px;
+  cursor: pointer;
 }
 
 .search:hover,
@@ -61,4 +63,10 @@
   font-weight: 800;
   bottom: 18px;
   left: 40px;
+}
+
+@media (min-width: 998px){
+  .container{
+    /* padding: 30px 70px; */
+  }
 }

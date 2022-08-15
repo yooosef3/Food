@@ -4,7 +4,7 @@ import { BsFillLayersFill } from "react-icons/bs";
 import { GiAbstract050 } from "react-icons/gi";
 import { IoIosArrowDown } from "react-icons/io";
 import { Link } from "react-router-dom";
-import styles from "./LeftSidebar.module.css";
+import styles from "../../styles/header/LeftSidebar.module.css";
 
 const LeftSidebar = ({ open }) => {
 
