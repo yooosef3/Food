@@ -1,55 +1,107 @@
-.container{
-    position: absolute;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-    top: 56px;
-    left: 0;;
-    right: 0;
-    height: 50px;
-    transition: all .3s linear;
+.background {
+  position: relative;
+  height: 45px;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  opacity: 100%;
+  visibility: visible;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  transition: all 0.3s linear ;
 }
 
-.closeSearch{
-    position: absolute;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-    top: 45px;
-    left: 0;;
-    right: 0;
-    height: 50px;
-    z-index: -30;
-    visibility:hidden;
-    opacity: 0%;
-    transition: all .3s linear;
+.hide {
+  position: relative;
+  height: 45px;
+  top: -15px ;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s linear;
 }
-.closeSearch input,
-.container input{
-    width: 100%;
+
+.container {
+    position: relative;
     height: 100%;
-    padding-right: 15px;
-    border: 1px solid #d7d7d7;
+    width: 1400px;
+    display: flex;
+    align-items: center;
 }
 
-.container input:focus{
-    outline: none;
-}
-.closeSearch input::placeholder,
-.container input::placeholder{
-    font-size: 28px;
-}
-
-.search{
+.close{
     position: absolute;
-    left: 10px;
-    top: 12px;
-    font-size: 28px;
+    font-size: 26px;
+    right: 0px;
+    top: -350px;
+    z-index: 1001;
+    color: #ffff;
     cursor: pointer;
-    color: #525252;
-    transition: all .2s linear;
+    transition:all .2s linear;
+    display: none;
 }
 
-.search:hover{
+.close:hover{
     color: #e52029;
+}
+
+input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding-right: 10px;
+}
+
+input::placeholder {
+  font-size: 28px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.search {
+  position: absolute;
+  left: 10px;
+  font-size: 28px;
+  color: #525252;
+  cursor: pointer;
+  transition: all .2s linear;
+}
+
+.search:hover {
+  color: #e52029;
+}
+
+@media (min-width:992px){
+    .background{
+        background-color: rgb(0, 0, 0) !important;
+        opacity: 85%;
+        height: 100vh;
+        top: -56px;
+        z-index: 1000;
+    }
+
+    .container{
+        height: 50px;
+        border-bottom: 2px solid #ffff;
+        width: 1000px;
+    }
+
+    input{
+        background-color: transparent;
+    }
+
+    input::placeholder {
+        color: #ffff;
+    }
+
+    .search{
+        color: #ffff;
+    }
+
+    .close{
+        display: block;
+    }
 }

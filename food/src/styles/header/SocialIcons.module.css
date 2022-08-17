@@ -1,5 +1,17 @@
 .container{
     list-style: none;
     display: flex;
-    justify-content: space-evenly;
+    text-align: center;
+    justify-content: space-around;
+    padding-right: 5px;
+}
+
+.container a{
+    font-size: 22px;
+    color: #2a2a2a;
+    transition: all .2s linear;
+}
+
+.container a:hover{
+    color: #e52029;
 }

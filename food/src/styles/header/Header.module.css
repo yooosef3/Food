@@ -39,9 +39,13 @@
   font-size: 1.6rem;
   font-weight: 300;
   color: #525252;
-  transition: 0.2s linear;
+  transition:all 0.2s linear;
   margin-left: 12px;
   cursor: pointer;
+}
+
+.close{
+  transform: rotate(30deg);
 }
 
 .search:hover,
