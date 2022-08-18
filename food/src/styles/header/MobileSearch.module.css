@@ -3,7 +3,7 @@
   height: 45px;
   left: 0;
   right: 0;
-  top: 0;
+  top: 0 !important;
   display: flex;
   opacity: 100%;
   visibility: visible;
@@ -16,7 +16,9 @@
 .hide {
   position: relative;
   height: 45px;
-  top: -15px ;
+  top: -15px;
+  right: 0;
+  left: 0;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s linear;
@@ -51,6 +53,7 @@ input {
   height: 100%;
   border: none;
   padding-right: 10px;
+  font-size: 26px;
 }
 
 input::placeholder {
@@ -79,7 +82,7 @@ input:focus {
         background-color: rgb(0, 0, 0) !important;
         opacity: 85%;
         height: 100vh;
-        top: -56px;
+        top: -101px !important;
         z-index: 1000;
     }
 
@@ -91,6 +94,8 @@ input:focus {
 
     input{
         background-color: transparent;
+        color: #ffff;
+        font-size: 28px;
     }
 
     input::placeholder {

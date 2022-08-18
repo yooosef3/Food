@@ -6,7 +6,7 @@
     flex-direction: column;
     position: absolute;
     right: 0;
-    top: 0;
+    top: -5px;
     height: 100vh;
     z-index: 20;
     transition: all .3s linear;
@@ -47,7 +47,7 @@
     flex-direction: column;
     position: absolute;
     right: -280px;
-    top: 0;
+    top: -5px;
     height: 100vh;
     z-index: 20;
     transition: all .3s linear;
@@ -115,4 +115,17 @@
 
 .close div:nth-child(2){
     transform: rotate(-45deg);
+}
+
+@media (min-width:992px) {
+    .hide{
+        right: -412px;
+        top: -33px;
+    }
+
+    .container{
+        width: 330px;
+        top: -33px;
+        right: -50px;
+    }
 }

@@ -12,7 +12,7 @@ const RightSidebar = () => {
   return (
     <div className={styles.cover}>
       <span onClick={() => setOpen(!open)}>
-        <RightHamburger className={styles.hamburg} />
+        <RightHamburger className={styles.hamburg} openHam={open}/>
       </span>
       <div className={open ? styles.container : styles.hide}>
         <div className={styles.header}>

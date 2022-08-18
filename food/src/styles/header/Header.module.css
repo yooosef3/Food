@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   justify-items: center;
+  align-items: center;
   background-color: #ffffff !important;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
   padding: 10px 20px 0;
@@ -69,8 +70,22 @@
   left: 40px;
 }
 
+.menu{
+  display: none !important;
+}
+
 @media (min-width: 998px){
   .container{
-    /* padding: 30px 70px; */
+    padding: 25px 70px 10px 0px;
+  }
+
+  .container img{
+    width: 249px;
+    height: 52px;
+    margin-right: auto;
+  }
+
+  .menu{
+    display: block !important;
   }
 }

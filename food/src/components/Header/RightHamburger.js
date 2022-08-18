@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import styles from '../../styles/header/RightHamburger.module.css'
 
-const RightHamburger = () => {
+const RightHamburger = ({openHam}) => {
     
     const [open, setOpen] = useState(false)
     
@@ -11,7 +11,7 @@ const RightHamburger = () => {
     }
     
     return (
-        <div className={open ? styles.clicked : styles.container} onClick={clickHandler}>
+        <div className={openHam ? styles.clicked : styles.container} onClick={clickHandler}>
             <div></div>
             <div></div>
             <div></div>

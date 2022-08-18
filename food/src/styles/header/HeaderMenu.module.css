@@ -1,0 +1,79 @@
+.container ul {
+  display: flex;
+  list-style: none;
+  margin-left: auto;
+}
+
+ul li {
+  font-size: 22px;
+  font-weight: 600;
+  color: #292929;
+  cursor: pointer;
+  margin: 0 12px;
+  transition: all 0.2s linear;
+}
+
+ul div:first-of-type li{
+  color: #e52029;
+}
+
+ul li:hover {
+  color: #e52029;
+}
+
+.shop,
+.galery,
+.blog,
+.pages{
+    position: relative;
+}
+
+.shop section,
+.galery section,
+.blog section,
+.pages section{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    width: 210px;
+    top: 34px;
+    border-radius: 4px;
+    transform: scale(.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s linear;
+}
+
+.shop:hover section,
+.galery:hover section,
+.blog:hover section,
+.pages:hover section {
+    transform: scale(1);
+    opacity: 100%;
+    visibility: visible;
+}
+
+.shop a,
+.galery a,
+.blog a,
+.pages a{
+    color: #292929;
+    font-weight: 500;
+    padding:10px;
+    transition: all .2s linear;
+}
+
+.shop a:hover,
+.galery a:hover,
+.blog a:hover,
+.pages a:hover{
+    color: #e52029;
+}
+
+@media (min-width:1200px) {
+    ul li{
+        margin: 0 25px;
+    }
+}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { BsCart3 } from "react-icons/bs";
+import HeaderMenu from "./HeaderMenu";
 import LeftHamburger from "./LeftHamburger";
 import LeftSidebar from "./LeftSidebar";
 import { Link } from "react-router-dom";
@@ -35,6 +36,9 @@ const Header = () => {
             />
           )}
         </div>
+        <div className={styles.menu}>
+          <HeaderMenu />
+        </div>
         <div>
           <Link to="/home">
             <img src={logo} alt="logo" />
@@ -43,7 +47,7 @@ const Header = () => {
           <LeftSidebar />
         </div>
       </header>
-      <MobileSearch search={searchM} setSearch={setSearchM}/>
+      <MobileSearch search={searchM} setSearch={setSearchM} />
     </>
   );
 };

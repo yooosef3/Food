@@ -4,7 +4,7 @@
   align-items: center;
   align-items: flex-end;
   position: absolute;
-  top: -22px;
+  top: -12px;
   right: 40px;
   width: 30px;
   gap: 3px;
@@ -19,7 +19,7 @@
   align-items: center;
   align-items: flex-end;
   position: absolute;
-  top: -22px;
+  top: -12px;
   right: 40px;
   width: 30px;
   gap: 3px;
@@ -29,7 +29,7 @@
 }
 
 .container div {
-  background-color: black;
+  background-color: #292929;
   width: 5px;
   height: 5px;
   border-radius: 5px;
@@ -40,7 +40,7 @@
 }
 
 .clicked div {
-    background-color: black;
+    background-color: #292929;
     width: 5px;
     height: 5px;
     border-radius: 5px;
@@ -53,4 +53,27 @@
 .container:hover div,
 .clicked:hover div {
   background-color: #e52029;
+}
+
+@media (min-width:992px){
+  .container {
+    gap: 5px;
+  }
+  .container div:nth-child(-n + 3){
+    width: 25px !important;
+    height: 3px;
+  }
+
+  .container:hover div:first-child{
+    width: 14px !important;
+  }
+
+  .container:hover div:last-child{
+    width: 25px ;
+  }
+
+  .container div:last-of-type{
+    width: 14px;
+    height: 3px;
+  }
 }
