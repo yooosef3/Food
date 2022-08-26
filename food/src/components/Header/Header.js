@@ -46,8 +46,8 @@ const Header = () => {
           <LeftHamburger />
           <LeftSidebar />
         </div>
-      </header>
       <MobileSearch search={searchM} setSearch={setSearchM} />
+      </header>
     </>
   );
 };

@@ -1,51 +1,53 @@
 .background {
-  position: relative;
+  position: fixed;
   height: 45px;
   left: 0;
   right: 0;
-  top: 0 !important;
+  top: 57px;
   display: flex;
   opacity: 100%;
   visibility: visible;
   justify-content: center;
   align-items: center;
+  z-index: -200;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  transition: all 0.3s linear ;
+  transition: all 0.3s linear;
 }
 
 .hide {
-  position: relative;
-  height: 45px;
-  top: -15px;
+  position: fixed;
+  height: 0;
+  top: 50px;
   right: 0;
   left: 0;
   opacity: 0;
+  z-index: -1000;
   visibility: hidden;
   transition: all 0.3s linear;
 }
 
 .container {
-    position: relative;
-    height: 100%;
-    width: 1400px;
-    display: flex;
-    align-items: center;
+  position: relative;
+  height: 100%;
+  width: 1400px;
+  display: flex;
+  align-items: center;
 }
 
-.close{
-    position: absolute;
-    font-size: 26px;
-    right: 0px;
-    top: -350px;
-    z-index: 1001;
-    color: #ffff;
-    cursor: pointer;
-    transition:all .2s linear;
-    display: none;
+.close {
+  position: absolute;
+  font-size: 26px;
+  right: 0px;
+  top: -350px;
+  z-index: 1001;
+  color: #ffff;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  display: none;
 }
 
-.close:hover{
-    color: #e52029;
+.close:hover {
+  color: #e52029;
 }
 
 input {
@@ -70,43 +72,43 @@ input:focus {
   font-size: 28px;
   color: #525252;
   cursor: pointer;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
 }
 
 .search:hover {
   color: #e52029;
 }
 
-@media (min-width:992px){
-    .background{
-        background-color: rgb(0, 0, 0) !important;
-        opacity: 85%;
-        height: 100vh;
-        top: -101px !important;
-        z-index: 1000;
-    }
+@media (min-width: 992px) {
+  .background {
+    background-color: rgb(0, 0, 0) !important;
+    opacity: 85%;
+    height: 100vh;
+    top: 0px;
+    z-index: 1000;
+  }
 
-    .container{
-        height: 50px;
-        border-bottom: 2px solid #ffff;
-        width: 1000px;
-    }
+  .container {
+    height: 50px;
+    border-bottom: 2px solid #ffff;
+    width: 1000px;
+  }
 
-    input{
-        background-color: transparent;
-        color: #ffff;
-        font-size: 28px;
-    }
+  input {
+    background-color: transparent;
+    color: #ffff;
+    font-size: 28px;
+  }
 
-    input::placeholder {
-        color: #ffff;
-    }
+  input::placeholder {
+    color: #ffff;
+  }
 
-    .search{
-        color: #ffff;
-    }
+  .search {
+    color: #ffff;
+  }
 
-    .close{
-        display: block;
-    }
+  .close {
+    display: block;
+  }
 }

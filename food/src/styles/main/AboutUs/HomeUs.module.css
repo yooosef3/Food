@@ -1,0 +1,132 @@
+.container {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bucket img {
+  width: 100%;
+  height: auto;
+}
+
+.info {
+  padding: 0 15px;
+}
+
+.container h2 {
+  color: #7fd02c;
+  margin-bottom: 0;
+}
+
+.container h1 {
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.container p {
+  color: #292929;
+}
+
+.signature {
+  display: flex;
+  padding: 0 5px;
+}
+
+.signature div:first-of-type {
+  display: flex;
+  width: 60%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.signature div:first-of-type div {
+  display: flex;
+  flex-direction: column;
+}
+
+.signature h4 {
+  margin-bottom: 0;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.signature h4:hover {
+  color: #e52029;
+}
+
+.signature p {
+  color: #7fd02c;
+  margin-top: 0;
+}
+
+.signatureImg {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.signatureImg img {
+  width: 100%;
+}
+
+.icon {
+  font-size: 35px;
+  color: #e52029;
+  cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  .bucket img {
+    width: 40%;
+    height: auto;
+  }
+}
+
+@media (min-width: 815px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .bucket img {
+    width: 100%;
+  }
+
+  .container h1 {
+    text-align: right;
+  }
+
+  .container h2 {
+    text-align: right;
+  }
+
+  .container p {
+    text-align: right;
+  }
+}
+
+@media (min-width: 998px) {
+  .container h1 {
+    font-size: 45px;
+  }
+
+  .icon {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 1220px) {
+  .bucket {
+    width: 40%;
+  }
+
+  .info {
+    width: 35%;
+    margin: auto;
+  }
+
+  .container h1{
+    font-size: 60px;
+  }
+}

@@ -1,131 +1,135 @@
-.container{
-    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;;
-    background-color: #ffff;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    right: 0;
-    top: -5px;
-    height: 100vh;
-    z-index: 20;
-    transition: all .3s linear;
-    overflow: auto;
+.container {
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  background-color: #ffff;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: -5px;
+  height: 100vh;
+  z-index: 20;
+  transition: all 0.3s linear;
+  overflow: auto;
+  padding: 10px 10px 0px 10px;
 }
 
-.info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    font-size: 16px;
-    padding: 0 20px;
-    font-weight: 600;
-    margin-bottom: auto;
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+  padding: 0 20px;
+  font-weight: 600;
+  margin-bottom: auto;
 }
-.info a{
-    color: #656161 !important;
-    transition: all .2s linear;
-}
-
-.info a:first-of-type{
-    border-bottom: 1px solid #cdcbcb;
+.info a p{
+  color: #656161 !important;
+  transition: all 0.2s linear;
 }
 
-.info a:nth-child(2){
-    direction: ltr;
+.info a:first-of-type {
+  border-bottom: 1px solid #cdcbcb;
 }
 
-.info a:hover{
-    color: #e52029 !important;
-}
-.hide{
-    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;;
-    background-color: #ffff;
-    width: 280px;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    right: -280px;
-    top: -5px;
-    height: 100vh;
-    z-index: 20;
-    transition: all .3s linear;
-    overflow: auto;
+.info a:nth-child(2) {
+  direction: ltr;
+  padding-top: 15px;
 }
 
-.cover{
-    position: relative;
-    right: -20px;
-    top: -10px;
-    padding: 0;
+.info a p:hover {
+  color: #e52029 !important;
 }
 
-.header{
-    position: relative;
-    justify-content: space-between;
-    padding: 0 12px;
-    margin-top: -10px;
+.hide {
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  background-color: #ffff;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: -280px;
+  top: -5px;
+  height: 100vh;
+  z-index: 20;
+  transition: all 0.3s linear;
+  overflow: auto;
+  padding: 10px 10px 0px -5px;
+}
+
+.cover {
+  position: relative;
+  right: -20px;
+  top: -10px;
+  padding: 0;
+}
+
+.header {
+  position: relative;
+  justify-content: space-between;
+  padding: 0 12px;
+  margin-top: -10px;
 }
 
 .hamburger {
-    display: inline-block;
-    align-items: center; 
+  display: inline-block;
+  align-items: center;
 }
 
 .hamburger > div {
-    width: 30px;
-    height: 3px;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: rgb(26, 26, 26);
+  width: 30px;
+  height: 3px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(26, 26, 26);
 }
 
-.hamburger div:first-of-type{
-    transform: rotate(45deg) translate(-20px, 21px);
-    transition: all .4s linear;
+.hamburger div:first-of-type {
+  transform: rotate(45deg) translate(-20px, 21px);
+  transition: all 0.2s linear;
 }
 
-.hamburger div:nth-child(2){
-    transform: rotate(-45deg);
-    transition: all .4s linear;
-    transition-delay: .3s;
+.hamburger div:nth-child(2) {
+  transform: rotate(-45deg);
+  transition: all 0.2s linear;
+  transition-delay: 0.3s;
 }
 
 .close {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 }
 
 .close > div {
-    width: 5px;
-    height: 5px;
-    display: none;
-    border-radius: 5px;
-    background-color: rgb(26, 26, 26);
-    transition: all .3s linear;
+  width: 5px;
+  height: 5px;
+  display: none;
+  border-radius: 5px;
+  background-color: rgb(26, 26, 26);
+  transition: all 0.3s linear;
 }
 
-.close div:first-of-type{
-    transform: rotate(45deg) translate(-18px, 18px);
-    transition-delay: .3s;
+.close div:first-of-type {
+  transform: rotate(45deg) translate(-18px, 18px);
+  transition-delay: 0.3s;
 }
 
-.close div:nth-child(2){
-    transform: rotate(-45deg);
+.close div:nth-child(2) {
+  transform: rotate(-45deg);
 }
 
-@media (min-width:992px) {
-    .hide{
-        right: -412px;
-        top: -33px;
-    }
+@media (min-width: 992px) {
+  .hide {
+    right: -412px;
+    top: -33px;
+  }
 
-    .container{
-        width: 330px;
-        top: -33px;
-        right: -50px;
-    }
+  .container {
+    width: 330px;
+    top: -33px;
+    right: -50px;
+  }
 }

@@ -1,0 +1,48 @@
+.container{
+    background: url('../../assets/images/bg-image-5.jpg') no-repeat center;
+    background-size: cover;
+    text-align: center;
+    padding-top: 8%;
+    height: 82vh;
+}
+
+.container p{
+    color: #7fd02c;
+    margin-bottom: 0;
+    font-size: 24px;
+}
+
+.container h1{
+    margin-top: 0;
+    font-size: 34px;
+}
+
+@media (min-width:768px) {
+    .container p{
+        font-size: 28px;
+    }
+
+    .container h1{
+        font-size: 38px;
+    }
+}
+
+@media (min-width:998px) {
+    .container p{
+        font-size: 32px;
+    }
+
+    .container h1{
+        font-size: 42px;
+    }
+}
+
+@media (min-width:1200px) {
+    .container p{
+        font-size: 38px;
+    }
+
+    .container h1{
+        font-size: 48px;
+    }
+}

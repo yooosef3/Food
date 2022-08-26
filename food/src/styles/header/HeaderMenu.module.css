@@ -13,7 +13,7 @@ ul li {
   transition: all 0.2s linear;
 }
 
-ul div:first-of-type li{
+ul div:first-of-type li {
   color: #e52029;
 }
 
@@ -24,56 +24,140 @@ ul li:hover {
 .shop,
 .galery,
 .blog,
-.pages{
-    position: relative;
+.pages,
+.elements {
+  position: relative;
 }
 
 .shop section,
 .galery section,
 .blog section,
-.pages section{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    background-color: #ffff;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-    width: 210px;
-    top: 34px;
-    border-radius: 4px;
-    transform: scale(.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: all .4s linear;
+.pages section {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  width: 210px;
+  top: 34px;
+  border-radius: 4px;
+  transform: scale(0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s linear;
 }
 
+.elements:hover section,
 .shop:hover section,
 .galery:hover section,
 .blog:hover section,
 .pages:hover section {
-    transform: scale(1);
-    opacity: 100%;
-    visibility: visible;
+  transform: scale(1);
+  opacity: 100%;
+  visibility: visible;
 }
 
 .shop a,
 .galery a,
 .blog a,
-.pages a{
-    color: #292929;
-    font-weight: 500;
-    padding:10px;
-    transition: all .2s linear;
+.pages a {
+  color: #292929;
+  font-weight: 500;
+  padding: 10px;
+  transition: all 0.2s linear;
 }
 
 .shop a:hover,
 .galery a:hover,
 .blog a:hover,
-.pages a:hover{
-    color: #e52029;
+.pages a:hover {
+  color: #e52029;
 }
 
-@media (min-width:1200px) {
-    ul li{
-        margin: 0 25px;
-    }
+.elements section {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #ffff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  width: 1000px;
+  top: 34px;
+  right: -495px;
+  border-radius: 4px;
+  transform: scale(0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s linear;
+}
+
+.eleIcons {
+  display: flex;
+  color: rgb(84, 171, 2);
+  align-items: center;
+  border-bottom: 1px solid #4f4f4f37;
+  cursor: pointer;
+  font-size: 26px;
+}
+
+.eleIcons p {
+  margin-right: 15px;
+  font-weight: 600;
+  margin-top: 40px;
+  color: rgb(84, 171, 2);
+}
+
+.third,
+.second,
+.first {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+  min-width:250px;
+}
+
+.firstCol {
+  display: flex;
+}
+
+.firstCol div {
+  display: flex;
+  flex-direction: column;
+  min-width: 130px;
+  padding-top: 30px;
+}
+
+.second div a p,
+.firstCol div p {
+  color: #292929;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  line-height: 1rem;
+}
+
+.second a p:hover,
+.firstCol div p:hover {
+  color: #e52029;
+}
+
+.second div:last-of-type {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.third img{
+  height: 100% !important;
+  margin-top: 24px;
+  cursor: pointer;
+}
+
+.third .fruit:hover.third>img{
+  transform: scale(.8);
+}
+
+@media (min-width: 1200px) {
+  ul li {
+    margin: 0 25px;
+  }
 }
