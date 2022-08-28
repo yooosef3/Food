@@ -1,0 +1,48 @@
+.container {
+  background-color: rgb(234, 234, 234);
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0;
+  justify-content: center;
+  text-align: center;
+}
+
+.container div section {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items:center;
+}
+
+.container p {
+  color: rgb(127, 127, 127);
+  margin-bottom: 10px;
+}
+
+.container div p {
+  margin: 10px 0 13px 0;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+
+.container div p:hover {
+  color: #e52029;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .container div {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 2rem;
+  }
+
+  .container p{
+    margin: 0px;
+  }
+}
