@@ -2,13 +2,13 @@ import React, { useState } from "react";
 
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { BsCart3 } from "react-icons/bs";
-import HeaderMenu from "./HeaderMenu";
-import LeftHamburger from "./LeftHamburger";
-import LeftSidebar from "./LeftSidebar";
+import HeaderMenu from "../Header/HeaderMenu";
+import LeftHamburger from "../Header/LeftHamburger";
+import LeftSidebar from "../Header/LeftSidebar";
 import { Link } from "react-router-dom";
-import MobileSearch from "./MobileSearch";
+import MobileSearch from "../Header/MobileSearch";
 import { RiSearchLine } from "react-icons/ri";
-import RightSidebar from "./RightSidebar";
+import RightSidebar from "../Header/RightSidebar";
 import logo from "../../assets/images/logo.png";
 import styles from "../../styles/header/Header.module.css";
 

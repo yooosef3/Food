@@ -3,7 +3,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaGooglePlusG } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
-import FooterBotom from "./FooterBotom";
+import FooterBotom from "../footer/FooterBotom";
 import { HiOutlineMail } from "react-icons/hi";
 import { IoIosSend } from "react-icons/io";
 import { Link } from "react-router-dom";
