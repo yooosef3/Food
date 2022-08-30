@@ -3,7 +3,7 @@ import { FaCarrot } from "react-icons/fa";
 import { GiAbstract050 } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import React from "react";
-import fruit from '../../assets/images/banner-1-300x202.jpg'
+import fruit from "../../assets/images/banner-1-300x202.jpg";
 import styles from "../../styles/header/HeaderMenu.module.css";
 
 const HeaderMenu = () => {
@@ -16,7 +16,7 @@ const HeaderMenu = () => {
         <div className={styles.pages}>
           <li>صفحات</li>
           <section>
-            <Link to="/">درباره ما</Link>
+            <Link to="/aboutus">درباره ما</Link>
             <Link to="/">پیشنهاد ما</Link>
             <Link to="/">تیم ما</Link>
             <Link to="/">نظرات</Link>
@@ -103,9 +103,9 @@ const HeaderMenu = () => {
                 <Link to="/">
                   <p>سیستم گرید</p>
                 </Link>
-                  <Link to="/">
-                    <p>سیستم </p>
-                  </Link>
+                <Link to="/">
+                  <p>سیستم </p>
+                </Link>
               </div>
             </div>
             <div className={styles.third}>
@@ -114,7 +114,7 @@ const HeaderMenu = () => {
                 <p>به فروشگاه ما خوش آمدید </p>
               </div>
               <div className={styles.fruit}>
-                <img alt="fruit" src={fruit}/>
+                <img alt="fruit" src={fruit} />
               </div>
             </div>
           </section>

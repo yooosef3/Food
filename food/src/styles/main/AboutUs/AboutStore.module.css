@@ -1,0 +1,142 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 15px 10px;
+    margin-top: 30px;
+}
+
+.container div:first-of-type{
+    margin: 0 auto;
+}
+
+.container section{
+    text-align: center;
+}
+
+.container .icon{
+    color: #7ed02ca9;
+    font-size: 38px;
+    margin-bottom: 0;
+}
+
+.container h1{
+    margin-top: 10px;
+}
+
+.container .aboutList{
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutList ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    min-width: 450px;
+    margin: 0 auto;
+    padding: 0;
+    gap: 15px;
+    border-bottom: 1px solid #aeaeae;
+}
+
+.aboutList ul li{
+    font-size: 20px;
+    color: #808080;
+    transition: all 0.2s linear;
+}
+
+.aboutList ul li:hover{
+    border-bottom: 1px solid #7ed02ca9;
+}
+
+.aboutList ul li:first-of-type{
+    color: #7ed02ca9;
+    border-bottom: 1px solid #7ed02ca9;
+}
+
+.aboutList ul li:hover{
+    color: #7ed02ca9;
+}
+
+.aboutList p{
+    color: #808080;
+    padding: 20px 15px;
+}
+
+.aboutList div{
+    max-width: 650px;
+    padding-top: 20px;
+}
+
+.aboutList p:nth-child(-n + 2){
+    display: none;
+}
+
+.aboutList .aboutBtn{
+    display: flex;
+    justify-content: center;
+}
+
+.aboutBtn button{
+    border: none;
+    padding: 10px 20px;
+    background-color: #7fd02c;
+    color: #ffff;
+    font-size: 26px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .2s linear;
+}
+
+.aboutBtn button:hover{
+    background-color: #e52029;
+}
+
+@media (min-width:768px) {
+    .container section{
+        display: flex;
+        align-items: center;
+        gap: 35px;
+        padding-right: 15px;
+    }
+
+    .container h1{
+        font-size: 32px;
+        margin-top: 33px;
+    }
+
+
+    .aboutList ul{
+        border-bottom: 5px solid #aeaeae;
+        justify-content: space-between;
+    }
+
+    .aboutList ul li:hover{
+        border-bottom: 5px solid #7ed02ca9;
+    }
+
+    .aboutList ul li:first-of-type{
+        color: #7ed02ca9;
+        border-bottom: 5px solid #7ed02ca9;
+    }
+
+    .aboutList .aboutBtn{
+        justify-content: flex-start;
+        margin-right: 15px;
+    }
+
+    .aboutList .aboutBtn button{
+        font-size: 32px;
+        padding: 15px 25px;
+    }
+}
+
+@media (min-width:998px) {
+    .container{
+        flex-direction: flex;
+    }
+
+    .container h1{
+        font-size: 40px;
+    }
+}

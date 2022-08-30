@@ -1,0 +1,6 @@
+.container{
+    background: url('../../../assets/images/bg-about-1.jpg') no-repeat center;
+    background-size: cover;
+    height: 47vh;
+    margin-top: 20px;
+}

@@ -32,7 +32,7 @@ const LeftSidebar = ({ open }) => {
         </div>
         <ul className={drop.openPage ? styles.openPage : styles.closeDrop}>
           <li>
-            <Link to="/">درباره ما</Link>
+            <Link to="/aboutus">درباره ما</Link>
           </li>
           <li>
             <Link to="/">تخفیف ها</Link>
