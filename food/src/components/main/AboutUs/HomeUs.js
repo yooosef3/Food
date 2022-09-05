@@ -3,6 +3,7 @@ import React from "react";
 import homeUs from "../../../assets/images/about-576x537.jpg";
 import signature from "../../../assets/images/signature-1-160x55.png";
 import styles from "../../../styles/main/AboutUs/HomeUs.module.css";
+import { Link } from "react-router-dom";
 
 const HomeUs = () => {
   return (
@@ -20,7 +21,9 @@ const HomeUs = () => {
         </p>
         <div className={styles.signature}>
           <div>
+          <Link to='/aboutus'>
             <FaArrowCircleLeft className={styles.icon}/>
+          </Link>
             <div>
               <h4>Yusef Khedri</h4>
               <p>CEO, Founder</p>
