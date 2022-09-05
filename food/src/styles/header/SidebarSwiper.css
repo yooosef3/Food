@@ -1,0 +1,61 @@
+.container {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
+
+.container .sidebarSwiper {
+  height: 100%;
+}
+
+.container .sidebarSwiper .fruit {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.container .sidebarSwiper .swiper-button-next {
+  background-color: gainsboro;
+  opacity: 60%;
+  position: absolute;
+  top: 90%;
+  width: 50px;
+  left: 0;
+  border-top-right-radius: 30%;
+  border-bottom-right-radius: 30%;
+}
+
+.container .sidebarSwiper .swiper-button-prev {
+  background-color: gainsboro;
+  opacity: 70%;
+  position: absolute;
+  top: 90%;
+  width: 50px;
+  right: 0;
+  border-top-left-radius: 30%;
+  border-bottom-left-radius: 30%;
+}
+
+.container .sidebarSwiper .swiper-button-next::after {
+  display: none;
+}
+
+.container .sidebarSwiper .swiper-button-prev::after {
+  display: none;
+}
+
+.container .sidebarSwiper .swiper-button-next::before {
+  content: "prev";
+  font-size: 22px;
+  font-weight: 700;
+  color: #e52029;
+  padding-top: 6px;
+}
+
+.container .sidebarSwiper .swiper-button-prev::before {
+  content: "next";
+  font-size: 22px;
+  font-weight: 700;
+  color: #e52029;
+  padding-top: 6px;
+}

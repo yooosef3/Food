@@ -61,7 +61,7 @@
   }
   .container div:nth-child(-n + 3){
     width: 25px !important;
-    height: 3px;
+    height: 3px !important;
   }
 
   .container:hover div:first-child{

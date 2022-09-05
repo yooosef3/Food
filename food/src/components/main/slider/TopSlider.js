@@ -1,36 +1,51 @@
 import "swiper/css";
-import 'swiper/css/bundle'
+import "swiper/css/bundle";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "../../../styles/main/slider/TopSlider.css";
 
-import { A11y, Navigation, Pagination } from "swiper";
+import { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import React from "react";
-import slide1 from '../../../assets/images/slide-1.jpg'
-import slide2 from '../../../assets/images/slide-2.jpg'
-import slide3 from '../../../assets/images/slide-3.jpg'
-import styles from '../../../styles/main/slider/TopSlider.module.css'
 
 const TopSlider = () => {
   return (
     <Swiper
-      modules={[Navigation, Pagination, A11y]}
+      modules={[Navigation, Pagination, Autoplay]}
       slidesPerView={1}
       navigation
+      autoplay={{
+        delay: 4000,
+      }}
       pagination={{ clickable: true }}
-      className={styles.slider}
+      className="topSlider"
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}
     >
-      <SwiperSlide>
-        <img alt="slide" src={slide1}/>
+      <SwiperSlide className="slide1">
+        <section>
+          <h3>به فروشگاه آنلاین ما خوش آمدید</h3>
+          <h1>فروشگاه های مواد غذایی</h1>
+          <h2>برای خوراک شناسان واقعی</h2>
+          <button type="button">خرید کن</button>
+        </section>
       </SwiperSlide>
-      <SwiperSlide>
-        <img alt="slide" src={slide2}/>
+      <SwiperSlide className="slide2">
+        <section>
+          <h3> انتخاب گسترده ای از نان صنعتگر</h3>
+          <h1> محصولات پخته شده</h1>
+          <h2> در فروشگاه ما موجود است</h2>
+          <button type="button">خرید کن</button>
+        </section>
       </SwiperSlide>
-      <SwiperSlide>
-        <img alt="slide" src={slide3}/>
+      <SwiperSlide className="slide3">
+        <section>
+          <h3> تازه و خوش طعم</h3>
+          <h1> سبزیجات</h1>
+          <h2> که دوست داری</h2>
+          <button type="button">خرید کن</button>
+        </section>
       </SwiperSlide>
     </Swiper>
   );

@@ -11,7 +11,9 @@ const HeaderMenu = () => {
     <div className={styles.container}>
       <ul>
         <div>
-          <li>خانه</li>
+          <li>
+            <Link to='/home'>خانه</Link>
+          </li>
         </div>
         <div className={styles.pages}>
           <li>صفحات</li>
@@ -54,7 +56,7 @@ const HeaderMenu = () => {
                     <p>تایپوگرافی</p>
                   </Link>
                   <Link to="/">
-                    <p>لیست ایکون ها</p>
+                    <p> ایکون ها</p>
                   </Link>
                   <Link to="/">
                     <p>نوار پیشرفت</p>
@@ -114,7 +116,14 @@ const HeaderMenu = () => {
                 <p>به فروشگاه ما خوش آمدید </p>
               </div>
               <div className={styles.fruit}>
-                <img alt="fruit" src={fruit} />
+                <div>
+                  <img alt="fruit" src={fruit}/>
+                  <section className={styles.elementPhoto}>
+                    <Link to='/login'>
+                    وارد شوید
+                    </Link>
+                  </section>
+                </div>
               </div>
             </div>
           </section>

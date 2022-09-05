@@ -30,7 +30,7 @@
   margin-left: 40px;
 }
 
-.icon{
+.icon {
   font-size: 1.6rem;
   font-weight: 300;
   color: #525252;
@@ -43,12 +43,12 @@
   font-size: 1.6rem;
   font-weight: 300;
   color: #525252;
-  transition:all 0.2s linear;
+  transition: all 0.2s linear;
   margin-left: 12px;
   cursor: pointer;
 }
 
-.close{
+.close {
   transform: rotate(30deg);
 }
 
@@ -72,22 +72,22 @@
   bottom: 18px;
   left: 40px;
 }
-.menu{
+.menu {
   display: none !important;
 }
 
-@media (min-width: 998px){
-  .container{
+@media (min-width: 998px) {
+  .container {
     padding: 25px 70px 10px 0px;
   }
 
-  .container img{
+  .container img {
     width: 249px;
     height: 52px;
     margin-right: auto;
   }
 
-  .menu{
+  .menu {
     display: block !important;
   }
 }

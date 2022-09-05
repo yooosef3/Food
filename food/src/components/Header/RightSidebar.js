@@ -12,7 +12,7 @@ const RightSidebar = () => {
   return (
     <div className={styles.cover}>
       <span onClick={() => setOpen(!open)}>
-        <RightHamburger className={styles.hamburg} openHam={open}/>
+        <RightHamburger className={styles.hamburg} openHam={open} />
       </span>
       <div className={open ? styles.container : styles.hide}>
         <div className={styles.header}>
@@ -25,14 +25,15 @@ const RightSidebar = () => {
             <div></div>
           </div>
         </div>
-        <SidebarSwiper />
+          <SidebarSwiper />
         <div className={styles.info}>
-          <Link to='/'>
+          <Link to="/">
             <p>
-              ارومیه, بلوار والفجر - آخر خیابان میثم - کوی یازده - بن بست اول , پلاک سه
+              ارومیه, بلوار والفجر - آخر خیابان میثم - کوی یازده - بن بست اول ,
+              پلاک سه
             </p>
           </Link>
-          <Link to='/'>
+          <Link to="/">
             <p>+98-914-968-9984</p>
           </Link>
         </div>
