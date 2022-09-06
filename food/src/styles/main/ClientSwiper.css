@@ -1,0 +1,147 @@
+.clientSlider {
+  height: 450px;
+  width: 98%;
+}
+
+.clientSlider .clientSlide {
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  height: 75% !important;
+  background-color: #ffff;
+  border-radius: 50px;
+  padding: 25px 20px;
+  margin: auto;
+  max-width: 85% !important;
+}
+
+.clientSlider img {
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+}
+
+.clientSlider .quote {
+  font-size: 32px;
+  color: #7fd02c;
+  opacity: 40%;
+}
+
+.clientSlider .clientSlide p {
+  font-size: 20px;
+  max-width: 370px;
+  margin: 10px auto;
+  color: #858585;
+}
+
+.clientSlider .clientSlide h2 {
+  color: black;
+  margin-bottom: 0;
+}
+
+.clientSlider .clientSlide span {
+  color: #7fd02c;
+  font-weight: 700;
+}
+
+.clientSlider .swiper-pagination {
+  position: absolute;
+  bottom: -12px !important;
+}
+
+.clientSlider .swiper-button-prev::after {
+  display: none;
+}
+
+.clientSlider .swiper-button-prev::before {
+  content: "next";
+  color: rgb(227, 193, 0);
+  border-bottom: 4px solid rgb(227, 193, 0);
+  font-size: 20px;
+  font-weight: 800;
+  display: none;
+}
+
+.clientSlider .swiper-button-next::after {
+  display: none;
+}
+
+.clientSlider .swiper-button-next::before {
+  content: "prev";
+  color: rgb(227, 193, 0);
+  border-bottom: 4px solid rgb(227, 193, 0);
+  font-size: 20px;
+  font-weight: 800;
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .clientSlider .clientSlide {
+    width: 75% !important;
+    padding: 25px 5px;
+  }
+
+  .clientSlider .clientSlide p {
+    max-width: 470px;
+  }
+}
+
+@media (min-width: 768px) {
+  .clientSlider {
+    position: relative;
+  }
+
+  .clientSlider .swiper-pagination {
+    display: none;
+  }
+
+  .clientSlider .swiper-button-next::before {
+    display: block;
+    position: absolute;
+    bottom: -16%;
+  }
+
+  .clientSlider .swiper-button-prev::before {
+    display: block;
+    position: absolute;
+    bottom: -16%;
+  }
+
+  .clientSlider .client {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+  }
+
+  .clientSlider .clientSlide {
+    padding: 20px 5px;
+  }
+}
+
+@media (min-width: 1020px) {
+  .clientSlider .quote {
+    font-size: 40px;
+  }
+
+  .clientSlider .clientSlide p {
+    font-size: 24px;
+  }
+
+  .clientSlider .clientSlide {
+    padding: 25px 5px;
+  }
+
+  .clientSlider .clientSlide p {
+    max-width: 570px;
+  }
+
+  .clientSlider {
+    width: 85%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .clientSlider {
+    width: 70%;
+  }
+}

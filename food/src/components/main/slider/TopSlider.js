@@ -15,13 +15,12 @@ const TopSlider = () => {
       modules={[Navigation, Pagination, Autoplay]}
       slidesPerView={1}
       navigation
+      loop={true}
       autoplay={{
         delay: 4000,
       }}
       pagination={{ clickable: true }}
       className="topSlider"
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
     >
       <SwiperSlide className="slide1">
         <section>
