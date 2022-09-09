@@ -211,7 +211,7 @@
     .swiper-pagination-bullet,
   .swiper-pagination-horizontal.swiper-pagination-bullets
     .swiper-pagination-bullet {
-    display: none;
+    display: none ;
   }
 
   .topSlider .swiper-button-next {

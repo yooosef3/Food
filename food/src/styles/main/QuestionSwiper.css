@@ -1,0 +1,44 @@
+.QuestionSlider {
+  background-color: rgb(244, 244, 244);
+  height: 55vh;
+  padding: 30px 5px !important;
+  width: 95%;
+}
+
+.QuestionSlider h2 {
+  color: rgb(56, 56, 56);
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+
+.QuestionSlider h3 {
+  color: #7fd02c;
+  margin-top: 0;
+  font-size: 22px;
+  font-weight: 800;
+  display: inline-flex;
+}
+
+.QuestionSlider span {
+  text-decoration: line-through;
+  font-size: 22px;
+  font-weight: 600;
+  margin-right: 10px;
+  color: rgb(157, 157, 157);
+}
+
+.QuestionSlider .swiper-slide {
+  text-align: center;
+}
+
+.QuestionSlider
+  .swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  display: inline-block !important;
+}
+
+@media (min-width: 600px) {
+  .QuestionSlider {
+    width: 60% !important;
+  }
+}
