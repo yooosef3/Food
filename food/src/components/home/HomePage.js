@@ -7,7 +7,7 @@ import OffHome from "../../components/main/OffHome";
 import Questions from "../../components/main/Questions";
 import React from 'react';
 import Sponsors from "../../components/main/Sponsors";
-import TopSlider from '../../components/main/slider/TopSlider';
+import TopSlider from '../main/topSlider/TopSlider';
 
 const HomePage = () => {
     return (

@@ -4,5 +4,7 @@
         "fasilities",
         "galery",
         "Swipper"
-    ]
+    ],
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500
 }
