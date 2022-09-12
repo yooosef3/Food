@@ -1,0 +1,157 @@
+.aboutHistorySwiper {
+  padding: 0 3% !important;
+  position: relative;
+}
+
+.aboutHistorySwiper h3 {
+  color: #ffff;
+  font-weight: 800;
+  z-index: 20 !important;
+}
+
+.aboutHistorySwiper p {
+  padding: 0 20px;
+}
+.aboutHistorySwiper .swiper-slide {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  padding: 10px 0;
+  border-radius: 5px;
+  position: relative;
+}
+
+.aboutHistorySwiper .swiper-button-next {
+  background-color: #daa5205b;
+  position: absolute;
+  top: 90%;
+  width: 50px;
+  left: 13px !important;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.aboutHistorySwiper .swiper-button-prev {
+  background-color: #daa5205b;
+  position: absolute;
+  top: 90%;
+  width: 50px;
+  right: 13px !important;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.aboutHistorySwiper .swiper-button-next::after {
+  display: none;
+}
+
+.aboutHistorySwiper .swiper-button-prev::after {
+  display: none;
+}
+
+.aboutHistorySwiper .swiper-button-next::before {
+  content: "prev";
+  border-bottom: 2px solid #febc2c;
+  font-size: 22px;
+  font-weight: 700;
+  color: #febc2c;
+}
+
+.aboutHistorySwiper .swiper-button-prev::before {
+  content: "next";
+  border-bottom: 2px solid #febc2c;
+  font-size: 22px;
+  font-weight: 700;
+  color: #febc2c;
+}
+
+.aboutHistorySwiper .first::after {
+  content: "1999";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #febc2c;
+  font-size: 55px;
+  transform: rotate(-23deg);
+  font-weight: 800;
+}
+
+.aboutHistorySwiper .second::after {
+  content: "2003";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #febc2c;
+  font-size: 55px;
+  transform: rotate(-23deg);
+  font-weight: 800;
+}
+
+.aboutHistorySwiper .third::after {
+  content: "2007";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #febc2c;
+  font-size: 55px;
+  transform: rotate(-23deg);
+  font-weight: 800;
+}
+
+.aboutHistorySwiper .forth::after {
+  content: "2015";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #febc2c;
+  font-size: 55px;
+  transform: rotate(-23deg);
+  font-weight: 800;
+}
+
+.aboutHistorySwiper .fifth::after {
+  content: "2022";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #febc2c;
+  font-size: 55px;
+  transform: rotate(-23deg);
+  font-weight: 800;
+}
+
+@media (min-width: 768px) {
+  .aboutHistorySwiper h3 {
+    font-size: 22px;
+  }
+
+  .aboutHistorySwiper p {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 992px) {
+  .aboutHistorySwiper h3 {
+    font-size: 26px;
+  }
+
+  .aboutHistorySwiper {
+    width: 90% !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  
+    .aboutHistorySwiper {
+      width: 88% !important;
+    }
+  }
+
+  @media (min-width: 1400px) {
+  
+    .aboutHistorySwiper {
+      width: 68% !important;
+    }
+  }

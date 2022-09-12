@@ -1,6 +1,40 @@
 .container{
     background: url('../../../assets/images/bg-about-1.jpg') no-repeat center;
     background-size: cover;
-    height: 47vh;
+    height: 49vh;
     margin-top: 20px;
+    text-align: center;
+}
+
+.container h1{
+    color: #ffff;
+    padding-top: 40px;
+    font-size: 40px;
+}
+
+@media (min-width:768px) {
+    .container{
+        height: 57vh;
+    }
+
+    .container h1{
+        font-size: 46px;
+    }
+}
+
+@media (min-width:992px) {
+    .container{
+        height: 72vh;
+    }
+
+    .container h1{
+        font-size: 50px;
+    }
+}
+
+@media (min-width:1200px) {
+
+    .container h1{
+        font-size: 54px;
+    }
 }
