@@ -4,8 +4,28 @@
   top: 30%;
 }
 
+.sponsorSlider img {
+  filter: grayscale();
+}
+
 @media (min-width: 1500px) {
   .sponsorSlider {
     width: 80%;
+  }
+}
+
+@media (min-width: 992px) {
+  .sponsorSlider img {
+    cursor: pointer;
+    width: 150px;
+    transition: all 0.2s linear;
+  }
+
+  .sponsorSlider img:hover {
+    opacity: 80%;
+  }
+
+  .sponsorSlider{
+    top: 25%;
   }
 }

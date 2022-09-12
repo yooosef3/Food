@@ -1,5 +1,6 @@
 import AboutBanner from './AboutBanner';
 import AboutHistory from './AboutHistory';
+import AboutSlider from './AboutSlider';
 import AboutSponsors from './AboutSponsors';
 import AboutStat from './AboutStat';
 import AboutStore from './AboutStore';
