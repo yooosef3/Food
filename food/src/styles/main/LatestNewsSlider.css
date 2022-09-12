@@ -1,0 +1,114 @@
+.latestNewsSlider {
+  height: 70vh !important;
+  text-align: center;
+  padding: 5px;
+}
+
+.latestNewsSlider .newsImg img {
+  transition: all 0.2s linear;
+}
+
+.latestNewsSlider .newsImg div {
+  overflow: hidden !important;
+  width: fit-content;
+  height: 368px;
+}
+
+.latestNewsSlider h4 {
+  max-width: 250px;
+  margin-right: auto;
+}
+
+.latestNewsSlider h4 a {
+  color: #292929;
+  font-size: 18px;
+  transition: all 0.2s linear;
+}
+
+.latestNewsSlider h4 a:hover {
+  color: #7fd02c;
+}
+
+.latestNewsSlider p {
+  color: #8d8d8d;
+  margin-top: 10px !important;
+  margin-right: 17%;
+}
+
+.latestNewsSlider .swiper-button-next {
+  background-color: gainsboro;
+  opacity: 60%;
+  position: absolute;
+  display: none;
+  top: 35%;
+  width: 50px;
+  left: 0 !important;
+  border-top-right-radius: 30%;
+  border-bottom-right-radius: 30%;
+}
+
+.latestNewsSlider .swiper-button-prev {
+  background-color: gainsboro;
+  opacity: 70%;
+  position: absolute;
+  display: none;
+  top: 35%;
+  width: 50px;
+  right: 0 !important;
+  border-top-left-radius: 30%;
+  border-bottom-left-radius: 30%;
+}
+
+.latestNewsSlider .swiper-pagination-horizontal {
+  display: flex !important;
+}
+
+.latestNewsSlider .swiper-button-next::after {
+  display: none;
+}
+
+.latestNewsSlider .swiper-button-prev::after {
+  display: none;
+}
+
+.latestNewsSlider .swiper-button-next::before {
+  content: "prev";
+  font-size: 22px;
+  font-weight: 700;
+  color: #b47b00;
+  padding-top: 6px;
+  border-bottom: 2px solid #b47b00;
+}
+
+.latestNewsSlider .swiper-button-prev::before {
+  content: "next";
+  font-size: 22px;
+  font-weight: 700;
+  color: #b47b00;
+  padding-top: 6px;
+  border-bottom: 2px solid #b47b00;
+}
+
+@media screen and (min-width: 992px) {
+  .latestNewsSlider {
+    width: 88%;
+  }
+
+  .latestNewsSlider .newsImg div:hover img {
+    transform: scale(1.1);
+  }
+
+  .latestNewsSlider .swiper-button-next {
+    display: block;
+  }
+
+  .latestNewsSlider .swiper-button-prev {
+    display: block;
+  }
+
+  .latestNewsSlider
+    .swiper-pagination-horizontal.swiper-pagination-bullets
+    .swiper-pagination-bullet {
+    display: none !important;
+  }
+}

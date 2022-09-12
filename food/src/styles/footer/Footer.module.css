@@ -4,6 +4,7 @@ footer .container {
   flex-direction: column;
   gap: 5px;
   padding: 4% 5px;
+  margin-top: 20px;
 }
 
 footer .container .twoCol {
@@ -139,6 +140,7 @@ footer .socials .icon:hover {
 @media (min-width: 768px) {
   footer .container {
     text-align: right;
+    margin-top: 60px;
   }
 
   footer .contact div {

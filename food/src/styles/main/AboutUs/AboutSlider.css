@@ -1,0 +1,43 @@
+.AboutSwiper {
+  margin-top: 50px !important;
+  max-width: 95vw !important;
+  margin: 0 auto;
+}
+
+.AboutSwiper .AboutSlider {
+  height: 80% !important;
+  overflow: hidden;
+  width: 100%;
+}
+
+.AboutSwiper .AboutSlider img {
+  width: 100%;
+}
+
+.AboutSwiper .AboutThumb {
+  height: 20% !important;
+  overflow: hidden;
+  width: 100%;
+}
+
+.AboutSwiper .AboutThumb img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s linear;
+}
+
+.AboutSwiper .swiper-slide-thumb-active img {
+  border: 2px solid #02cd02;
+}
+
+@media (min-width: 640px) {
+  .AboutSwiper {
+    max-width: 75vw !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .AboutSwiper .AboutThumb img:hover {
+    opacity: 70%;
+  }
+}
