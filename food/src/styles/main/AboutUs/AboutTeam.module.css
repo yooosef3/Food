@@ -1,3 +1,34 @@
-.container{
-    height: 92vh;
+.container {
+  height: 92vh;
+}
+
+.container h1 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.container img {
+  transition: all 0.2s linear;
+}
+
+@media (min-width: 768px) {
+  .container h1 {
+    font-size: 40px !important;
+  }
+
+  .container img:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media (min-width: 992px) {
+  .container h1 {
+    font-size: 50px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container h1 {
+    font-size: 60px !important;
+  }
 }

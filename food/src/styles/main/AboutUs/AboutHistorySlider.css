@@ -145,13 +145,13 @@
 @media (min-width: 1200px) {
   
     .aboutHistorySwiper {
-      width: 88% !important;
+      width: 82% !important;
     }
-  }
+}
 
-  @media (min-width: 1400px) {
-  
+@media (min-width: 1400px) {
+    
     .aboutHistorySwiper {
-      width: 68% !important;
+        width: 63% !important;
     }
   }

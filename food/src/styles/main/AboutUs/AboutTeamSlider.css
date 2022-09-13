@@ -1,0 +1,65 @@
+.AboutTeamSlider {
+  text-align: center;
+  padding: 5px 15px !important;
+  height: 70vh;
+}
+
+.AboutTeamSlider h2 {
+  color: #292929;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.AboutTeamSlider h2:hover {
+  color: #7fd02c;
+}
+
+.AboutTeamSlider p {
+  color: #8c8c8c;
+  margin-bottom: 20px;
+}
+
+.AboutTeamSlider .team-about {
+  overflow: hidden !important;
+  height: 335px !important;
+  transition: all 0.2s linear;
+}
+
+.AboutTeamSlider .swiper-pagination {
+  display: block !important;
+}
+
+.AboutTeamSlider .icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.AboutTeamSlider .icons svg {
+  font-size: 22px;
+  transition: all 0.2s linear;
+}
+
+.AboutTeamSlider .icons svg:hover {
+  color: #e52029;
+}
+
+@media (min-width: 992px) {
+  .AboutTeamSlider .team-about:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 3px 4px 4px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .AboutTeamSlider {
+    width: 75%;
+  }
+}
+
+@media (min-width: 992px) {
+  .AboutTeamSlider.swiper-pagination-horizontal.swiper-pagination-bullets
+    .swiper-pagination-bullet {
+    display: flex !important;
+  }
+}

@@ -1,17 +1,106 @@
-.container{
-    background: url('../../../assets/images/parallax-2.jpg') center no-repeat;
-    background-size: cover;
-    height: 39vh;
-    position: relative;
+.container {
+  background: url("../../../assets/images/parallax-2.jpg") center no-repeat;
+  background-size: cover;
+  height: 39vh;
+  position: relative;
+  padding: 20px 10px;
+  z-index: 22;
 }
 
-.container::before{
-    content: '';
-    position: absolute;
-    background-color: black;
-    opacity: 40%;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+.container::before {
+  content: "";
+  position: absolute;
+  background-color: black;
+  opacity: 50%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -22;
+}
+
+.container .statics {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.container .statics div {
+  text-align: center;
+  width: 50%;
+}
+
+.container .statics span {
+  color: #ffff;
+  border-bottom: 2px solid #ffff;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.container .statics p {
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+@media (min-width: 800px) {
+  .container .statics div {
+    width: 25%;
+  }
+
+  .container .statics span {
+    font-size: 40px;
+  }
+
+  .container .statics{
+    margin: 110px 0;
+  }
+
+  .container{
+    height: 44vh;
+  }
+}
+
+@media (min-width: 992px) {
+  .container .statics span {
+    font-size: 50px;
+  }
+
+  .container .statics p {
+    font-size: 25px;
+  }
+
+  .container{
+    height: 48vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container .statics span {
+    font-size: 56px;
+  }
+
+  .container{
+    height: 52vh;
+  }
+
+  .container .statics{
+    margin: 130px 0
+  }
+}
+
+@media (min-width: 1400px) {
+  .container .statics span {
+    font-size: 62px;
+  }
+
+  .container{
+    height: 56vh;
+  }
+
+  .container .statics{
+    margin: 150px 0
+  }
 }
