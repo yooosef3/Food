@@ -1,12 +1,12 @@
 import AboutBanner from './AboutBanner';
 import AboutHistory from './AboutHistory';
-import AboutSlider from './AboutSlider';
-import AboutSponsors from './AboutSponsors';
 import AboutStat from './AboutStat';
 import AboutStore from './AboutStore';
 import AboutTeam from './AboutTeam';
 import AboutTestim from './AboutTestim';
+import Map from '../Map';
 import React from 'react';
+import Sponsors from '../Sponsors';
 
 const AboutUs = () => {
     return (
@@ -17,7 +17,8 @@ const AboutUs = () => {
             <AboutTeam />
             <AboutStat />
             <AboutTestim />
-            <AboutSponsors />
+            <Sponsors />
+            <Map />
         </div>
     );
 };

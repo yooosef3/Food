@@ -1,8 +1,9 @@
 import "swiper/css";
 import "../../../styles/main/AboutUs/AboutTeamSlider.css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-import { Autoplay, Pagination } from "swiper";
+import { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { BsInstagram } from "react-icons/bs";
@@ -22,7 +23,7 @@ const AboutTeamSlider = () => {
     <Swiper
       spaceBetween={50}
       pagination={{ clickable: true }}
-      modules={[Autoplay, Pagination]}
+      modules={[Autoplay, Pagination, Navigation]}
       breakpoints={{
         640: {
           width: 640,
@@ -33,6 +34,7 @@ const AboutTeamSlider = () => {
           slidesPerView: 2,
         },
       }}
+      navigation
       loop={true}
       autoplay={{
         delay: 4000,
@@ -44,7 +46,7 @@ const AboutTeamSlider = () => {
           <img src={team1} alt="team" />
         </div>
         <h2>Richard Ferrand</h2>
-        <p>برنامه نویس ری اکت</p>
+        <p>Richard Ferrand مدیر دوره PADI و موسس شرکت ما است</p>
         <div className="icons">
           <FaFacebookF />
           <BsTwitter />
@@ -57,7 +59,7 @@ const AboutTeamSlider = () => {
           <img src={team2} alt="team" />
         </div>
         <h2>Rebecca Martinez</h2>
-        <p>برنامه نویس انگولار</p>
+        <p>Rebecca مربی مدرس تخصصی grocmart است که در سال 2010 به ما پیوست.</p>
         <div className="icons">
           <FaFacebookF />
           <BsTwitter />
@@ -70,7 +72,7 @@ const AboutTeamSlider = () => {
           <img src={team3} alt="team" />
         </div>
         <h2>Peter Johnson</h2>
-        <p>برنامه نویس ویو</p>
+        <p>Peter از روز اول به عنوان PADI Divemaster با ما کار کرده است.</p>
         <div className="icons">
           <FaFacebookF />
           <BsTwitter />
@@ -83,7 +85,7 @@ const AboutTeamSlider = () => {
           <img src={team4} alt="team" />
         </div>
         <h2>Martin Wilson</h2>
-        <p>برنامه نویس php</p>
+        <p>Martin مسئول تمام مراحل حسابداری در grocmart است.</p>
         <div className="icons">
           <FaFacebookF />
           <BsTwitter />
@@ -96,7 +98,7 @@ const AboutTeamSlider = () => {
           <img src={team5} alt="team" />
         </div>
         <h2>Caroline Lopez</h2>
-        <p>برنامه نویس لاراول</p>
+        <p>Caroline از روز اول به عنوان PADI Divemaster با ما کار کرده است.</p>
         <div className="icons">
           <FaFacebookF />
           <BsTwitter />
@@ -109,7 +111,7 @@ const AboutTeamSlider = () => {
           <img src={team6} alt="team" />
         </div>
         <h2>Will McMillan</h2>
-        <p>برنامه نویس پایتون</p>
+        <p>Will از روز اول به عنوان PADI Divemaster با ما کار کرده است.</p>
         <div className="icons">
           <FaFacebookF />
           <BsTwitter />

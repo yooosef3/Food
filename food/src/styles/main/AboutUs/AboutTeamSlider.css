@@ -11,13 +11,15 @@
   transition: all 0.2s linear;
 }
 
-.AboutTeamSlider h2:hover {
-  color: #7fd02c;
-}
-
 .AboutTeamSlider p {
   color: #8c8c8c;
-  margin-bottom: 20px;
+  margin: 0 auto;
+  max-width: 300px;
+  margin-bottom: 20px !important;
+}
+
+.AboutTeamSlider h2:hover {
+  color: #7fd02c;
 }
 
 .AboutTeamSlider .team-about {
@@ -26,8 +28,36 @@
   transition: all 0.2s linear;
 }
 
-.AboutTeamSlider .swiper-pagination {
-  display: block !important;
+.AboutTeamSlider .swiper-button-prev::after {
+  display: none;
+}
+
+.AboutTeamSlider .swiper-button-prev::before {
+  content: "next";
+  position: absolute;
+  right: -10px !important;
+  bottom: 0 !important;
+  color: rgb(227, 193, 0);
+  border-bottom: 4px solid rgb(227, 193, 0);
+  font-size: 20px;
+  font-weight: 800;
+  display: none;
+}
+
+.AboutTeamSlider .swiper-button-next::after {
+  display: none;
+}
+
+.AboutTeamSlider .swiper-button-next::before {
+  content: "prev";
+  position: absolute;
+  left: -10px !important;
+  bottom: 0 !important;
+  color: rgb(227, 193, 0);
+  border-bottom: 4px solid rgb(227, 193, 0);
+  font-size: 20px;
+  font-weight: 800;
+  display: none;
 }
 
 .AboutTeamSlider .icons {
@@ -39,6 +69,7 @@
 .AboutTeamSlider .icons svg {
   font-size: 22px;
   transition: all 0.2s linear;
+  cursor: pointer;
 }
 
 .AboutTeamSlider .icons svg:hover {
@@ -49,6 +80,14 @@
   .AboutTeamSlider .team-about:hover {
     box-shadow: rgba(0, 0, 0, 0.4) 3px 4px 4px;
   }
+
+  .AboutTeamSlider .swiper-button-prev::before {
+    display: block;
+  }
+
+  .AboutTeamSlider .swiper-button-next::before {
+    display: block;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -58,8 +97,7 @@
 }
 
 @media (min-width: 992px) {
-  .AboutTeamSlider.swiper-pagination-horizontal.swiper-pagination-bullets
-    .swiper-pagination-bullet {
-    display: flex !important;
+  .AboutTeamSlider.swiper-pagination-bullets {
+    display: block !important;
   }
 }

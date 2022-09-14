@@ -1,5 +1,6 @@
 .container {
   height: 92vh;
+  position: relative;
 }
 
 .container h1 {

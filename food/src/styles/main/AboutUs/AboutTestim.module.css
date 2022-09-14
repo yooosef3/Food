@@ -1,3 +1,36 @@
 .container{
-    height: 70vh;
+    height: 80vh;
+    background: url('../../../assets/images/bg-pattern-1.jpg') no-repeat center;
+    background-size: cover;
+    position: relative;
 }
+
+.container h1{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: -50px;
+    padding: 50px 15px;
+}
+
+@media (min-width: 768px) {
+    .container h1 {
+      font-size: 40px !important;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .container h1 {
+      font-size: 50px !important;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .container h1 {
+      font-size: 60px !important;
+    }
+
+    .container{
+        height: 90vh;
+    }
+  }
+  
