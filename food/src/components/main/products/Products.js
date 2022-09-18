@@ -10,7 +10,7 @@ import { useQuery } from "@apollo/client";
 
 const Products = () => {
   const { loading, data, error } = useQuery(PRODUCTS);
-    if(loading) return <h1>loading ...</h1>
+  if(loading) return <h1>loading ...</h1>
   
   return (
     <div className={styles.container}>
