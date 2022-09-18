@@ -73,9 +73,9 @@
   top: 0;
   left: 0;
   color: #febc2c;
-  font-size: 55px;
+  font-size: 45px;
   transform: rotate(-23deg);
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .aboutHistorySwiper .second::after {
@@ -84,9 +84,9 @@
   top: 0;
   left: 0;
   color: #febc2c;
-  font-size: 55px;
+  font-size: 45px;
   transform: rotate(-23deg);
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .aboutHistorySwiper .third::after {
@@ -95,9 +95,9 @@
   top: 0;
   left: 0;
   color: #febc2c;
-  font-size: 55px;
+  font-size: 45px;
   transform: rotate(-23deg);
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .aboutHistorySwiper .forth::after {
@@ -106,9 +106,9 @@
   top: 0;
   left: 0;
   color: #febc2c;
-  font-size: 55px;
+  font-size: 45px;
   transform: rotate(-23deg);
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .aboutHistorySwiper .fifth::after {
@@ -117,9 +117,9 @@
   top: 0;
   left: 0;
   color: #febc2c;
-  font-size: 55px;
+  font-size: 45px;
   transform: rotate(-23deg);
-  font-weight: 800;
+  font-weight: 600;
 }
 
 @media (min-width: 768px) {

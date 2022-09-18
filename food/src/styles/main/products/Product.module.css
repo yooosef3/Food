@@ -1,0 +1,141 @@
+.container {
+  background-color: rgb(246, 246, 246);
+  position: relative;
+  width: 285px;
+  height: 250px;
+  text-align: center;
+  padding: 50px 0;
+  border-radius: 5px;
+  margin: 0 auto;
+  transition: all .2s linear;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  cursor: pointer;
+}
+
+.container:nth-child(odd)::after {
+  content: "جدید";
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #ffff;
+  border-radius: 5px;
+  padding: 1px 8px 4px 8px;
+  font-weight: 700;
+  background-color: #7fd02c;
+}
+
+.container:nth-child(even)::after {
+  content: "فروخته شد";
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #ffff;
+  border-radius: 5px;
+  padding: 1px 8px 4px 8px;
+  font-weight: 700;
+  background-color: #e52029;
+}
+
+.container img{
+  height: 150px;
+}
+
+.container h3 {
+  color: #292929;
+  letter-spacing: 2px;
+  transition: all .2s linear;
+}
+
+.container h3:hover{
+    color: #e52029;
+}
+
+.container span {
+  margin: 0 10px;
+}
+
+.container span:first-of-type {
+  text-decoration: line-through;
+  color: #979797;
+  font-size: 18px;
+}
+
+.container span:nth-of-type(2) {
+  color: #7fd02c;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.container .button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.container a {
+  border-radius: 50%;
+  margin: 0 10px;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+.container a:first-of-type {
+  background-color: #7fd02c;
+  transition: all 0.2s linear;
+}
+
+.container a:first-of-type:hover {
+  background-color: #66a825;
+}
+
+.container a:nth-of-type(2):hover {
+  background-color: #af1a21;
+}
+
+.container a:nth-of-type(2) {
+  background-color: #e52029;
+  transition: all 0.2s linear;
+}
+
+.container a svg {
+  color: #ffff;
+  font-size: 24px;
+}
+
+@keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+@media (min-width:992px) {
+    .button{
+        display: none !important;
+    }
+
+    .container:hover{
+        background-color: #ffff;
+        height: 290px;
+        margin-bottom: -40px;
+        z-index: 2;
+        transform: translateY(-20px);
+    }
+
+    .container:hover .button{
+        display: flex !important;
+    }
+
+    .container:hover .button a:first-of-type{
+        animation: FadeIn .3s linear
+    }
+
+    .container:hover .button a:nth-of-type(2){
+        animation: FadeIn .3s linear
+    }
+}

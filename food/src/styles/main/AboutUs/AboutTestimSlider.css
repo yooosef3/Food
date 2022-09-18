@@ -50,7 +50,7 @@
 
 .AboutTestimSlider .swiper-pagination {
   position: absolute;
-  bottom: -11px !important;
+  bottom: 3px !important;
 }
 
 .AboutTestimSlider .swiper-button-prev::after {
