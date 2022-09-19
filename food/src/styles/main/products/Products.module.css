@@ -1,5 +1,5 @@
-.container{
-    margin-bottom: 40px;
+.container {
+  margin-bottom: 40px;
 }
 
 section {
@@ -18,7 +18,7 @@ section h1 {
   color: #000;
 }
 
-section ul {
+section .filter {
   display: flex;
   list-style: none;
   justify-content: center;
@@ -28,19 +28,33 @@ section ul {
   margin: 0 auto;
 }
 
-section li {
+.filter li {
   color: #b9b9b9 !important;
+  transition: all 0.2s linear;
 }
 
-.products{
+.container .filter li:hover {
+  border-bottom: 4px solid #7fd02c;
+  margin-bottom: -14px;
+}
+
+.selectedFilter {
+  border-bottom: 4px solid #7fd02c;
+  margin-bottom: -14px;
+}
+
+.selectedFilter:nth-child(-n + 4) {
+  color: #7fd02c !important;
+}
+.products {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   gap: 40px;
 }
 
-@media (min-width:640px) {
-  .products{
+@media (min-width: 640px) {
+  .products {
     flex-direction: row;
     flex-wrap: wrap;
     width: 85%;
@@ -48,22 +62,22 @@ section li {
   }
 }
 
-@media (min-width:768px) {
-    section p{
-        font-size: 22px;
-    }
+@media (min-width: 768px) {
+  section p {
+    font-size: 22px;
+  }
 
-    section h1{
-        font-size: 30px;
-    }
+  section h1 {
+    font-size: 30px;
+  }
 }
 
-@media (min-width:992px) {
-    section p{
-        font-size: 24px;
-    }
+@media (min-width: 992px) {
+  section p {
+    font-size: 24px;
+  }
 
-    section h1{
-        font-size: 36px;
-    }
+  section h1 {
+    font-size: 36px;
+  }
 }

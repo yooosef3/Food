@@ -9,7 +9,6 @@
   margin: 0 auto;
   transition: all .2s linear;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  cursor: pointer;
 }
 
 .container:nth-child(odd)::after {
@@ -44,6 +43,9 @@
   color: #292929;
   letter-spacing: 2px;
   transition: all .2s linear;
+  width: fit-content;
+  margin: 19px auto;
+  cursor: pointer;
 }
 
 .container h3:hover{

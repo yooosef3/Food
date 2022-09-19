@@ -11,6 +11,7 @@ const  PRODUCTS = gql `
     slug
     discount
     id
+    type
   }
 }
 `
