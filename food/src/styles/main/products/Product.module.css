@@ -2,7 +2,7 @@
   background-color: rgb(246, 246, 246);
   position: relative;
   width: 285px;
-  height: 250px;
+  height: 270px;
   text-align: center;
   padding: 50px 0;
   border-radius: 5px;
@@ -119,6 +119,10 @@
 @media (min-width:992px) {
     .button{
         display: none !important;
+    }
+
+    .container{
+      height: 250px;
     }
 
     .container:hover{

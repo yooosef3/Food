@@ -10,15 +10,16 @@ import { BsInstagram } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import { IoLogoGoogleplus } from "react-icons/io";
+import Loader from '../../Loader'
 import React from "react";
-import team1 from "../../../assets/images/team-1-367x334.jpg";
-import team2 from "../../../assets/images/team-2-367x334.jpg";
-import team3 from "../../../assets/images/team-3-370x334.jpg";
-import team4 from "../../../assets/images/team-15-370x334.jpg";
-import team5 from "../../../assets/images/team-17-370x334.jpg";
-import team6 from "../../../assets/images/team-20-370x334.jpg";
+import { TEAM } from "../../../graphql/queries";
+import { useQuery } from "@apollo/client";
 
 const AboutTeamSlider = () => {
+
+  const {loading, data} = useQuery(TEAM)
+  if(loading) return <Loader />
+  
   return (
     <Swiper
       spaceBetween={50}
@@ -41,12 +42,14 @@ const AboutTeamSlider = () => {
       }}
       className="AboutTeamSlider"
     >
-      <SwiperSlide>
+    {
+      data.teams.map(person => 
+      <SwiperSlide key={person.id}>
         <div className="team-about">
-          <img src={team1} alt="team" />
+          <img src={person.image.url} alt="team" />
         </div>
-        <h2>Richard Ferrand</h2>
-        <p>Richard Ferrand مدیر دوره PADI و موسس شرکت ما است</p>
+        <h2>{person.name}</h2>
+        <p>{person.text}</p>
         <div className="icons">
           <FaFacebookF />
           <BsTwitter />
@@ -54,71 +57,8 @@ const AboutTeamSlider = () => {
           <IoLogoGoogleplus />
         </div>
       </SwiperSlide>
-      <SwiperSlide>
-        <div className="team-about">
-          <img src={team2} alt="team" />
-        </div>
-        <h2>Rebecca Martinez</h2>
-        <p>Rebecca مربی مدرس تخصصی grocmart است که در سال 2010 به ما پیوست.</p>
-        <div className="icons">
-          <FaFacebookF />
-          <BsTwitter />
-          <BsInstagram />
-          <IoLogoGoogleplus />
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="team-about">
-          <img src={team3} alt="team" />
-        </div>
-        <h2>Peter Johnson</h2>
-        <p>Peter از روز اول به عنوان PADI Divemaster با ما کار کرده است.</p>
-        <div className="icons">
-          <FaFacebookF />
-          <BsTwitter />
-          <BsInstagram />
-          <IoLogoGoogleplus />
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="team-about">
-          <img src={team4} alt="team" />
-        </div>
-        <h2>Martin Wilson</h2>
-        <p>Martin مسئول تمام مراحل حسابداری در grocmart است.</p>
-        <div className="icons">
-          <FaFacebookF />
-          <BsTwitter />
-          <BsInstagram />
-          <IoLogoGoogleplus />
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="team-about">
-          <img src={team5} alt="team" />
-        </div>
-        <h2>Caroline Lopez</h2>
-        <p>Caroline از روز اول به عنوان PADI Divemaster با ما کار کرده است.</p>
-        <div className="icons">
-          <FaFacebookF />
-          <BsTwitter />
-          <BsInstagram />
-          <IoLogoGoogleplus />
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="team-about">
-          <img src={team6} alt="team" />
-        </div>
-        <h2>Will McMillan</h2>
-        <p>Will از روز اول به عنوان PADI Divemaster با ما کار کرده است.</p>
-        <div className="icons">
-          <FaFacebookF />
-          <BsTwitter />
-          <BsInstagram />
-          <IoLogoGoogleplus />
-        </div>
-      </SwiperSlide>
+      )
+    }
     </Swiper>
   );
 };

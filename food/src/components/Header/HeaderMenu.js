@@ -19,7 +19,7 @@ const HeaderMenu = () => {
           <li>صفحات</li>
           <section>
             <Link to="/aboutus">درباره ما</Link>
-            <Link to="/">پیشنهاد ما</Link>
+            <Link to="/offer">پیشنهاد ما</Link>
             <Link to="/">تیم ما</Link>
             <Link to="/">نظرات</Link>
             <Link to="/">لیست قیمت ها</Link>

@@ -35,7 +35,7 @@ const LeftSidebar = ({ open }) => {
             <Link to="/aboutus">درباره ما</Link>
           </li>
           <li>
-            <Link to="/">تخفیف ها</Link>
+            <Link to="/offer">تخفیف ها</Link>
           </li>
           <li>
             <Link to="/">تیم ما</Link>

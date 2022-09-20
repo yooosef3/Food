@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import styles from '../../../styles/main/products/Product.module.css'
 
-const Product = ({image, name, price, discount}) => {
+const Product = ({image, name, price, discount, type}) => {
     return (
         <div className={styles.container}>
             <img src={image.url} alt='product'/>

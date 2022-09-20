@@ -1,31 +1,43 @@
 import { gql } from "@apollo/client";
 
-const  PRODUCTS = gql `
-  query  {
-  products {
-    image {
-      url
+const PRODUCTS = gql`
+  query {
+    products {
+      image {
+        url
+      }
+      name
+      price
+      slug
+      discount
+      id
+      type
     }
-    name
-    price
-    slug
-    discount
-    id
-    type
   }
-}
-`
+`;
+
+const BLOGS = gql`
+  query {
+    blogs {
+      title
+      id
+      images {
+        url
+      }
+    }
+  }
+`;
 
 const TEAM = gql`
-    query  {
-  teams {
-    name
-    text
-    image {
-      url
+  query {
+    teams {
+      name
+      text
+      image {
+        url
+      }
     }
   }
-}
-`
+`;
 
-export {TEAM, PRODUCTS}
+export { TEAM, PRODUCTS, BLOGS };
