@@ -10,7 +10,7 @@ const Products = () => {
   const [category, setCategory] = useState('all');
 
   const { loading, data, error } = useQuery(PRODUCTS);
-  if (error) return <h1>some error occured ...</h1>;
+  
 
   return (
     <div className={styles.container}>
@@ -55,6 +55,7 @@ const Products = () => {
       <div className={styles.products}>
        {
         (loading) ? <Loader /> :
+        (error) ? <h1 style={{color: '#e52029',textAlign:'center'}}>یک خطای شبکه رخ داده است, بعدا امتحان کنید</h1>:
         category === 'all' ?
             data.products.map(product => <Product key={product.id} {...product}/>) :
             data.products.map(

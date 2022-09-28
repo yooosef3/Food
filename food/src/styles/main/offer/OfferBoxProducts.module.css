@@ -1,0 +1,21 @@
+.OfferBoxProducts{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+@media (min-width:640px) {
+    .OfferBoxProducts{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width:1200px) {
+    .OfferBoxProducts{
+        margin: 100px 0;
+    }
+}

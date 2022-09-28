@@ -20,9 +20,9 @@ const HeaderMenu = () => {
           <section>
             <Link to="/aboutus">درباره ما</Link>
             <Link to="/offer">پیشنهاد ما</Link>
-            <Link to="/">تیم ما</Link>
-            <Link to="/">نظرات</Link>
-            <Link to="/">لیست قیمت ها</Link>
+            <Link to="/ourteam">تیم ما</Link>
+            <Link to="/testimonals">نظرات</Link>
+            <Link to="/pricinglist">لیست قیمت ها</Link>
           </section>
         </div>
         <div className={styles.blog}>

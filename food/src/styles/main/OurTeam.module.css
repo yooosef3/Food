@@ -1,0 +1,131 @@
+.OurTeam .team {
+  background: url("../../assets//images/bg-pattern-1.jpg") no-repeat center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.OurTeam .team .icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.OurTeam .team .icons svg {
+  font-size: 22px;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+
+.OurTeam .team .icons svg:hover {
+  color: #e52029;
+}
+
+.OurTeam .team section .teamImg {
+  border-radius: 50%;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  padding: 15px;
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: #dbdbdb;
+  border: 20px solid #20c1e550;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.OurTeam .team section:nth-of-type(2) .teamImg {
+  background-color: #cecece;
+  border: 20px solid #20c1e550;
+}
+
+.OurTeam .team section:nth-of-type(3) .teamImg {
+  background-color: #dddddd;
+  border: 20px solid #20c1e550;
+}
+
+.OurTeam .team section .teamImg img {
+  border-radius: 100%;
+  width: 310px;
+  position: absolute;
+  bottom: 0px;
+}
+
+.OurTeam .team section .teamImg .imgArrow {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  transition: all 0.3s linear;
+  border: 20px solid transparent;
+  border-top: 45px solid #20c1e550;
+  left: -2%;
+  top: 90%;
+  transform: rotate(43deg);
+}
+
+.OurTeam .team section {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.OurTeam .team section h3 {
+  font-size: 20px;
+  letter-spacing: 4px;
+  color: #656565;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+.OurTeam .team section h3:hover {
+  color: #e52029;
+}
+
+.OurTeam .team section p {
+  font-size: 16px;
+  color: #a2a2a2;
+  margin-bottom: 30px;
+}
+
+
+@media (min-width: 998px) {
+  .OurTeam .team {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 1350px;
+  }
+
+  .OurTeam .team section {
+    margin: 0 60px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .OurTeam .team section:hover .imgArrow {
+    left: 45%;
+    top: 108%;
+    transform: rotate(0deg);
+    border-top: 45px solid #cfb700;
+  }
+
+  .OurTeam .team section:hover .teamImg {
+    margin-bottom: 70px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 6px 8px;
+    transform: scale(1.04);
+    border: 20px solid #cfb700;
+  }
+}
+
+@media (min-width: 1280px) {
+  .OurTeam .team {
+    height: 700px;
+  }
+}

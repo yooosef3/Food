@@ -40,4 +40,22 @@ const TEAM = gql`
   }
 `;
 
-export { TEAM, PRODUCTS, BLOGS };
+const OFFER = gql`
+  query {
+  offers {
+    box {
+      html
+    }
+    discount
+    id
+    price
+    image {
+      url
+    }
+    name
+    slug
+  }
+}
+`;
+
+export { TEAM, PRODUCTS, BLOGS, OFFER };

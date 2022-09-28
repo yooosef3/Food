@@ -1,0 +1,93 @@
+.OfferBoxInfo {
+  padding: 60px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.OfferBoxInfo div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.OfferBoxInfo div .leftOffer {
+  font-size: 36px;
+  color: #7fd02c;
+  border-radius: 100%;
+  transition: all 0.2s linear;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 4px 12px;
+}
+
+.offerDown {
+  transform: rotate(-90deg);
+  color: #ffff !important;
+  background-color: #7fd02c;
+}
+
+.OfferBoxInfo div h4 {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #292929;
+}
+
+.OfferBoxInfo section {
+  padding:10px 0;
+  width: 95%;
+}
+
+.OfferBoxInfo section .offerText {
+  font-size: 16px;
+  color: rgb(151, 160, 163);
+  text-align: right;
+  display: none;
+}
+
+.showOfferText {
+    display: block !important;
+    margin-top: 15px;
+}
+
+@media (min-width: 600px) {
+  .OfferBoxInfo div h4 {
+    font-size: 22px;
+  }
+
+  .OfferBoxInfo div .leftOffer {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .OfferBoxInfo div h4 {
+    font-size: 24px;
+  }
+
+  .OfferBoxInfo div .leftOffer {
+    font-size: 42px;
+  }
+}
+
+@media (min-width: 992px) {
+  .OfferBoxInfo section {
+    width: 45%;
+  }
+
+  .OfferBoxInfo section p {
+    font-size: 20px;
+  }
+
+  .OfferBoxInfo div:hover .leftOffer {
+    transform: rotate(-90deg);
+  }
+
+  .OfferBoxInfo {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+}

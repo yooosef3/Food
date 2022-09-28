@@ -1,0 +1,137 @@
+.OfferNewsLetter {
+  background: url("../../../assets/images/parallax-2.jpg") center no-repeat;
+  background-size: cover;
+  height: 42vh;
+  position: relative;
+  padding: 20px 30px;
+  margin-top: 60px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: #ffff;
+}
+
+.OfferNewsLetter::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 55%;
+}
+
+.OfferNewsLetter .newsletterInfo div {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.OfferNewsLetter .newsletterInfo h1 {
+  margin-bottom: 20px;
+}
+
+.OfferNewsLetter .newsletterInfo h2 {
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.OfferNewsLetter .newsletterSub {
+  display: flex;
+  flex-direction: column;
+}
+
+.OfferNewsLetter .newsletterSub input {
+  background-color: transparent;
+  border-bottom: 1px solid #ffff;
+  height: 40px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.OfferNewsLetter .newsletterSub input::placeholder {
+  color: #ffff;
+  font-size: 22px;
+}
+
+.OfferNewsLetter .newsletterSub button {
+  background-color: #e52029;
+  border: none;
+  color: #ffff;
+  font-size: 24px;
+  width: 103%;
+  border-radius: 5px;
+  padding: 8px 0;
+  margin-top: 5px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  transition: all 0.2s linear;
+}
+
+.OfferNewsLetter .newsletterSub button:hover {
+  background-color: #bd1c24;
+}
+
+@media (min-width: 768px) {
+  .OfferNewsLetter .newsletterSub {
+    flex-direction: row;
+    align-items:flex-end;
+    gap: 30px;
+  }
+
+  .OfferNewsLetter .newsletterInfo h1 {
+    font-size: 38px;
+  }
+
+  .OfferNewsLetter .newsletterInfo h2 {
+    font-size: 30px;
+  }
+
+  .OfferNewsLetter .newsletterInfo p {
+    font-size: 18px;
+  }
+
+  .OfferNewsLetter .newsletterSub input {
+    height: 50px;
+  }
+
+  .OfferNewsLetter .newsletterSub button{
+    padding: 10px 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .OfferNewsLetter {
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 100px;
+  }
+
+  .OfferNewsLetter .newsletterInfo div {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .OfferNewsLetter .newsletterInfo h2 {
+    margin-top: -20px;
+    margin-bottom: 50px;
+  }
+
+  .OfferNewsLetter .newsletterSub button {
+    font-size: 30px;
+  }
+
+  .OfferNewsLetter .newsletterInfo h1{
+    font-size: 42px;
+  }
+
+  .OfferNewsLetter .newsletterInfo h2{
+    font-size: 34px;
+  }
+}

@@ -1,0 +1,133 @@
+.testimonalsContainer {
+  background: url("../../../assets/images/bg-7.jpg") no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 30px 15px;
+}
+
+.testimonalsContainer::after {
+  position: absolute;
+  content: "";
+  background-color: #ffff;
+  opacity: 60%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.TestimonalsSwiper {
+  margin-top: 50px !important;
+  max-width: 95vw !important;
+  margin: 0 auto;
+  position: relative;
+}
+
+.TestimonalsSwiper .TestimonalsSlider {
+  height: 80% !important;
+  overflow: hidden;
+  width: 100%;
+}
+
+.TestimonalsSwiper .TestimonalsSlider p {
+  color: #787878;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.TestimonalsSwiper .TestimonalsThumb {
+  height: 20% !important;
+  overflow: hidden;
+  width: 100%;
+}
+
+.TestimonalsSwiper .TestimonalsThumb div {
+  text-align: center;
+}
+
+.TestimonalsSwiper .TestimonalsThumb img {
+  border-radius: 100%;
+  transition: all 0.2s linear;
+}
+
+.TestimonalsSwiper .TestimonalsThumb h3 {
+  color: #575757;
+  margin-bottom: 6px;
+  letter-spacing: 4px;
+}
+
+.TestimonalsSwiper .TestimonalsThumb small {
+  color: #ff0000;
+}
+
+.TestimonalsSwiper .TestimonalsThumb .swiper-slide{
+  transition: all .2s linear;
+  cursor: pointer;
+}
+
+.TestimonalsSwiper .swiper-button-prev::after {
+  display: none;
+}
+
+.TestimonalsSwiper .swiper-button-prev::before {
+  content: "next";
+  color: #937d00 ;
+  border-bottom: 4px solid #937d00;
+  font-size: 20px;
+  font-weight: 600;
+  position: absolute;
+  bottom: -30px;
+}
+
+.TestimonalsSwiper .swiper-button-next::after {
+  display: none;
+}
+
+.TestimonalsSwiper .swiper-button-next::before {
+  content: "prev";
+  color: #937d00;
+  border-bottom: 4px solid #937d00;
+  font-size: 20px;
+  font-weight: 600;
+  position: absolute;
+  bottom: -30px;
+}
+
+@media (min-width: 640px) {
+  .TestimonalsSwiper {
+    max-width: 75vw !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .TestimonalsSwiper .TestimonalsThumb .swiper-slide:hover {
+    opacity: 100%;
+  }
+
+  .TestimonalsSwiper .TestimonalsThumb .swiper-slide{
+    opacity: 60%;
+  }
+
+  .TestimonalsSwiper .swiper-slide.swiper-slide-thumb-active{
+    opacity: 100%;
+  }
+
+  .TestimonalsSwiper .TestimonalsSlider p {
+    width: 650px;
+  }
+
+  .TestimonalsSwiper .swiper-button-prev::before{
+    display: none;
+  }
+
+  .TestimonalsSwiper .swiper-button-next::before{
+    display: none;
+  }
+}
+
+@media (min-width: 1100px) {
+  .TestimonalsSwiper {
+    max-width: 50vw !important;
+  }
+}

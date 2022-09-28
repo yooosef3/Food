@@ -38,13 +38,13 @@ const LeftSidebar = ({ open }) => {
             <Link to="/offer">تخفیف ها</Link>
           </li>
           <li>
-            <Link to="/">تیم ما</Link>
+            <Link to="/ourteam">تیم ما</Link>
           </li>
           <li>
-            <Link to="/">نظرات</Link>
+            <Link to="/testimonals">نظرات</Link>
           </li>
           <li>
-            <Link to="/">لیست قیمت ها</Link>
+            <Link to="/pricinglist">لیست قیمت ها</Link>
           </li>
         </ul>
       </div>

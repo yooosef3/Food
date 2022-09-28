@@ -12,8 +12,9 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 
 const LatestNewsSlider = () => {
-  const { loading, data} = useQuery(BLOGS);
+  const { loading, data, error} = useQuery(BLOGS);
   if (loading) return <Loader />;
+  if (error) return <h1 style={{color: '#e52029', textAlign:'center'}}>یک خطای شبکه رخ داده است, بعدا امتحان کنید</h1>;
   return (
     <Swiper
       // install Swiper modules

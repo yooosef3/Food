@@ -2,8 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: justify;
   flex-direction: column;
+  padding: 40px 0;
   gap: 20px;
 }
 
@@ -17,7 +18,7 @@
 .offerProperties .offerProperty span {
   font-size: 54px;
   font-weight: 700;
-  color: rgba(194, 194, 194, 0.261);
+  color: #c2c2c243;
 }
 
 .offerProperties .offerProperty svg {
@@ -30,6 +31,7 @@
   font-weight: 700;
   width: fit-content;
   margin: 12px auto;
+  margin-bottom: 20px;
   cursor: pointer;
   transition: all 0.2s linear;
 }
@@ -44,12 +46,35 @@
 
 .offerProperties .property {
   padding: 10px 20px;
+  width: 390px;
 }
 
 @media (min-width: 768px) {
   .offerProperties {
-    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+
+  .offerProperties .property {
+    width: 320px;
+    gap: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .offerProperty span {
+    font-size: 64px !important;
+  }
+
+  .offerProperty svg {
+    font-size: 58px !important;
+  }
+
+  .offerProperties {
+    padding: 70px 0 0;
+  }
+
+  .offerProperties .property{
+    width: 270px;
   }
 }

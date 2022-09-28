@@ -1,12 +1,18 @@
-import OfferBanner from "./OfferBanner";
+import OfferBoxInfo from "./OfferBoxInfo";
+import OfferBoxProducts from "./OfferBoxProducts";
+import OfferNewsLetter from "./OfferNewsLetter";
 import OfferProperties from "./OfferProperties";
+import PagesHeader from "../PagesHeader";
 import React from "react";
 
 const Offer = () => {
   return (
     <>
-      <OfferBanner />
+      <PagesHeader headline={'پیشنهاد ما'} path={'offer'}/>
       <OfferProperties />
+      <OfferNewsLetter />
+      <OfferBoxProducts />
+      <OfferBoxInfo />
     </>
   );
 };

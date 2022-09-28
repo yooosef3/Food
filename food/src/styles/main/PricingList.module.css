@@ -1,0 +1,24 @@
+.PricingList{
+    border-bottom: 1px solid #cccccc;
+}
+
+.PricingList p{
+    color: #6d6d6d;
+}
+
+.PricingList .PricingListInfo{
+    padding: 0 20px;
+    margin: 80px auto;
+}
+
+@media (min-width:768px) {
+    .PricingList .PricingListInfo{
+        width: 50%;
+        margin: 100px auto;
+        margin-bottom: 80px;
+    }
+
+    .PricingList .PricingListInfo p{
+        font-size: 20px;
+    }
+}
