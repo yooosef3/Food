@@ -1,0 +1,13 @@
+.blogList .bloglistContainer{
+    padding: 60px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width:992px) {
+    .blogList .bloglistContainer{
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+    }
+}

@@ -24,7 +24,7 @@
 }
 
 .container:nth-child(even)::after {
-  content: "فروخته شد";
+  content: "محدود";
   position: absolute;
   top: 10px;
   right: 15px;

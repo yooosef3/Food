@@ -1,0 +1,64 @@
+.GridCard{
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    width: 370px;
+    height: 505px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    transition: all .2s linear;
+}
+
+.GridCard div{
+    padding: 0;
+    height: 239px;
+    overflow: hidden;
+}
+
+.GridCard section{
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start !important;
+    justify-content:flex-start;
+    padding: 0 20px 20px;
+    
+}
+
+.GridCard section small{
+    margin-top: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #878787;
+}
+
+.GridCard img{
+     transition: all .1s linear;
+}
+
+.GridCard section a:hover h4{
+    color: #d71a1a;
+}
+
+.GridCard section h4{
+    font-size: 18px;
+    color: #373737;
+    margin-top: 15px;
+    transition: all .2s linear;
+}
+
+.GridCard section p{
+    margin-top: auto;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: #878787;
+}
+
+@media (min-width:1200px) {
+    .GridCard:hover img{
+        transform: scale(1.1);
+    }
+
+    .GridCard:hover{
+        box-shadow: rgba(0, 0, 0, 0.1) 4px 8px 16px;
+    }
+}

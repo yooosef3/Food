@@ -6,7 +6,7 @@ import styles from "../../styles/main/PricingList.module.css";
 const PricingList = () => {
   return (
     <div className={styles.PricingList}>
-      <PagesHeader headline={"لیست قیمت ها"} path={"pricinglist"} />
+      <PagesHeader page={'صفحات'} headline={"لیست قیمت ها"} path={"pricinglist"} />
       <section className={styles.PricingListInfo}>
         <h1>قیمت ها</h1>
         <p>

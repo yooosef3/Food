@@ -14,6 +14,7 @@ const AboutUs = () => {
       <PagesHeader
         headline={"درباره ما"}
         path={"/aboutus"}
+        page={'صفحات'}
         text={
           <p>
             Grocmart یک فروشگاه مواد غذایی متعلق به خانواده است که از سال 1999

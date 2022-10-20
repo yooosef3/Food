@@ -105,7 +105,8 @@ ul li:hover {
   margin-right: 15px;
   font-weight: 600;
   margin-top: 40px;
-  color: rgb(84, 171, 2);
+  color: #54ab02;
+  /* color: #575757; */
 }
 
 .third,
@@ -131,6 +132,7 @@ ul li:hover {
 .second div a p,
 .firstCol div p {
   color: #292929;
+  /* color: #252525; */
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s linear;

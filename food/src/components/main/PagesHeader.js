@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import React from "react";
 import styles from "../../styles/PagesHeader.module.css";
 
-const PagesHeader = ({ headline, path, text }) => {
+const PagesHeader = ({ headline, path, text, page }) => {
   return (
     <>
       <div className={styles.PagesHeader}>
@@ -16,7 +16,7 @@ const PagesHeader = ({ headline, path, text }) => {
           <FaArrowLeft className={styles.leftRow} />
         </li>
         <li>
-          <Link to="/pages">صفحات</Link>
+          <Link to="/pages">{page}</Link>
           <FaArrowLeft className={styles.leftRow} />
         </li>
         <li>

@@ -8,7 +8,7 @@ import React from "react";
 const Offer = () => {
   return (
     <>
-      <PagesHeader headline={'پیشنهاد ما'} path={'offer'}/>
+      <PagesHeader page={'صفحات'} headline={'پیشنهاد ما'} path={'offer'}/>
       <OfferProperties />
       <OfferNewsLetter />
       <OfferBoxProducts />

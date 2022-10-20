@@ -6,7 +6,7 @@ import TestimonalsSwiper from "./TestimonalsSwiper";
 const Testimonals = () => {
   return (
     <div>
-      <PagesHeader headline={'نظرات'} path={'testimonals'}/>
+      <PagesHeader page={'صفحات'} headline={'نظرات'} path={'testimonals'}/>
       <TestimonalsSwiper />
       <TestimonalStar />
     </div>

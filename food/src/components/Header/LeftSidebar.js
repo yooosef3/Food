@@ -56,13 +56,13 @@ const LeftSidebar = ({ open }) => {
         </div>
         <ul className={drop.openBlog ? styles.openBlog : styles.closeDrop}>
           <li>
-            <Link to="/">وبلاگ</Link>
+            <Link to="/gridblog">وبلاگ</Link>
           </li>
           <li>
-            <Link to="/">لیست بلاگ</Link>
+            <Link to="/bloglist">لیست بلاگ</Link>
           </li>
           <li>
-            <Link to="/">پست ها</Link>
+            <Link to="/blogpost">پست ها</Link>
           </li>
         </ul>
       </div>
@@ -74,16 +74,16 @@ const LeftSidebar = ({ open }) => {
         </div>
         <ul className={drop.openGallery ? styles.openGallery : styles.closeDrop}>
           <li>
-            <Link to="/">گالری</Link>
+            <Link to="/gridgallery">گالری</Link>
           </li>
           <li>
-            <Link to="/">گالری تمام صفحه</Link>
+            <Link to="/gridgallery">گالری تمام صفحه</Link>
           </li>
           <li>
-            <Link to="/">لیست محصولات</Link>
+            <Link to="/gridgallery">لیست محصولات</Link>
           </li>
           <li>
-            <Link to="/">لیست تمام صفحه</Link>
+            <Link to="/gridgallery">لیست تمام صفحه</Link>
           </li>
         </ul>
       </div>
@@ -169,27 +169,27 @@ const LeftSidebar = ({ open }) => {
 
       <div className={styles.shop}>
         <div onClick={() => setDrop({openShop: !drop.openShop})}>
-          <Link to="/">فروشگاه</Link>
+          <Link to="/shop">فروشگاه</Link>
           <IoIosArrowDown className={drop.openShop ? styles.arrowUp : styles.arrowDown} />
         </div>
         <ul className={drop.openShop ? styles.openShop : styles.closeDrop}>
           <li>
-            <Link to="/">تب ها</Link>
+            <Link to="/shop">فروشگاه</Link>
           </li>
           <li>
-            <Link to="/">دکمه ها</Link>
+            <Link to="/gridshop">قفسه</Link>
           </li>
           <li>
             <Link to="/">جداول</Link>
           </li>
           <li>
-            <Link to="/">فرم ها</Link>
+            <Link to="/singleproduct"> محصولات تکی</Link>
           </li>
           <li>
-            <Link to="/">شمارنده</Link>
+            <Link to="/cart"> سبد خرید</Link>
           </li>
           <li>
-            <Link to="/">سیستم گرید</Link>
+            <Link to="/checkout"> پرداخت</Link>
           </li>
         </ul>
       </div>

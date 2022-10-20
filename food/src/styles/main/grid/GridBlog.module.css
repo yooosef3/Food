@@ -1,0 +1,41 @@
+.GridBlog{
+    border-bottom: 1px solid rgb(161, 161, 161);
+}
+
+.GridBlog .gridCards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 100px 0;
+}
+
+.GridBlog .gridPagination{
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.GridBlog .gridPagination a{
+    margin: 0 8px;
+    color: #292929;
+    font-size: 24px;
+    font-weight: 500;
+    transition: all .2s linear;
+}
+
+.GridBlog .gridPagination a:first-of-type{
+    color: #ff0000;
+}
+
+.GridBlog .gridPagination a:hover{
+    color: #ff0000;
+}
+
+@media (min-width:768px) {
+ .GridBlog .gridCards{
+    flex-direction: row;
+    flex-wrap: wrap;
+ }   
+}

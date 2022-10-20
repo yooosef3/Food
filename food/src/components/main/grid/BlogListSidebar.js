@@ -1,0 +1,88 @@
+import React from "react";
+import { RiSearchLine } from "react-icons/ri";
+import lopez from "../../../assets/images/user-4-123x123.jpg";
+import post1 from '../../../assets/images/post-mini-1-106x104.jpg'
+import post2 from '../../../assets/images/post-mini-2-106x104.jpg'
+import styles from "../../../styles/main/grid/BlogListSidebar.module.css";
+
+const BlogListSidebar = () => {
+  return (
+    <div className={styles.blogListSidebar}>
+      <div className={styles.lopez}>
+        <img alt="lopez" src={lopez} />
+        <h3>Caroline Lopez</h3>
+        <p>خانم Lopez اینجاست تا پاسخگوی سوالات شما در زمینه خرید مناسب باشد</p>
+      </div>
+      <div className={styles.searchBlog}>
+        <input placeholder="جستجوی بلاگ ..." />
+        <RiSearchLine />
+      </div>
+      <section className={styles.category}>
+        <div className={styles.galery}>
+          <h3>گالری</h3>
+          <ul>
+            <li>
+              <p>همه</p>
+              <span>18</span>
+            </li>
+            <li>
+              <p>فروشگاه</p>
+              <span>9</span>
+            </li>
+            <li>
+              <p>خرید</p>
+              <span>5</span>
+            </li>
+            <li>
+              <p>تخفیف</p>
+              <span>8</span>
+            </li>
+          </ul>
+        </div>
+        <div className={styles.latestPost}>
+          <h3>آخرین پست ها</h3>
+          <section>
+            <div className={styles.miniPost}>
+              <img alt="post" src={post1}/>
+              <div>
+                <h4>5 دلیل برای انتخاب grocmart</h4>
+                <p>15 مهر 1401</p>
+              </div>
+            </div>
+            <div className={styles.miniPost}>
+              <img alt="post" src={post2}/>
+              <div>
+                <h4> دلیل خرید آنلاین مردم؟</h4>
+                <p>15 مهر 1401</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+      <section className={styles.archives}>
+        <div className={styles.tags}>
+          <h3>تگ های محبوب</h3>
+          <ul>
+            <li>اخبار</li>
+            <li>سبزیجات</li>
+            <li>نوشیدنی ها</li>
+            <li>میوه ها</li>
+            <li>غذا</li>
+            <li>خرید</li>
+          </ul>
+        </div>
+        <div className={styles.archive}>
+          <h3>آرشیو</h3>
+          <ul>
+            <li>مرداد 1401</li>
+            <li>شهریور 1401</li>
+            <li>مهر 1401</li>
+            <li>آبان 1401</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default BlogListSidebar;

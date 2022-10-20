@@ -12,7 +12,7 @@ import team3 from "../../assets/images/team-2-367x334.jpg";
 const OurTeam = () => {
   return (
     <div className={styles.OurTeam}>
-      <PagesHeader headline={'تیم ما'} path={'ourteam'}/>
+      <PagesHeader page={'صفحات'} headline={'تیم ما'} path={'ourteam'}/>
       <div className={styles.team}>
         <section>
           <div className={styles.teamImg}>

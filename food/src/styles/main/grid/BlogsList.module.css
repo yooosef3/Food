@@ -1,0 +1,21 @@
+.blogsList ul{
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.blogsList ul a{
+    margin: 0 8px;
+    color: #292929;
+    font-size: 24px;
+    font-weight: 500;
+    transition: all .2s linear;
+}
+
+.blogsList ul a:first-of-type{
+    color: #ff0000;
+}
+
+.blogsList ul a:hover{
+    color: #ff0000;
+}
