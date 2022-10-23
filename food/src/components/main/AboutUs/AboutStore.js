@@ -57,7 +57,7 @@ const AboutStore = () => {
             </p>
           </div>
           <div className={styles.aboutBtn}>
-            <button>مطالعه بیشتر</button>
+            <button>مطالعه بیشــتر</button>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@
   align-items: center;
   background-color: #ffffff !important;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  padding: 10px 20px 0;
+  padding: 15px 20px 3px 0px ;
   margin: 0 auto !important;
   z-index: 1000 !important;
 }
@@ -30,7 +30,7 @@
   margin-left: 40px;
 }
 
-.icon {
+.container .icon {
   font-size: 1.6rem;
   font-weight: 300;
   color: #525252;
@@ -39,7 +39,7 @@
   margin-right: 10px;
 }
 
-.search {
+.container .search {
   font-size: 1.6rem;
   font-weight: 300;
   color: #525252;
@@ -87,7 +87,7 @@
     margin-right: auto;
   }
 
-  .menu {
+  .container .menu {
     display: block !important;
   }
 }

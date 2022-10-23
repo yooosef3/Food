@@ -9,11 +9,11 @@
   text-align: center;
 }
 
-.container h3 {
+.container .questions h3 {
   color: #7fd02c;
-  font-weight: 800;
-  font-size: 24px;
-  margin-bottom: 0;
+  font-weight: 600;
+  font-size: 24px ;
+  margin-bottom: 15px;
 }
 
 .container h4 {
@@ -34,9 +34,9 @@
   display: block;
 }
 
-.container h1 {
-  font-weight: 800;
-  font-size: 30px;
+.container .questions h1 {
+  font-weight: 600;
+  font-size: 36px;
   margin-top: 5px;
 }
 

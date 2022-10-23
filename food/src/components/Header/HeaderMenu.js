@@ -92,7 +92,7 @@ const HeaderMenu = () => {
                 <BsFillLayersFill />
                 <p>صفحات اضافی</p>
               </div>
-              <div>
+              <div className={styles.secondList}>
                 <Link to="/">
                   <p>جداول</p>
                 </Link>
@@ -118,11 +118,6 @@ const HeaderMenu = () => {
               <div className={styles.fruit}>
                 <div>
                   <img alt="fruit" src={fruit}/>
-                  <section className={styles.elementPhoto}>
-                    <Link to='/login'>
-                    وارد شوید
-                    </Link>
-                  </section>
                 </div>
               </div>
             </div>

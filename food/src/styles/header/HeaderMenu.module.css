@@ -13,7 +13,7 @@ ul li {
   transition: all 0.2s linear;
 }
 
-ul div:first-of-type li a{
+ul div:first-of-type li a {
   color: #e52029;
 }
 
@@ -29,12 +29,13 @@ ul li:hover {
   position: relative;
 }
 
-.shop section,
-.galery section,
-.blog section,
-.pages section {
+.container .shop section,
+.container .galery section,
+.container .blog section,
+.container .pages section {
   position: absolute;
   display: flex;
+  text-align: right;
   flex-direction: column;
   background-color: #ffff;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
@@ -45,9 +46,11 @@ ul li:hover {
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s linear;
+  padding:0 ;
+  overflow: hidden;
 }
 
-.elements:hover section,
+.container .elements:hover section,
 .shop:hover section,
 .galery:hover section,
 .blog:hover section,
@@ -76,13 +79,14 @@ ul li:hover {
   background-color: #f2c5c7;
 }
 
-.elements section {
+.container .elements section {
   position: absolute;
   display: flex;
   justify-content: space-evenly;
   background-color: #ffff;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
   width: 1000px;
+  height: 275px;
   top: 34px;
   right: -495px;
   border-radius: 4px;
@@ -92,75 +96,69 @@ ul li:hover {
   transition: all 0.4s linear;
 }
 
-.eleIcons {
+.container .eleIcons {
   display: flex;
   color: rgb(84, 171, 2);
-  align-items: center;
+  align-items: baseline;
   border-bottom: 1px solid #4f4f4f37;
   cursor: pointer;
-  font-size: 26px;
+  font-size: 18px;
+  padding-bottom: 10px;
 }
 
-.eleIcons p {
+.container .eleIcons p {
   margin-right: 15px;
   font-weight: 600;
-  margin-top: 40px;
   color: #54ab02;
-  /* color: #575757; */
+  font-size: 16px;
 }
 
-.third,
-.second,
-.first {
+.container .third,
+.container .container .second,
+.container .first {
   display: flex;
   flex-direction: column;
-  padding-right: 10px;
-  min-width: 250px;
+  width: 250px;
 }
 
-.firstCol {
+.container .firstCol {
   display: flex;
 }
 
-.firstCol div {
+.container .firstCol div {
   display: flex;
   flex-direction: column;
-  min-width: 130px;
-  padding-top: 30px;
+  width: 130px;
+  padding-top: 15px;
 }
 
-.second div a p,
-.firstCol div p {
+.container .second div a p,
+.container .firstCol div p {
   color: #292929;
-  /* color: #252525; */
   font-weight: 500;
   cursor: pointer;
+  font-size: 16px;
   transition: all 0.2s linear;
+  text-align: right;
   padding: 5px 0;
 }
 
-.firstCol a,
-.second a {
-  margin: -15px 0;
-}
-
-.second a p:hover,
-.firstCol div p:hover {
+.container .second a p:hover,
+.container .firstCol div p:hover {
   color: #e52029;
   border-right: 5px solid #e52029;
   background-color: #f2c5c7;
-  padding-right: 4px;
+  padding-right: 5px;
 }
 
-.second div:last-of-type {
+.container .second .secondList {
   display: flex;
   flex-direction: column;
-  padding-top: 30px;
+  padding-top: 15px;
 }
 
 .third .fruit div {
-  height: 240px;
-  overflow: hidden;
+  height: 200px;
   padding: 15px;
 }
 
@@ -173,39 +171,6 @@ ul li:hover {
 
 .third .fruit div {
   position: relative;
-  overflow: hidden;
-}
-
-.fruit .elementPhoto {
-  position: absolute;
-  top: 10;
-  right: -70px;
-  width: 70px;
-  height: 30px;
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.3s linear;
-  background-color: #e52029;
-  z-index: 5;
-}
-
-.fruit .elementPhoto a{
-  color: #ffff;
-}
-
-.third .fruit img:hover + .elementPhoto {
-  right: 9px;
-}
-
-.elementPhoto:hover {
-  right: 30px;
-  border-radius: 5px;
-  width: 90px;
-  height: 40px;
-  font-size: 22px;
 }
 
 .third .fruit img:hover {

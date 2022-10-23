@@ -9,16 +9,16 @@
 }
 
 .container h1 {
-  font-weight: 800;
+  font-weight: 700;
   font-size: 30px;
   margin-top: 5px;
 }
 
 .container h3 {
   color: #7fd02c;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 24px;
-  margin-bottom: 0;
+  margin-bottom: 15px;
 }
 
 @media (min-width: 600px) {

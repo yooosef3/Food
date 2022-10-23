@@ -20,7 +20,7 @@ const Header = () => {
       <header className={styles.container}>
         <div>
           <RightSidebar />
-          <Link to="/home/cart" className={styles.cart}>
+          <Link to="/cart" className={styles.cart}>
             <BsCart3 className={styles.icon} />
             <span>0</span>
           </Link>

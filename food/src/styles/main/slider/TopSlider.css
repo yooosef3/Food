@@ -103,7 +103,6 @@
   color: #ffff;
   margin-bottom: 5px;
   margin-top: 0;
-  /* transform: translateX(-100%); */
 }
 
 .slide1 section h2,
@@ -111,6 +110,7 @@
 .slide3 section h2 {
   font-size: 28px;
   margin-bottom: 5px;
+  color: #ffff;
 }
 
 .slide1 section button,
@@ -202,7 +202,7 @@
 
 @media (min-width: 998px) {
   .topSlider {
-    margin-top: 102px;
+    margin-top: 98px;
   }
 
   .topSlider

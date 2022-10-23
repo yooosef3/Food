@@ -98,6 +98,7 @@
 .blogListSidebar .category .galery ul li {
   display: flex;
   margin-bottom: 10px;
+  align-items: baseline;
   justify-content: space-between;
 }
 
@@ -222,6 +223,10 @@
 
   .blogListSidebar .searchBlog input::placeholder {
     color: rgb(100, 100, 100);
+  }
+
+  .blogListSidebar .searchBlog svg{
+    top: 25px;
   }
 
   .blogListSidebar .archives {

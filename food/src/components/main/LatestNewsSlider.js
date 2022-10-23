@@ -12,14 +12,19 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 
 const LatestNewsSlider = () => {
-  const { loading, data, error} = useQuery(BLOGS);
+  const { loading, data, error } = useQuery(BLOGS);
   if (loading) return <Loader />;
-  if (error) return <h1 style={{color: '#e52029', textAlign:'center'}}>یک خطای شبکه رخ داده است, بعدا امتحان کنید</h1>;
+  if (error)
+    return (
+      <h1 style={{ color: "#e52029", textAlign: "center" }}>
+        یک خطای شبکه رخ داده است, بعدا امتحان کنید
+      </h1>
+    );
   return (
     <Swiper
       // install Swiper modules
       modules={[Navigation, Autoplay, Pagination]}
-      spaceBetween={150}
+      spaceBetween={15}
       breakpoints={{
         640: {
           width: 640,
@@ -45,10 +50,13 @@ const LatestNewsSlider = () => {
               <img alt="news" src={blog.images.url} />
             </div>
           </Link>
-          <h4>
-            <Link to="/">{blog.title}</Link>
-          </h4>
-          <p>1 مهر, 1401</p>
+
+          <div className="latest-info">
+            <h4>
+              <Link to="/">{blog.title}</Link>
+            </h4>
+            <p>1 مهر, 1401</p>
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>

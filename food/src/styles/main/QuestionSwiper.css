@@ -1,27 +1,28 @@
 .QuestionSlider {
-  background-color: rgb(244, 244, 244);
-  height: 55vh;
+  background-color: #f4f4f4;
   padding: 30px 5px !important;
   width: 95%;
+  padding: 5px;
 }
 
 .QuestionSlider h2 {
   color: rgb(56, 56, 56);
   margin-bottom: 0;
   margin-top: 5px;
+  font-weight: 700;
 }
 
 .QuestionSlider h3 {
   color: #7fd02c;
-  margin-top: 0;
-  font-size: 22px;
+  margin-top: 5px;
+  font-size: 18px !important;
   font-weight: 800;
   display: inline-flex;
 }
 
 .QuestionSlider span {
   text-decoration: line-through;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   margin-right: 10px;
   color: rgb(157, 157, 157);
@@ -34,7 +35,11 @@
 .QuestionSlider
   .swiper-pagination-horizontal.swiper-pagination-bullets
   .swiper-pagination-bullet {
-  display: inline-block !important;
+  display: inline-block ;
+}
+
+.QuestionSlider .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+  bottom: 0px !important;
 }
 
 @media (min-width: 600px) {

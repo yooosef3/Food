@@ -104,7 +104,7 @@ const LeftSidebar = ({ open }) => {
             marginBottom:'10px'
           }}
         >
-          <p>المان ها</p>
+          <p>الــمان ها</p>
           <GiAbstract050 />
         </div>
           <li>

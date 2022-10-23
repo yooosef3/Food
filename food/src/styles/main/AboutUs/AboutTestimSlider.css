@@ -39,8 +39,9 @@
 }
 
 .AboutTestimSlider .testimSlide h2 {
-  color: black;
+  color: #383838 !important;
   margin-bottom: 0;
+  font-weight: 700;
 }
 
 .AboutTestimSlider .testimSlide span {

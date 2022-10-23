@@ -8,6 +8,7 @@ import vegetable from "../../../assets/images/1112951441.jpg";
 
 const Store = styled.div`
   padding: 60px 15px;
+  border-bottom: 1px solid #a9a9a9;
   .search-store {
     position: relative;
     margin: 0 auto;

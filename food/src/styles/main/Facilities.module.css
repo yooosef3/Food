@@ -30,16 +30,17 @@
     font-size: 40px;
 }
 
-h2{
+.fasilities h2{
     color: #ffff;
     margin: 0;
-    font-weight: 800;
+    font-size: 22px;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 
-p{
+.fasilities p{
     font-weight: 700;
-    color: #ffff;
+    color: #a8a8a8;
     margin: 0;
     margin-bottom: 40px;
 }
@@ -63,11 +64,11 @@ p{
         font-size: 50px;
     }
 
-    h2{
+    .fasilities h2{
         font-size: 28px;
     }
 
-    p{
+    .fasilities p{
         font-size: 18px;
     }
 }

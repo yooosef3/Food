@@ -6,12 +6,12 @@
   flex-direction: column;
   position: absolute;
   right: 0;
-  top: -5px;
+  top: -7px;
   height: 100vh;
   z-index: 20;
   transition: all 0.3s linear;
   overflow: auto;
-  padding: 10px 10px 0px 10px;
+  padding: 15px 10px 10px 10px;
 }
 
 .info {
@@ -70,6 +70,11 @@
   justify-content: space-between;
   padding: 0 12px;
   margin-top: -10px;
+}
+
+.header h2{
+  color: #313131;
+  font-size: 28px ;
 }
 
 .hamburger {

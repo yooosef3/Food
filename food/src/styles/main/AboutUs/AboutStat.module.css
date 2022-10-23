@@ -37,12 +37,13 @@
   color: #ffff;
   border-bottom: 2px solid #ffff;
   font-size: 32px;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .container .statics p {
   font-size: 20px;
   margin-top: 15px;
+  color: #ffff;
 }
 
 @media (min-width: 800px) {

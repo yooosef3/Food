@@ -42,6 +42,11 @@
   border-bottom: 1px solid #aeaeae;
 }
 
+.aboutList p{
+  font-weight: 600;
+  color: #a1a1a1 !important;
+}
+
 .aboutList ul .tab {
   font-size: 20px;
   color: #808080;
@@ -88,6 +93,7 @@
   background-color: #7fd02c;
   color: #ffff;
   font-size: 26px;
+  font-weight: 700;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.2s linear;

@@ -10,7 +10,7 @@ const FooterBotom = () => {
       <p>© 2022 code.load تمامی حقوق محفوظ است</p>
       <div>
         <p>سیاست حفظ حریم خصوصی</p>
-        <section>
+        <section className={styles.logos}>
           <div>
             <img alt="payment" src={pay1} />
           </div>

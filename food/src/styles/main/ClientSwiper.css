@@ -9,8 +9,8 @@
   background-color: #ffff;
   border-radius: 50px;
   padding: 25px 20px;
-  margin: auto;
-  max-width: 85% !important;
+  margin: 0 auto;
+  width: 85% !important;
 }
 
 .clientSlider img {
@@ -33,8 +33,9 @@
 }
 
 .clientSlider .clientSlide h2 {
-  color: black;
+  color: #202020;
   margin-bottom: 0;
+  font-weight: 600;
 }
 
 .clientSlider .clientSlide span {
@@ -44,7 +45,7 @@
 
 .clientSlider .swiper-pagination {
   position: absolute;
-  bottom: -12px !important;
+  bottom: 0px !important;
 }
 
 .clientSlider .swiper-button-prev::after {

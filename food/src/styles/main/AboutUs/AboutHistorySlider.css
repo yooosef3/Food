@@ -5,12 +5,15 @@
 
 .aboutHistorySwiper h3 {
   color: #ffff;
-  font-weight: 800;
+  font-weight: 600;
+  font-size: 22px;
   z-index: 20 !important;
 }
 
 .aboutHistorySwiper p {
   padding: 0 20px;
+  color: #e3e3e3;
+  font-weight: 600;
 }
 .aboutHistorySwiper .swiper-slide {
   background: linear-gradient(

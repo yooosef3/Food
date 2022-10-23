@@ -55,7 +55,7 @@ const Products = () => {
       <div className={styles.products}>
        {
         (loading) ? <Loader /> :
-        (error) ? <h1 style={{color: '#e52029',textAlign:'center'}}>یک خطای شبکه رخ داده است, بعدا امتحان کنید</h1>:
+        (error) ? <h1 style={{color: '#e52029',textAlign:'center', fontSize:'18px'}}>یک خطای شبکه رخ داده است, بعدا امتحان کنید</h1>:
         category === 'all' ?
             data.products.map(product => <Product key={product.id} {...product}/>) :
             data.products.map(

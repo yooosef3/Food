@@ -4,13 +4,12 @@
   align-items: center;
   align-items: flex-end;
   position: absolute;
-  top: -12px;
+  top: -5px;
   right: 40px;
   width: 30px;
   gap: 3px;
   cursor: pointer;
   margin-left: 12px;
-  padding-top: 2px;
 }
 
 .clicked {
@@ -19,7 +18,7 @@
   align-items: center;
   align-items: flex-end;
   position: absolute;
-  top: -12px;
+  top: -5px;
   right: 40px;
   width: 30px;
   gap: 3px;
@@ -58,6 +57,11 @@
 @media (min-width:992px){
   .container {
     gap: 5px;
+    top:0;
+  }
+
+  .clicked{
+    top: 0;
   }
   .container div:nth-child(-n + 3){
     width: 25px !important;

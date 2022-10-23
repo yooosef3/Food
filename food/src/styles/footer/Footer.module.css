@@ -13,9 +13,9 @@ footer .container .twoCol {
 }
 
 footer h1 {
-  color: black;
-  /* color: #b5b5b5; */
-  font-size: 34px;
+  color: rgb(43, 43, 43);
+  font-size: 30px;
+  font-weight: 500;
 }
 
 footer .visit {
@@ -24,17 +24,25 @@ footer .visit {
 
 footer .container strong {
   margin-left: 5px;
+  font-weight: 500;
+  color: #4a4a4a;
+}
+
+footer .container span{
+  color: #7f7f7f;
 }
 
 footer .socials {
   border-top: 1px solid rgb(194, 194, 194);
   padding-top: 35px;
   display: flex;
+  gap: 20px;
   justify-content: center;
 }
 
 footer .socials p {
-  color: rgb(63, 63, 63);
+  color: #545454;
+  margin: 0;
 }
 
 footer .socials ul {
@@ -65,6 +73,7 @@ footer .socials .icon:hover {
   color: #6e6e6e;
   width: 220px;
   margin: 0 auto;
+  font-size: 14px;
   cursor: pointer;
   transition: all 0.2s linear;
 }
@@ -85,19 +94,22 @@ footer .socials .icon:hover {
 }
 
 .newsletter p {
-  color: #6e6e6e;
+  color: #909090;
   margin-top: -5px;
+  font-size: 16px;
 }
 
 .newsletter input {
-  border-bottom: 1px solid #bababa;
+  border: 1px solid #eaeaea;
   text-align: center;
   padding: 5px 0;
   color: #6e6e6e;
+  margin-top: 40px;
 }
 
 .newsletter input::placeholder {
   color: #6e6e6e;
+  font-size: 18px;
 }
 
 .newsletter div {
@@ -108,7 +120,7 @@ footer .socials .icon:hover {
   justify-items: center;
   padding: 10px;
   border-radius: 50%;
-  margin-top: 20px;
+  margin-top: 10px;
   cursor: pointer;
   transition: all 0.2s linear;
 }
@@ -170,7 +182,7 @@ footer .socials .icon:hover {
 
   footer h1{
     margin-top: 0;
-    font-size: 38px;
+    font-size: 30px;
   }
 
   footer .socials{
