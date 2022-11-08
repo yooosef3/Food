@@ -1,3 +1,7 @@
+import * as Yup from "yup";
+
+import { ErrorMessage, Field, Form, Formik } from "formik";
+
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import { FaGooglePlusG } from "react-icons/fa";
@@ -10,6 +14,7 @@ import { Link } from "react-router-dom";
 import { MdLocationPin } from "react-icons/md";
 import React from "react";
 import logo from "../../assets/images/logo.png";
+import { motion } from "framer-motion";
 import styles from "../../styles/footer/Footer.module.css";
 
 const Footer = () => {
@@ -17,7 +22,12 @@ const Footer = () => {
     <footer>
       <div className={styles.container}>
         <div className={styles.twoCol}>
-          <div>
+          <motion.div
+            initial={{ opacity: 0, transform: "translateX(50%)" }}
+            whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
             <Link to="/">
               <img alt="logo" src={logo} />
             </Link>
@@ -56,8 +66,14 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-          </div>
-          <div className={styles.contact}>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, transform: "translateY(50%)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0%)" }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className={styles.contact}
+          >
             <h1>تماس با ما</h1>
             <div>
               <MdLocationPin className={styles.icon} />
@@ -74,21 +90,45 @@ const Footer = () => {
               <HiOutlineMail className={styles.icon} />
               <p>Yusef_khedri@yahoo.com</p>
             </div>
-          </div>
+          </motion.div>
         </div>
-        <div className={styles.newsletter}>
+        <motion.div
+          initial={{ opacity: 0, transform: "translateY(-50%)" }}
+          whileInView={{ opacity: 1, transform: "translateY(0%)" }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className={styles.newsletter}
+        >
           <section>
             <h1>خبرنامه</h1>
             <p>
               برای دریافت اخبار هفتگی، به روز رسانی ها، پیشنهادات ویژه و تخفیف
               های منحصر به فرد، در خبرنامه ما مشترک شوید.
             </p>
-            <input type="text" placeholder="ایمیل خود را وارد کنید" />
+            <Formik
+              initialValues={{ email: "" }}
+              validationSchema={Yup.object({
+                email: Yup.string()
+                  .email("آدرس ایمیل نامعتبر است")
+                  .required("ایمیل ضروری است"),
+              })}
+              onSubmit={(values, { setSubmitting }) => {
+                setTimeout(() => {
+                  alert(JSON.stringify(values, null, 2));
+                  setSubmitting(false);
+                }, 400);
+              }}
+            >
+              <Form className={styles.footerForm}>
+                <Field name="email" type="email" placeholder="ایمیل خود را وارد کنید"/>
+                <br />
+                <ErrorMessage className={styles.ErrorMessage} name="email" render={msg => <div className={styles.error}>{msg}</div>}/>
+                <br />
+                <button type="submit"><IoIosSend /></button>
+              </Form>
+            </Formik>
           </section>
-          <div>
-            <IoIosSend />
-          </div>
-        </div>
+        </motion.div>
       </div>
       <FooterBotom />
     </footer>

@@ -1,17 +1,21 @@
+import * as Yup from "yup";
+
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import React, { useState } from "react";
 
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import { AiTwotoneStar } from "react-icons/ai";
 import { BsStarHalf } from "react-icons/bs";
 import DetailSlider from "./DetailSlider";
-import Loader from "../../Loader";
-import { PRODUCTS } from "../../../graphql/queries";
+import Loader from "../../shared/Loader";
+import { PRODUCT } from "../../../graphql/queries";
 import PagesHeader from "../PagesHeader";
-import Product from "../products/Product";
+import ProductPack from "../products/ProductPack";
 import Review from "./Review";
 import SocialIcons from "../../Header/SocialIcons";
 import { TbTruckDelivery } from "react-icons/tb";
 import styled from "styled-components";
+import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 const Detail = styled.div`
@@ -46,11 +50,14 @@ const Detail = styled.div`
     ul {
       list-style: none;
       display: flex;
+      gap: 35px;
       border-radius: 4px;
       border-bottom: 4px solid #c3c3c3;
       li {
         font-size: 18px;
         color: #c3c3c3;
+        font-weight: 600;
+        cursor: pointer;
         transition: all 0.2s linear;
         padding-bottom: 15px;
         border-bottom: 4px solid #c3c3c3;
@@ -98,6 +105,7 @@ const Detail = styled.div`
     p {
       color: #616161;
       font-size: 16px;
+      font-weight: 600;
       margin-bottom: 40px;
     }
 
@@ -191,12 +199,11 @@ const Detail = styled.div`
       text-align: right;
     }
 
-    form {
+    .comment-form {
       .inputs {
         display: flex;
         flex-direction: column;
-        @media (min-width: 992px) {
-          flex-direction: row;
+        @media (min-width: 992px) { 
           justify-content: center;
           gap: 15px;
           flex-wrap: wrap;
@@ -205,16 +212,36 @@ const Detail = styled.div`
     }
 
     input {
-      border-bottom: 1px solid #939393;
-      padding: 10px 5px;
-      color: #939393;
+      background-color: transparent;
+      border: 1px solid #b7b7b7;
+      padding: 10px;
+      border-radius: 8px;
+      color: #292929;
+      height: 40px;
+      outline: 0;
+      font-size: 24px;
+      margin: 5px 0;
+
+      &:focus {
+        border: 2px solid #1d6adc;
+      }
+
       &::placeholder {
         font-size: 18px;
         color: #939393;
       }
-      @media (min-width: 992px) {
-        width: 38%;
+
+      &:invalid {
+        border: 2px solid #ff7d87;
       }
+
+    }
+    
+    .error {
+      color: #292929;
+      height: fit-content;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px #ff000d;
     }
 
     textarea {
@@ -270,8 +297,8 @@ const Detail = styled.div`
       min-width: 700px;
     }
     @media (min-width: 1200px) {
-      width:100%;
-      gap:15px;
+      width: 100%;
+      gap: 15px;
     }
   }
 
@@ -288,6 +315,7 @@ const Detail = styled.div`
       color: #808080;
       text-align: right;
       font-size: 16px;
+      font-weight: 600;
       max-width: 620px;
       @media (min-width: 1200px) {
         max-width: 800px;
@@ -315,6 +343,7 @@ const Detail = styled.div`
       color: #808080;
       text-align: right;
       font-size: 16px;
+      font-weight: 600;
       max-width: 620px;
       @media (min-width: 1200px) {
         max-width: 800px;
@@ -335,8 +364,17 @@ const SingleProduct = () => {
     moreInfo: false,
     delivery: false,
   });
-  const { data, loading, error } = useQuery(PRODUCTS);
-
+  const { slug } = useParams();
+  const { loading, data, error } = useQuery(PRODUCT, {
+    variables: { slug },
+  });
+  if (loading) return <Loader />;
+  if (error)
+    return (
+      <h1 style={{ color: "#e52029", textAlign: "center", fontSize: "18px" }}>
+        یک خطای شبکه رخ داده است, بعدا امتحان کنید
+      </h1>
+    );
   return (
     <Detail>
       <PagesHeader
@@ -347,12 +385,12 @@ const SingleProduct = () => {
       <section className="product-info">
         <div className="slider-info">
           <div className="product-slider">
-            <DetailSlider />
+            <DetailSlider data={data} />
           </div>
           <div className="information">
-            <h1>پنیر Frigo Parmesan</h1>
+            <h1> {data.product.name}</h1>
             <section className="star-price">
-              <h2>$20</h2>
+              <h2>${data.product.price}</h2>
               <div>
                 <AiTwotoneStar />
                 <AiTwotoneStar />
@@ -361,22 +399,15 @@ const SingleProduct = () => {
                 <BsStarHalf />
               </div>
             </section>
-            <p>
-              عضویت در خبرنامه grocmart یکی از بهترین روش ها و یکی سریعترین روش
-              ها ببرای پیدا کردن کد تخفیف grocmart است. شما میتونید به راحتی با
-              ثبت نام در خبرنامه grocmart و فقط با چند کلیک در خبرنامه grocmart
-              ثبت نام کنید تا از کد تخفیف های روز مطلع شوید.
-            </p>
+            <p>{data.product.details}</p>
             <h4>
-              دسته بندی: <span>پنیر</span>
+              دسته بندی: <span>{data.product.category}</span>
             </h4>
             <h4>
-              {" "}
-              وزن: <span>200gr</span>
+              وزن: <span dir="ltr">{data.product.weight}</span>
             </h4>
             <h4>
-              {" "}
-              ابعاد: <span>0.6 X 0.9 in</span>
+              ابعاد: <span dir="ltr">{data.product.dimensions}</span>
             </h4>
             <div className="add-cart">
               <span className="counter">1</span>
@@ -416,17 +447,97 @@ const SingleProduct = () => {
           <div className={`${!info.review && "more-info-hide"} ${"reviews"}`}>
             <Review />
             <h3>یک نظر بنویسید</h3>
-            <form>
-              <section className="inputs">
-                <input type="text" placeholder="نام" />
-                <input type="text" placeholder="نام خانوادگی" />
-                <input type="text" placeholder="ایمیل" />
-                <input type="text" placeholder="تلفن" />
-                <textarea rows={8} placeholder="متن پیام"></textarea>
-              </section>
-              <br />
-              <button type="submit">ارسال</button>
-            </form>
+            <Formik
+              initialValues={{
+                email: "",
+                name: "",
+                textarea: "",
+                family: "",
+                phone: "",
+              }}
+              validationSchema={Yup.object({
+                name: Yup.string()
+                  .max(15, " نام باید کمتر از 15 حرف باشد")
+                  .required("نام ضروری است"),
+                family: Yup.string().required("نام خانوادگی ضروری است"),
+                email: Yup.string()
+                  .email("آدرس ایمیل نامعتبر است")
+                  .required("ایمیل ضروری است"),
+                phone: Yup.string().required("شماره تلفن ضروری است"),
+                textarea: Yup.string().required("لطفا یک کامنت بنویسید"),
+              })}
+              onSubmit={(values, { setSubmitting }) => {
+                setTimeout(() => {
+                  alert(JSON.stringify(values, null, 2));
+                  setSubmitting(false);
+                }, 400);
+              }}
+            >
+              <Form className="comment-form">
+                <div className="inputs">
+                  <div className="input-error">
+                    <Field
+                      name="name"
+                      type="text"
+                      placeholder="نام خود را وارد کنید"
+                    />
+                    <ErrorMessage
+                      className="ErrorMessage"
+                      name="name"
+                      render={(msg) => <div className="error">{msg}</div>}
+                    />
+                  </div>
+                  <div className="input-error">
+                    <Field
+                      name="family"
+                      type="text"
+                      placeholder="نام خانوادگی خود را وارد کنید"
+                    />
+                    <ErrorMessage
+                      className="ErrorMessage"
+                      name="family"
+                      render={(msg) => <div className="error">{msg}</div>}
+                    />
+                  </div>
+                  <div className="input-error">
+                    <Field
+                      name="email"
+                      type="email"
+                      placeholder="ایمیل خود را وارد کنید"
+                    />
+                    <ErrorMessage
+                      className="ErrorMessage"
+                      name="email"
+                      render={(msg) => <div className="error">{msg}</div>}
+                    />
+                  </div>
+                  <div className="input-error">
+                    <Field
+                      name="phone"
+                      type="text"
+                      placeholder="تلفن خود را وارد کنید"
+                    />
+                    <ErrorMessage
+                      className="ErrorMessage"
+                      name="phone"
+                      render={(msg) => <div className="error">{msg}</div>}
+                    />
+                  </div>
+                </div>
+                <Field
+                  name="textarea"
+                  className="textarea"
+                  placeholder="نظر خود را وارد کنید"
+                />
+                <ErrorMessage
+                  className="ErrorMessage"
+                  name="textarea"
+                  render={(msg) => <div className="error">{msg}</div>}
+                />
+                <br />
+                <button type="submit">عضویت</button>
+              </Form>
+            </Formik>
           </div>
           <div
             className={`${
@@ -434,20 +545,13 @@ const SingleProduct = () => {
             } ${"additional-info"}`}
           >
             <AiOutlineExclamationCircle />
-            <p>
-              {" "}
-              عضویت در خبرنامه grocmart یکی از بهترین روش ها و یکی سریعترین روش
-              ها ببرای پیدا کردن کد تخفیف grocmart است. شما میتونید به راحتی با
-              ثبت نام در خبرنامه grocmart و فقط با چند کلیک در خبرنامه grocmart
-              ثبت نام کنید تا از کد تخفیف های روز مطلع شوید.
-            </p>
+            <p>{data.product.information}</p>
           </div>
           <div
             className={`${!info.delivery && "more-info-hide"} ${"delivery"}`}
           >
             <TbTruckDelivery />
             <p>
-              {" "}
               عضویت در خبرنامه grocmart یکی از بهترین روش ها و یکی سریعترین روش
               ها ببرای پیدا کردن کد تخفیف grocmart است. شما میتونید به راحتی با
               ثبت نام در خبرنامه grocmart و فقط با چند کلیک در خبرنامه grocmart
@@ -455,18 +559,7 @@ const SingleProduct = () => {
             </p>
           </div>
           <h3>محصولات برتر</h3>
-          <div className="featured-products">
-            {loading ? (
-              <Loader />
-            ) : error ? (
-              <h1 style={{ color: "#e52029", textAlign: "center" }}>
-                یک خطای شبکه رخ داده است, بعدا امتحان کنید
-              </h1>
-            ) : (
-              data.products
-                .slice(0, 4).map((product) => <Product key={product.id} {...product} />)
-            )}
-          </div>
+          <ProductPack />
         </div>
       </section>
     </Detail>

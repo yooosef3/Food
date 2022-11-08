@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { BLOGS } from "../../graphql/queries";
 import { Link } from "react-router-dom";
-import Loader from "../Loader";
+import Loader from "../shared/Loader";
 import React from "react";
 import { useQuery } from "@apollo/client";
 
@@ -43,17 +43,17 @@ const LatestNewsSlider = () => {
       pagination={{ clickable: true }}
       className="latestNewsSlider"
     >
-      {data.blogs.map((blog) => (
-        <SwiperSlide key={blog.id}>
-          <Link to="/" className="newsImg">
+      {data.blogs.map(({id, images, title, slug}) => (
+        <SwiperSlide key={id}>
+          <Link to={`/blogpost/${slug}`} className="newsImg">
             <div>
-              <img alt="news" src={blog.images.url} />
+              <img alt="news" src={images.url} />
             </div>
           </Link>
 
           <div className="latest-info">
             <h4>
-              <Link to="/">{blog.title}</Link>
+              <Link to={`/blogpost/${slug}`}>{title}</Link>
             </h4>
             <p>1 مهر, 1401</p>
           </div>

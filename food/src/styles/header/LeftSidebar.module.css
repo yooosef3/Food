@@ -82,25 +82,20 @@
   color: #e52029;
 }
 
-.home div,
-.pages div,
-.blog div,
-.gallery div,
-.elements div,
-.shop div {
+.unselectedDrop{
   display: flex;
   justify-content: space-between;
   align-items: center;
   justify-items: center;
   width: 100%;
   margin-top: 10px;
-  padding: 10px 0;
+  padding: 12px 10px ;
   transition: all 0.2s linear;
   cursor: pointer;
 }
 
 .pages div a {
-  margin-left: 15px !important;
+  /* margin-left: 15px !important; */
 }
 
 .arrowDown {
@@ -124,39 +119,25 @@
   flex-direction: column;
 }
 
-.pages div a,
-.blog div a,
-.gallery div a,
-.elements div a,
-.shop div a {
+.unselectedDrop a {
   text-decoration: none;
   font-size: 22px;
   font-weight: 600;
-  color: black;
+  color: black !important;
   padding: 5px 10px 0;
 }
 
-.home div:hover,
-.pages div:hover,
-.blog div:hover,
-.gallery div:hover,
-.elements div:hover,
-.shop div:hover {
+.unselectedDrop:hover {
   background-color: #e52029;
 }
 
-.home div:hover a,
-.pages div:hover *,
-.blog div:hover *,
-.gallery div:hover *,
-.elements div:hover *,
-.shop div:hover * {
-  color: #ffff;
+.unselectedDrop:hover * {
+  color: #ffff !important;
 }
 
 .container div li ,
 .open div li{
-  height: 40px !important;
+  padding: 5px 20px;
 }
 
 .container div li:hover *,
@@ -185,13 +166,7 @@
   color: #ffff;
 }
 
-.container .home li,
-.open .home li {
-  background-color: #e52029;
-}
-
-.open .home div,
-.container .home div {
+.selectedDrop {
   text-decoration: none;
   font-size: 22px;
   font-weight: 600;
@@ -200,7 +175,10 @@
   padding:12px 10px;
 }
 
-.open .home div a,
-.container .home div a{
-  color: #ffff;
+.selectedDrop > *{
+  color: #ffff !important;
+}
+
+.selectedDrop a{
+  color: #ffff !important;
 }

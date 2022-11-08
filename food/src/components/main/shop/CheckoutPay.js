@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
 import { ImRadioChecked } from "react-icons/im";
 import { ImRadioUnchecked } from "react-icons/im";
@@ -87,6 +87,10 @@ const Pay = styled.div`
         border-bottom: none;
       }
     }
+  }
+
+  .bank, .paypal, .cheque{
+    cursor: pointer;
   }
 `;
 

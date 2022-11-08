@@ -8,6 +8,7 @@ import { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import React from "react";
+import { motion } from "framer-motion";
 
 const TopSlider = () => {
   return (
@@ -24,26 +25,107 @@ const TopSlider = () => {
     >
       <SwiperSlide className="slide1">
         <section>
-          <h3>به فروشگاه آنلاین ما خوش آمدید</h3>
-          <h1>فروشگاه های مواد غذایی</h1>
-          <h2>برای خوراک شناسان واقعی</h2>
-          <button type="button">خرید کن</button>
+          <motion.h3
+            initial={{ opacity: 0, transform: "translateY(-100%)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0%)" }}
+            transition={{ duration: 0.6 }}
+          >
+            به فروشگاه آنلاین ما خوش آمدید
+          </motion.h3>
+          <motion.h1
+            initial={{ opacity: 0, transform: "translateX(100%)" }}
+            whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+            transition={{ duration: 1}}
+          >
+            فروشــگاه های مــواد غــذایی
+          </motion.h1>
+          <motion.h2
+            initial={{ opacity: 0, transform: "translateY(100%)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0%)" }}
+            transition={{ duration: 0.6 }}
+          >
+            برای خوراک شناسان واقعی
+          </motion.h2>
+          <motion.button
+            initial={{ opacity: 0, transform: "translateX(-100%)" }}
+            whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+            transition={{ duration: 0.6 }}
+            type="button"
+          >
+            خریــد کن
+          </motion.button>
         </section>
       </SwiperSlide>
       <SwiperSlide className="slide2">
         <section>
-          <h3> انتخاب گسترده ای از نان صنعتگر</h3>
-          <h1> محصولات پخته شده</h1>
-          <h2> در فروشگاه ما موجود است</h2>
-          <button type="button">خرید کن</button>
+          <motion.h3
+            initial={{ opacity: 0, transform: "translateY(-100%)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0%)" }}
+            transition={{ duration: 0.6 }}
+          >
+            {" "}
+            انتخاب گسترده ای از نان صنعتگر
+          </motion.h3>
+          <motion.h1
+            initial={{ opacity: 0, transform: "translateX(100%)" }}
+            whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+            transition={{ duration: 1}}
+          >
+            {" "}
+            محصــولات پخته شـده
+          </motion.h1>
+          <motion.h2
+            initial={{ opacity: 0, transform: "translateY(100%)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0%)" }}
+            transition={{ duration: 0.6 }}
+          >
+            {" "}
+            در فروشگاه ما موجود است
+          </motion.h2>
+          <motion.button
+            initial={{ opacity: 0, transform: "translateX(-100%)" }}
+            whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+            transition={{ duration: 0.6 }}
+            type="button"
+          >
+            خریــد کن
+          </motion.button>
         </section>
       </SwiperSlide>
       <SwiperSlide className="slide3">
         <section>
-          <h3> تازه و خوش طعم</h3>
-          <h1> سبزیجات</h1>
-          <h2> که دوست داری</h2>
-          <button type="button">خرید کن</button>
+          <motion.h3
+            initial={{ opacity: 0, transform: "translateY(-100%)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0%)" }}
+            transition={{ duration: 0.6 }}
+          >
+            {" "}
+            تازه و خوش طعم
+          </motion.h3>
+          <motion.h1
+            initial={{ opacity: 0, transform: "translateX(100%)" }}
+            whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+            transition={{ duration: 1}}
+          >
+            {" "}
+            سبـزیجــات
+          </motion.h1>
+          <motion.h2
+            initial={{ opacity: 0, transform: "translateY(100%)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0%)" }}
+            transition={{ duration: 0.6 }}
+          >
+            {" "}
+            که دوست داری
+          </motion.h2>
+          <motion.button
+            initial={{ opacity: 0, transform: "translateX(-100%)" }}
+            whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+            transition={{ duration: 0.6 }}
+            type="button"
+          >
+            خریــد کن
+          </motion.button>
         </section>
       </SwiperSlide>
     </Swiper>

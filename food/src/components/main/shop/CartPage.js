@@ -1,5 +1,4 @@
 import Cart from "./Cart";
-import { Link } from "react-router-dom";
 import PagesHeader from "../PagesHeader";
 import React from "react";
 import styled from "styled-components";

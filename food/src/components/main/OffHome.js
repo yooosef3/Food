@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import React from "react";
+import { motion } from "framer-motion";
 import off1 from "../../assets/images/banner-2-670x676.jpg";
 import off2 from "../../assets/images/banner-3-470x395.jpg";
 import off3 from "../../assets/images/banner-4-470x250.jpg";
@@ -9,17 +10,28 @@ const OffHome = () => {
   return (
     <div>
       <div className={styles.container}>
-        <Link to="/">
+        <motion.a
+          href="/"
+          initial={{ opacity: 0, transform: "translateX(50%)" }}
+          whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <img alt="off" src={off1} />
-        </Link>
-        <div>
+        </motion.a>
+        <motion.div
+          initial={{ opacity: 0, transform: "translateX(-50%)" }}
+          whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
           <Link to="/">
             <img alt="off" src={off2} />
           </Link>
           <Link to="/">
             <img alt="off" src={off3} />
           </Link>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

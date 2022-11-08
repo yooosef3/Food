@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import React from "react";
 import { RiSearchLine } from "react-icons/ri";
 import lopez from "../../../assets/images/user-4-123x123.jpg";
-import post1 from '../../../assets/images/post-mini-1-106x104.jpg'
-import post2 from '../../../assets/images/post-mini-2-106x104.jpg'
+import post1 from "../../../assets/images/post-mini-1-106x104.jpg";
+import post2 from "../../../assets/images/post-mini-2-106x104.jpg";
 import styles from "../../../styles/main/grid/BlogListSidebar.module.css";
 
 const BlogListSidebar = () => {
@@ -10,7 +11,9 @@ const BlogListSidebar = () => {
     <div className={styles.blogListSidebar}>
       <div className={styles.lopez}>
         <img alt="lopez" src={lopez} />
-        <h3>Caroline Lopez</h3>
+        <Link to="/ourteam">
+          <h3>Caroline Lopez</h3>
+        </Link>
         <p>خانم Lopez اینجاست تا پاسخگوی سوالات شما در زمینه خرید مناسب باشد</p>
       </div>
       <div className={styles.searchBlog}>
@@ -43,16 +46,20 @@ const BlogListSidebar = () => {
           <h3>آخرین پست ها</h3>
           <section>
             <div className={styles.miniPost}>
-              <img alt="post" src={post1}/>
+              <img alt="post" src={post1} />
               <div>
-                <h4>5 دلیل برای انتخاب grocmart</h4>
+                <Link to="/blogpost/getting-discounts-on-your-favorite-products">
+                  <h4>5 دلیل برای انتخاب grocmart</h4>
+                </Link>
                 <p>15 مهر 1401</p>
               </div>
             </div>
             <div className={styles.miniPost}>
-              <img alt="post" src={post2}/>
+              <img alt="post" src={post2} />
               <div>
-                <h4> دلیل خرید آنلاین مردم؟</h4>
+                <Link to="/blogpost/why-people-are-shopping-for-groceries-online">
+                  <h4> دلیل خرید آنلاین مردم؟</h4>
+                </Link>
                 <p>15 مهر 1401</p>
               </div>
             </div>

@@ -10,7 +10,7 @@ import { BsInstagram } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import { IoLogoGoogleplus } from "react-icons/io";
-import Loader from "../../Loader";
+import Loader from "../../shared/Loader";
 import React from "react";
 import { TEAM } from "../../../graphql/queries";
 import { useQuery } from "@apollo/client";

@@ -16,17 +16,58 @@ const PRODUCTS = gql`
   }
 `;
 
+const PRODUCT = gql`
+  query product($slug : String!) {
+  product(where: {slug: $slug}) {
+    category
+    details
+    dimensions
+    imageAll {
+      id
+      url
+    }
+    information
+    name
+    price
+    slug
+    weight
+  }
+}
+`
+
 const BLOGS = gql`
   query {
     blogs {
-      title
       id
+      title
+      subText
+      subTitle
+      slug
+      text {
+        html
+      }
       images {
         url
       }
     }
   }
 `;
+
+const BLOG = gql`
+  query blog ($slug: String!){
+  blog(where: {slug: $slug}) {
+    images {
+      url
+    }
+    subText
+    subTitle
+    title
+    text {
+      html
+    }
+  }
+}
+`
 
 const TEAM = gql`
   query {
@@ -42,20 +83,20 @@ const TEAM = gql`
 
 const OFFER = gql`
   query {
-  offers {
-    box {
-      html
+    offers {
+      box {
+        html
+      }
+      discount
+      id
+      price
+      image {
+        url
+      }
+      name
+      slug
     }
-    discount
-    id
-    price
-    image {
-      url
-    }
-    name
-    slug
   }
-}
 `;
 
-export { TEAM, PRODUCTS, BLOGS, OFFER };
+export { TEAM, PRODUCTS, PRODUCT, BLOGS, BLOG, OFFER };

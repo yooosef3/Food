@@ -30,6 +30,7 @@
 
 .QuestionSlider .swiper-slide {
   text-align: center;
+  background-color: transparent;
 }
 
 .QuestionSlider

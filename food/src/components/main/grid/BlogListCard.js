@@ -83,13 +83,14 @@ const Card = styled.div`
       font-size: 18px;
       font-weight: 600;
       display: flex;
+      width: fit-content;
       &:hover {
         color: red;
       }
     }
   }
 `;
-const BlogListCard = ({ title, image, text }) => {
+const BlogListCard = ({ title, image, text, more }) => {
   return (
     <Card>
       <div>
@@ -103,7 +104,7 @@ const BlogListCard = ({ title, image, text }) => {
             <img alt="blog" src={image} />
           </div>
           <p>{text}</p>
-          <Link to="#">بیشتر بخوانید</Link>
+          <Link to={`/blogpost/${more}`}>بیشتر بخوانید</Link>
         </section>
       </div>
     </Card>

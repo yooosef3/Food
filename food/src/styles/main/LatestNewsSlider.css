@@ -26,6 +26,7 @@
   color: #292929;
   font-size: 18px;
   transition: all 0.2s linear;
+  margin: 0 !important;
 }
 
 .latestNewsSlider h4 a:hover {
@@ -35,7 +36,7 @@
 .latestNewsSlider p {
   color: #8d8d8d;
   font-weight: 300;
-  margin-top: 10px !important;
+  margin: 40px auto;
 }
 
 .latestNewsSlider .swiper-button-next {

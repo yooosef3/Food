@@ -100,6 +100,7 @@
   .OurTeam .team {
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: flex-start;
     height: 1350px;
   }
 

@@ -4,7 +4,7 @@
   margin-left: auto;
 }
 
-ul li {
+.unselectedMenu {
   font-size: 22px;
   font-weight: 600;
   color: #292929;
@@ -13,11 +13,20 @@ ul li {
   transition: all 0.2s linear;
 }
 
-ul div:first-of-type li a {
-  color: #e52029;
+.selectedMenu, .selectedHome{
+  color: #e52029 !important;
 }
 
-ul li:hover {
+.unselectedHome {
+  font-size: 22px;
+  font-weight: 600;
+  color: #292929;
+  cursor: pointer;
+  margin: 0 12px;
+  transition: all 0.2s linear;
+}
+
+.container ul li:hover {
   color: #e52029;
 }
 
@@ -60,10 +69,10 @@ ul li:hover {
   visibility: visible;
 }
 
-.shop a,
-.galery a,
-.blog a,
-.pages a {
+.shop section a,
+.galery section a,
+.blog section a,
+.pages section a {
   color: #292929;
   font-weight: 500;
   padding: 10px;
@@ -179,7 +188,7 @@ ul li:hover {
 }
 
 @media (min-width: 1200px) {
-  ul li {
+  .container ul li {
     margin: 0 25px;
   }
 }

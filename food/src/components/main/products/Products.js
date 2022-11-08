@@ -1,16 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 
-import Loader from "../../Loader";
-import { PRODUCTS } from "../../../graphql/queries";
-import Product from "./Product";
+import { CategoryContext } from "../../../App";
+import ProductPack from "./ProductPack";
 import styles from "../../../styles/main/products/Products.module.css";
-import { useQuery } from "@apollo/client";
 
 const Products = () => {
-  const [category, setCategory] = useState('all');
 
-  const { loading, data, error } = useQuery(PRODUCTS);
-  
+  const {category, setCategory} = useContext(CategoryContext);
 
   return (
     <div className={styles.container}>
@@ -50,18 +46,17 @@ const Products = () => {
           >
             نان
           </li>
+          <li
+            onClick={() => setCategory('meat')}
+            className={`${category === 'meat' ? styles.selectedFilter : undefined} ${
+              styles.li
+            }`}
+          >
+            گوشت
+          </li>
         </ul>
       </section>
-      <div className={styles.products}>
-       {
-        (loading) ? <Loader /> :
-        (error) ? <h1 style={{color: '#e52029',textAlign:'center', fontSize:'18px'}}>یک خطای شبکه رخ داده است, بعدا امتحان کنید</h1>:
-        category === 'all' ?
-            data.products.map(product => <Product key={product.id} {...product}/>) :
-            data.products.map(
-              product =>  {if (product.type === category) {return <Product key={product.id} {...product}/>}}
-       )}
-      </div>
+      <ProductPack category={{category, setCategory}}/>
     </div>
   );
 };

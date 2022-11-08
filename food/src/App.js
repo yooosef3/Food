@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
+import { createContext, useContext, useState } from "react";
 
 import AboutUs from "./components/main/AboutUs/AboutUs";
 import BlogList from "./components/main/grid/BlogList";
@@ -13,32 +14,41 @@ import Layout from "./components/layout/Layout";
 import Offer from "./components/main/offer/Offer";
 import OurTeam from "./components/main/OurTeam";
 import PricingList from "./components/main/PricingList";
+import ScrollToTop from "./components/shared/ScrollToTop";
 import Shop from "./components/main/shop/Shop";
 import SingleProduct from "./components/main/shop/SingleProduct";
 import Testimonals from "./components/main/testimonals/Testimonals";
 
+export const CategoryContext = createContext();
+
 function App() {
+  const [category, setCategory] = useState("all");
+
+
   return (
-      <Layout>
+    <Layout>
+      <ScrollToTop />
+      <CategoryContext.Provider value= {{category, setCategory}}>
         <Routes>
-          <Route path="/aboutus" element={<AboutUs />}/>
-          <Route path="/offer" element={<Offer />}/>
-          <Route path="/ourteam" element={<OurTeam />}/>
-          <Route path="/testimonals" element={<Testimonals />}/>
-          <Route path="/pricinglist" element={<PricingList />}/>
-          <Route path="/gridblog" element={<GridBlog />}/>
-          <Route path="/bloglist" element={<BlogList />}/>
-          <Route path="/blogpost" element={<BlogPost />}/>
-          <Route path="/gridgallery" element={<GridGallery />}/>
-          <Route path="/shop" element={<Shop />}/>
-          <Route path="/gridshop" element={<GridShop />}/>
-          <Route path="/singleproduct" element={<SingleProduct />}/>
-          <Route path="/cart" element={<CartPage />}/>
-          <Route path="/checkout" element={<Checkout />}/>
-          <Route path="/home" element={<HomePage />}/>
-          <Route path="/*" element={<Navigate to='/home' />}/>
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/offer" element={<Offer />} />
+          <Route path="/ourteam" element={<OurTeam />} />
+          <Route path="/testimonals" element={<Testimonals />} />
+          <Route path="/pricinglist" element={<PricingList />} />
+          <Route path="/gridblog" element={<GridBlog />} />
+          <Route path="/bloglist" element={<BlogList />} />
+          <Route path="/blogpost/:slug" element={<BlogPost />} />
+          <Route path="/gridgallery" element={<GridGallery />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/gridshop" element={<GridShop />} />
+          <Route path="/singleproduct/:slug" element={<SingleProduct />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/*" element={<Navigate to="/home" />} />
         </Routes>
-      </Layout>
+      </CategoryContext.Provider>
+    </Layout>
   );
 }
 

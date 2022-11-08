@@ -10,7 +10,7 @@
     margin: 0 auto;
 }
 .swiper-slide {
-  background-color: #f7f7f7;
+  background-color: transparent;
   img {
     height: 100%;
   }
@@ -30,6 +30,7 @@
     }
     .swiper-slide {
       background-color: #f7f7f7;
+      // background-color: #626161;
       width: 128px !important;
       border: 1px solid #ffff;
       height: 95%;

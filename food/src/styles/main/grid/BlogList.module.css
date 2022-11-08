@@ -2,6 +2,7 @@
     padding: 60px 15px;
     display: flex;
     flex-direction: column;
+    border-bottom: 1px solid #c2c2c2;
 }
 
 @media (min-width:992px) {

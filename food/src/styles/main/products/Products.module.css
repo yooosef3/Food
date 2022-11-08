@@ -9,7 +9,7 @@ section {
 
 section p {
   color: #7fd02c;
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 0;
 }
 
@@ -26,10 +26,15 @@ section .filter {
   padding-bottom: 10px;
   max-width: 350px;
   margin: 0 auto;
+  gap: 20px;
+  font-size: 18px;
 }
 
 .filter li {
-  color: #b9b9b9 !important;
+  color: #b9b9b9 ;
+  font-weight: 600;
+  font-size: 22px !important;
+  cursor: pointer;
   transition: all 0.2s linear;
 }
 
@@ -43,23 +48,8 @@ section .filter {
   margin-bottom: -14px;
 }
 
-.selectedFilter:nth-child(-n + 4) {
+.selectedFilter:nth-child(-n + 5) {
   color: #7fd02c !important;
-}
-.products {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  gap: 40px;
-}
-
-@media (min-width: 640px) {
-  .products {
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 85%;
-    justify-content: center;
-  }
 }
 
 @media (min-width: 768px) {

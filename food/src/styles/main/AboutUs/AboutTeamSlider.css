@@ -4,6 +4,10 @@
   height: 70vh;
 }
 
+.AboutTeamSlider .swiper-slide{
+  background-color: transparent;
+}
+
 .AboutTeamSlider h2 {
   color: #292929;
   margin-top: 10px;

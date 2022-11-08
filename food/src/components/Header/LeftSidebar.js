@@ -9,6 +9,7 @@ import styles from "../../styles/header/LeftSidebar.module.css";
 const LeftSidebar = ({ open }) => {
 
   const [drop, setDrop] = useState({
+      openHome: true,
       openPage: false,
       openBlog: false,
       openGallery:false,
@@ -20,14 +21,14 @@ const LeftSidebar = ({ open }) => {
   return (
     <div className={!open ? styles.container : styles.open}>
       <div className={styles.home}>
-        <div>
-          <Link to="/">خانه</Link>
+        <div className={`${drop.openHome && styles.selectedDrop} ${styles.unselectedDrop}`} onClick={() => setDrop({openHome: !drop.openHome})}>
+          <Link to="/home">خانه</Link>
         </div>
       </div>
 
       <div className={styles.pages}>
-        <div onClick={() => setDrop({openPage: !drop.openPage})}>
-          <Link to="/">صفحات</Link>
+        <div className={`${drop.openPage && styles.selectedDrop} ${styles.unselectedDrop}`} onClick={() => setDrop({openPage: !drop.openPage})}>
+          <Link to="/aboutus">صفحات</Link>
           <IoIosArrowDown className={drop.openPage ? styles.arrowUp : styles.arrowDown}/>
         </div>
         <ul className={drop.openPage ? styles.openPage : styles.closeDrop}>
@@ -50,8 +51,8 @@ const LeftSidebar = ({ open }) => {
       </div>
 
       <div className={styles.blog}>
-        <div onClick={() => setDrop({openBlog: !drop.openBlog})}>
-          <Link to="/">بلاگ</Link>
+        <div className={`${drop.openBlog && styles.selectedDrop} ${styles.unselectedDrop}`} onClick={() => setDrop({openBlog: !drop.openBlog})}>
+          <Link to="/gridblog">بلاگ</Link>
           <IoIosArrowDown className={drop.openBlog ? styles.arrowUp : styles.arrowDown}/>
         </div>
         <ul className={drop.openBlog ? styles.openBlog : styles.closeDrop}>
@@ -68,8 +69,8 @@ const LeftSidebar = ({ open }) => {
       </div>
 
       <div className={styles.gallery}>
-        <div onClick={() => setDrop({openGallery: !drop.openGallery})}>
-          <Link to="/">گالری</Link>
+        <div className={`${drop.openGallery && styles.selectedDrop} ${styles.unselectedDrop}`} onClick={() => setDrop({openGallery: !drop.openGallery})}>
+          <Link to="/gridgallery">گالری</Link>
           <IoIosArrowDown className={drop.openGallery ? styles.arrowUp : styles.arrowDown}/>
         </div>
         <ul className={drop.openGallery ? styles.openGallery : styles.closeDrop}>
@@ -89,7 +90,7 @@ const LeftSidebar = ({ open }) => {
       </div>
 
       <div className={styles.elements}>
-        <div onClick={() => setDrop({openElements: !drop.openElements})}>
+        <div className={`${drop.openElements && styles.selectedDrop} ${styles.unselectedDrop}`} onClick={() => setDrop({openElements: !drop.openElements})}>
           <Link to="/">المان ها</Link>
           <IoIosArrowDown className={drop.openElements ? styles.arrowUp : styles.arrowDown}/>
         </div>
@@ -168,7 +169,7 @@ const LeftSidebar = ({ open }) => {
       </div>
 
       <div className={styles.shop}>
-        <div onClick={() => setDrop({openShop: !drop.openShop})}>
+        <div className={`${drop.openShop && styles.selectedDrop} ${styles.unselectedDrop}`} onClick={() => setDrop({openShop: !drop.openShop})}>
           <Link to="/shop">فروشگاه</Link>
           <IoIosArrowDown className={drop.openShop ? styles.arrowUp : styles.arrowDown} />
         </div>
@@ -180,10 +181,7 @@ const LeftSidebar = ({ open }) => {
             <Link to="/gridshop">قفسه</Link>
           </li>
           <li>
-            <Link to="/">جداول</Link>
-          </li>
-          <li>
-            <Link to="/singleproduct"> محصولات تکی</Link>
+            <Link to="/singleproduct/deli-meat"> محصولات تکی</Link>
           </li>
           <li>
             <Link to="/cart"> سبد خرید</Link>

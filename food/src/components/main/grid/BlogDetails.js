@@ -1,12 +1,21 @@
+import * as Yup from "yup";
+
+import { ErrorMessage, Field, Form, Formik } from "formik";
+
+import { BLOG } from "../../../graphql/queries";
 import BlogListSidebar from "./BlogListSidebar";
 import Comments from "./Comments";
 import { FaQuoteLeft } from "react-icons/fa";
 import GridCard from "./GridCard";
+import Loader from "../../shared/Loader";
 import React from "react";
 import SocialIcons from "../../Header/SocialIcons";
 import blogCard2 from "../../../assets/images/post-8-800x394.jpg";
 import blogCard3 from "../../../assets/images/post-9-800x394.jpg";
+import sanitizeHtml from "sanitize-html";
 import styled from "styled-components";
+import { useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 
 const Detail = styled.div`
   padding: 30px 15px;
@@ -21,7 +30,7 @@ const Detail = styled.div`
   .post-blog {
     padding: 15px 15px !important;
     @media (min-width: 768px) {
-      width: 75%;
+      width: 60%;
     }
     .news {
       display: flex;
@@ -39,6 +48,7 @@ const Detail = styled.div`
       }
       p {
         color: #afafaf;
+        margin: 0;
       }
     }
   }
@@ -102,7 +112,7 @@ const Detail = styled.div`
         }
       }
     }
-    .share {
+    .share:first-child {
       display: flex;
       justify-content: center !important;
     }
@@ -124,7 +134,7 @@ const Detail = styled.div`
   }
 
   .comment-form {
-    margin-bottom:60px;
+    margin-bottom: 60px;
     h3 {
       @media (min-width: 768px) {
         text-align: right;
@@ -138,31 +148,56 @@ const Detail = styled.div`
       .inputs {
         display: flex;
         flex-direction: column;
-        gap: 50px;
+        gap: 20px;
         @media (min-width: 768px) {
           flex-direction: row;
+          justify-content: center;
         }
 
         input {
-          border-bottom: 1px solid #dcdcdc;
+          border: 1px solid gray;
+          width: 100%;
+          height: 30px;
+          border-radius: 6px;
           padding: 5px;
           color: #414141;
+          outline: 0;
+          @media (min-width: 768px) {
+            width: 100%;
+          }
           &::placeholder {
             color: #414141;
             font-size: 20px;
           }
+          &:focus {
+            border: 2px solid #1d6adc;
+          }
+          &:invalid {
+            border: 2px solid #ff7d87;
+          }
         }
       }
-      textarea {
-        border: none;
-        border-bottom: 1px solid #dcdcdc;
+      .textarea {
+        border: 1px solid gray;
+        border-radius: 6px;
+        outline: 0;
+        width: 95%;
+        padding: 15px;
         &::placeholder {
           font-size: 20px;
           color: #414141;
         }
-        &:focus{
-          outline:none;
+        &:focus {
+          border: 2px solid #1d6adc;
         }
+      }
+
+      .error {
+        color: #ffffff;
+        height: fit-content;
+        margin-bottom: 10px;
+        font-weight: 600;
+        text-shadow: 1px 1px #ff000d;
       }
 
       button {
@@ -184,7 +219,21 @@ const Detail = styled.div`
     }
   }
 `;
-const BlogDetails = ({ title, image, text, subtitle, subtext }) => {
+const BlogDetails = () => {
+  const { slug } = useParams();
+  const { loading, data, error } = useQuery(BLOG, {
+    variables: {
+      slug,
+    },
+  });
+  if (loading) return <Loader />;
+  if (error)
+    return (
+      <h1 style={{ color: "#e52029", textAlign: "center", fontSize: "18px" }}>
+        یک خطای شبکه رخ داده است, بعدا امتحان کنید
+      </h1>
+    );
+  const { text, title, subTitle, subText, images } = data.blog;
   return (
     <Detail>
       <section className="post-blog">
@@ -193,27 +242,18 @@ const BlogDetails = ({ title, image, text, subtitle, subtext }) => {
           <p>20 مهر 1401</p>
         </div>
         <div className="post">
-          <h2>8 نکته مفید برای خرید هوشمند خوار و بار فروشی</h2>
+          <h2>{title}</h2>
           <div>
-            <img alt="post" src={blogCard2} />
+            <img alt="post" src={images.url} />
           </div>
-          <p>
-            خرید مواد غذایی یکی از مهم‌ترین مخارج هر خانواده است. هزینه‌های مواد
-            خوراکی گاه تا یک سوم درآمد هر خانواده را در ماه شامل می‌شود که در
-            خانواده‌های پرجمعیت‌تر این مقدار می‌تواند به نصف درآمد نیز افزایش
-            یابد.
-          </p>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: sanitizeHtml(text.html),
+            }}
+          ></p>
           <FaQuoteLeft />
-          <h3>
-            8 نکته مفید برای خرید هوشمند خوار و بار فروشی 8 نکته مفید برای خرید
-            هوشمند خوار و بار فروشی
-          </h3>
-          <p>
-            خرید مواد غذایی یکی از مهم‌ترین مخارج هر خانواده است. هزینه‌های مواد
-            خوراکی گاه تا یک سوم درآمد هر خانواده را در ماه شامل می‌شود که در
-            خانواده‌های پرجمعیت‌تر این مقدار می‌تواند به نصف درآمد نیز افزایش
-            یابد.
-          </p>
+          <h3>{subTitle}</h3>
+          <p>{subText}</p>
         </div>
         <div className="link">
           <div className="links">
@@ -230,16 +270,20 @@ const BlogDetails = ({ title, image, text, subtitle, subtext }) => {
           <GridCard
             image={blogCard2}
             title={"چگونه هنگام خرید سبزیجات در پول خود صرفه جویی کنید"}
-            text={
+            text1={
               "خرید مواد غذایی یکی از مهم‌ترین مخارج هر خانواده است. هزینه‌های مواد خوراکی گاه تا یک سوم درآمد هر خانواده را در ماه شامل می‌شود که در خانواده‌های پرجمعیت‌تر این مقدار می‌تواند به نصف درآمد نیز افزایش یابد."
             }
+            text=""
+            slug="how-to-save-money-when-shopping-for-vegetables"
           />
           <GridCard
             image={blogCard3}
             title={"پیمایش در فروشگاه مواد غذایی برای تغذیه سالم"}
-            text={
+            text1={
               "خرید مواد غذایی یکی از مهم‌ترین مخارج هر خانواده است. هزینه‌های مواد خوراکی گاه تا یک سوم درآمد هر خانواده را در ماه شامل می‌شود که در خانواده‌های پرجمعیت‌تر این مقدار می‌تواند به نصف درآمد نیز افزایش یابد."
             }
+            text=""
+            slug="navigating-the-grocery-store-for-healthy-eating"
           />
         </div>
         <h3 className="comments"> کامنت</h3>
@@ -248,14 +292,64 @@ const BlogDetails = ({ title, image, text, subtitle, subtext }) => {
         <Comments />
         <div className="comment-form">
           <h3>یک کامنت بنویسید</h3>
-          <form>
-            <div className="inputs">
-              <input placeholder="نام " type='text'/>
-              <input placeholder="ایمیل" type='email' />
-            </div>
-            <textarea placeholder="متن" rows={8}/>
-            <button type="submit">ارسال</button>
-          </form>
+          <Formik
+            initialValues={{ email: "", name: "", textarea: "" }}
+            validationSchema={Yup.object({
+              name: Yup.string()
+                .max(15, " نام باید کمتر از 15 حرف باشد")
+                .required("نام ضروری است"),
+              email: Yup.string()
+                .email("آدرس ایمیل نامعتبر است")
+                .required("ایمیل ضروری است"),
+              textarea: Yup.string().required("لطفا یک کامنت بنویسید"),
+            })}
+            onSubmit={(values, { setSubmitting }) => {
+              setTimeout(() => {
+                alert(JSON.stringify(values, null, 2));
+                setSubmitting(false);
+              }, 400);
+            }}
+          >
+            <Form className="comment-form">
+              <div className="inputs">
+                <div className="input-error">
+                  <Field
+                    name="name"
+                    type="text"
+                    placeholder="نام خود را وارد کنید"
+                  />
+                  <ErrorMessage
+                    className="ErrorMessage"
+                    name="name"
+                    render={(msg) => <div className="error">{msg}</div>}
+                  />
+                </div>
+                <div className="input-error">
+                  <Field
+                    name="email"
+                    type="email"
+                    placeholder="ایمیل خود را وارد کنید"
+                  />
+                  <ErrorMessage
+                    className="ErrorMessage"
+                    name="email"
+                    render={(msg) => <div className="error">{msg}</div>}
+                  />
+                </div>
+              </div>
+              <Field
+                name="textarea"
+                className="textarea"
+                placeholder="نظر خود را وارد کنید"
+              />
+              <ErrorMessage
+                className="ErrorMessage"
+                name="textarea"
+                render={(msg) => <div className="error">{msg}</div>}
+              />
+              <button type="submit">عضویت</button>
+            </Form>
+          </Formik>
         </div>
       </section>
       <BlogListSidebar />

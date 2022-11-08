@@ -53,10 +53,12 @@
   transition: all 0.2s linear;
   margin-bottom: -5px;
   padding-bottom: 10px;
+  cursor: pointer;
 }
 
 .aboutList ul li:hover {
   border-bottom: 5px solid #7ed02ca9;
+  color: #7fd02c;
 }
 
 .selectedTab {

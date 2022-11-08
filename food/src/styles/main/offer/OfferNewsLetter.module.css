@@ -48,10 +48,29 @@
 
 .OfferNewsLetter .newsletterSub input {
   background-color: transparent;
-  border-bottom: 1px solid #ffff;
+  border: 1px solid #b7b7b7;
+  padding: 10px;
+  border-radius: 8px;
+  color: #ffffff;
   height: 40px;
+  outline: 0;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.OfferNewsLetter .newsletterSub input:focus {
+  border: 2px solid #1d6adc;
+}
+
+.OfferNewsLetter .newsletterSub input:invalid {
+  border: 2px solid #ff7d87;
+}
+
+.OfferNewsLetter .newsletterSub .error {
+  color: #ffffff;
+  height: fit-content;
   margin-bottom: 10px;
-  width: 100%;
+  text-shadow: 1px 1px #ff000d;
 }
 
 .OfferNewsLetter .newsletterSub input::placeholder {
@@ -64,10 +83,9 @@
   border: none;
   color: #ffff;
   font-size: 24px;
-  width: 103%;
-  border-radius: 5px;
-  padding: 8px 0;
-  margin-top: 5px;
+  border-radius: 7px;
+  padding: 8px 10px !important;
+  height: 60px;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
   transition: all 0.2s linear;
@@ -80,7 +98,7 @@
 @media (min-width: 768px) {
   .OfferNewsLetter .newsletterSub {
     flex-direction: row;
-    align-items:flex-end;
+    align-items: flex-end;
     gap: 30px;
   }
 
@@ -100,8 +118,25 @@
     height: 50px;
   }
 
-  .OfferNewsLetter .newsletterSub button{
+  .OfferNewsLetter .newsletterSub button {
     padding: 10px 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .OfferNewsLetter .newsletterSub {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .OfferNewsLetter .newsletterSub .inputError{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .OfferNewsLetter .newsletterSub button {
+    height: 70px;
   }
 }
 
@@ -127,11 +162,11 @@
     font-size: 30px;
   }
 
-  .OfferNewsLetter .newsletterInfo h1{
+  .OfferNewsLetter .newsletterInfo h1 {
     font-size: 42px;
   }
 
-  .OfferNewsLetter .newsletterInfo h2{
+  .OfferNewsLetter .newsletterInfo h2 {
     font-size: 34px;
   }
 }

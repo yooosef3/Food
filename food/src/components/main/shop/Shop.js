@@ -1,9 +1,13 @@
+import React, { useState } from "react";
+
+import Loader from "../../shared/Loader";
+import { PRODUCTS } from "../../../graphql/queries";
 import PagesHeader from "../PagesHeader";
-import React from "react";
+import Product from "../products/Product";
 import { RiSearchLine } from "react-icons/ri";
-import ShopCard from "./ShopCard";
 import meat from "../../../assets/images/1112951750.jpg";
 import styled from "styled-components";
+import { useQuery } from "@apollo/client";
 import vegetable from "../../../assets/images/1112951441.jpg";
 
 const Store = styled.div`
@@ -115,20 +119,23 @@ const Store = styled.div`
   h1 {
     text-align: center;
   }
-  .shop-products{
-    max-width:1000px;
-    margin:0 auto;
-    display:flex;
-    gap:20px;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    @media(min-width:768px){
-        max-width:1200px;
+  .shop-products {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    @media (min-width: 768px) {
+      max-width: 1200px;
     }
   }
 `;
 const Shop = () => {
+  const [category, setCategory] = useState("meat");
+  const { loading, data, error } = useQuery(PRODUCTS);
+
   return (
     <div>
       <PagesHeader headline={"فروشگاه"} path={"shop"} page={"فروشگاه"} />
@@ -138,13 +145,13 @@ const Shop = () => {
           <RiSearchLine />
         </div>
         <div className="filter">
-          <div className="meat">
+          <div className="meat" onClick={() => setCategory('meat')}>
             <img alt="filter" src={meat} />
             <div className="overlay">
               <h3>گوشت</h3>
             </div>
           </div>
-          <div className="vegetable">
+          <div className="vegetable" onClick={() => setCategory('vegetable')}>
             <img alt="filter" src={vegetable} />
             <div className="overlay">
               <h3>سبزیجات</h3>
@@ -152,16 +159,29 @@ const Shop = () => {
           </div>
         </div>
         <h1>محصولات خاص</h1>
+        <h2 style={{textAlign: 'center', color:'brown'}}>{
+          category === 'meat' ? 'گوشت' : 'سبزیجات' 
+        }</h2>
         <section className="shop-products">
-          <ShopCard />
-          <ShopCard />
-          <ShopCard />
-          <ShopCard />
-          <ShopCard />
-          <ShopCard />
-          <ShopCard />
-          <ShopCard />
-          <ShopCard />
+          {loading ? (
+            <Loader />
+          ) : error ? (
+            <h1
+              style={{
+                color: "#e52029",
+                textAlign: "center",
+                fontSize: "18px",
+              }}
+            >
+              یک خطای شبکه رخ داده است, بعدا امتحان کنید
+            </h1>
+          ) : (
+            data.products.map((product) => {
+              if (product.type === category) {
+                return <Product key={product.id} {...product} />;
+              }
+            })
+          )}
         </section>
       </Store>
     </div>

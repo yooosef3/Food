@@ -5,17 +5,13 @@ import { Autoplay, Thumbs } from "swiper";
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import cheeze1 from "../../../assets/images/product-big-3-303x304.png";
-import cheeze3 from "../../../assets/images/single-product-2-530x480.png";
-import cheeze4 from "../../../assets/images/single-product-3-530x480.png";
-
-const DetailSlider = () => {
+const DetailSlider = ({data}) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
     <div className="slider-single">
       <Swiper
-        className='DetailSlider'
+        className="DetailSlider"
         modules={[Thumbs, Autoplay]}
         loop={true}
         autoplay={{
@@ -23,19 +19,15 @@ const DetailSlider = () => {
         }}
         thumbs={{ swiper: thumbsSwiper }}
       >
-        <SwiperSlide>
-          <img alt="detail" src={cheeze1} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img alt="detail" src={cheeze4} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img alt="detail" src={cheeze3} />
-        </SwiperSlide>
+        {data.product.imageAll.map((image) => (
+          <SwiperSlide>
+            <img alt="detail" src={image.url} />
+          </SwiperSlide>
+        ))}
       </Swiper>
 
       <Swiper
-        className='DetailThumb'
+        className="DetailThumb"
         modules={[Thumbs]}
         slidesPerView={3}
         spaceBetween={5}
@@ -43,15 +35,11 @@ const DetailSlider = () => {
         loop={true}
         onSwiper={setThumbsSwiper}
       >
-        <SwiperSlide>
-          <img alt="detail" src={cheeze1} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img alt="detail" src={cheeze4} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img alt="detail" src={cheeze3} />
-        </SwiperSlide>
+      {data.product.imageAll.map((image) => (
+          <SwiperSlide>
+            <img alt="detail" src={image.url} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 import { AiOutlineLeftCircle } from "react-icons/ai";
-import QuestionSwiper from '../main/QuestionSwiper'
+import QuestionSwiper from "../main/QuestionSwiper";
+import { motion } from "framer-motion";
 import styles from "../../styles/main/Questions.module.css";
 
 const Questions = () => {
@@ -15,12 +16,23 @@ const Questions = () => {
     <div className={styles.container}>
       <QuestionSwiper />
       <div className={styles.questions}>
-        <section>
+        <motion.section
+          initial={{ opacity: 0, transform: "translateX(-50%)" }}
+          whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
           <h3>سوالات متداول</h3>
           <h1>FAQ</h1>
-        </section>
+        </motion.section>
         <div>
-          <div className={styles.question}>
+          <motion.div
+            initial={{ opacity: 0, transform: "translateY(50%)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0%)" }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className={styles.question}
+          >
             <div
               onClick={() => setToggle({ fstQuestion: !toggle.fstQuestion })}
             >
@@ -36,8 +48,13 @@ const Questions = () => {
               دریافت خواهید کرد. فایل های منبع موجود در بسته دانلودی بسته به نوع
               محصولی که خریداری کرده اید می تواند متفاوت باشد.
             </p>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, transform: "translateY(50%)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0%)" }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
             <div className={styles.question}>
               <div
                 onClick={() => setToggle({ secQuestion: !toggle.secQuestion })}
@@ -55,8 +72,13 @@ const Questions = () => {
               همراه با فایل فتوشاپ هستند. در اکثر الگوها، HTML با Adobe®
               Dreamweaver® و Microsoft® FrontPage® سازگار است.
             </p>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, transform: "translateY(50%)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0%)" }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
             <div className={styles.question}>
               <div
                 onClick={() => setToggle({ trdQuestion: !toggle.trdQuestion })}
@@ -78,7 +100,7 @@ const Questions = () => {
               پروژه با استفاده از یک الگو نیستید (برای ساختن پروژه دیگری با همان
               طرح، باید یک بار دیگر همان قالب را خریداری کنید).
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
