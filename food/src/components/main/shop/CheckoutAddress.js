@@ -1,3 +1,7 @@
+import * as Yup from "yup";
+
+import { ErrorMessage, Field, Form, Formik } from "formik";
+
 import React from "react";
 import styled from "styled-components";
 
@@ -22,41 +26,52 @@ const Address = styled.div`
     color: #292929;
     text-align: center;
     margin-bottom: 40px;
-    @media(min-width: 992px){
-    text-align: right;
+    @media (min-width: 992px) {
+      text-align: right;
     }
   }
-  form {
-    .name,
-    .phone-mail {
-      display: flex;
-      flex-direction: column;
-      @media (min-width: 768px) {
-        gap: 25px;
-        flex-direction: row;
-        justify-content: space-between;
+  .checkout-form {
+    input {
+      width: 100%;
+      height: 40px;
+      border-radius: 6px;
+      border: 1px solid gray;
+      margin-top: 10px;
+      outline: 0;
+      font-size: 22px;
+      &::placeholder {
+        font-size: 18px;
+        padding-right: 10px;
+      }
+      &:focus {
+        border: 2px solid #1d6adc;
+      }
+      &:invalid {
+        border: 2px solid #ff7d87;
       }
     }
-    input {
-      border-bottom: 1px solid #c2c2c2;
-      height: 40px;
-      color:#797979;
-      margin-bottom:30px;
-      &::placeholder {
-        color: #797979;
-        font-size: 20px;
-      }
+    .error {
+      color: #292929;
+      height: fit-content;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px #ff000d;
     }
 
-    .bill-ship {
+    label{
       display: flex;
-      gap: 25px;
-      margin: 40px 0;
-      padding: 0;
-      width: fit-content;
-      input {
-        height: 20px;
-        width: 20px;
+      align-items: center;
+      gap: 5px;
+      input{
+        width: fit-content;
+      }
+    }
+    
+    @media (min-width: 640px) {
+      .name-family,
+      .email-phone {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
       }
     }
   }
@@ -66,39 +81,251 @@ const CheckoutAddress = () => {
     <Address>
       <div className="billing">
         <h2>آدرس تسویه حساب</h2>
-        <form>
-          <div className="name">
-            <input type="text" placeholder="نام" />
-            <input type="text" placeholder="نام خانوادگی" />
-          </div>
-          <input type="text" placeholder="شرکت" />
-          <input type="text" placeholder="آدرس" />
-          <input type="text" placeholder="شهر" />
-          <div className="phone-mail">
-            <input type="text" placeholder="ایمیل" />
-            <input type="text" placeholder="تلفن" />
-          </div>
-          <div className="bill-ship">
-            <input type="checkbox" />
-            <label>آدرس تسویه حساب با آدرس پرداخت من یکسان است</label>
-          </div>
-        </form>
+        <Formik
+          initialValues={{
+            email: "",
+            name: "",
+            company: "",
+            address: "",
+            city: "",
+            family: "",
+            phone: "",
+          }}
+          validationSchema={Yup.object({
+            name: Yup.string().required("نام ضروری است"),
+            family: Yup.string().required("نام خانوادگی ضروری است"),
+            email: Yup.string()
+              .email("آدرس ایمیل نامعتبر است")
+              .required(" ایمیل ضروری است"),
+            phone: Yup.string().required("شماره تلفن ضروری است"),
+            company: Yup.string().required(" نام شرکت ضروری است"),
+            city: Yup.string().required(" نام شهر ضروری است"),
+            address: Yup.string().required(" آدرس ضروری است"),
+          })}
+          onSubmit={(values, { setSubmitting }) => {
+            setTimeout(() => {
+              alert(JSON.stringify(values, null, 2));
+              setSubmitting(false);
+            }, 400);
+          }}
+        >
+          <Form className="checkout-form">
+            <div className="name-family">
+              <div className="input-error">
+                <Field
+                  name="name"
+                  type="text"
+                  placeholder="نام خود را وارد کنید"
+                />
+                <ErrorMessage
+                  className="ErrorMessage"
+                  name="name"
+                  render={(msg) => <div className="error">{msg}</div>}
+                />
+              </div>
+              <div className="input-error">
+                <Field
+                  name="family"
+                  type="text"
+                  placeholder="نام خانوادگی خود را وارد کنید"
+                />
+                <ErrorMessage
+                  className="ErrorMessage"
+                  name="family"
+                  render={(msg) => <div className="error">{msg}</div>}
+                />
+              </div>
+            </div>
+            <div className="input-error">
+              <Field
+                name="company"
+                type="text"
+                placeholder="نام شرکت را وارد کنید"
+              />
+              <ErrorMessage
+                className="ErrorMessage"
+                name="company"
+                render={(msg) => <div className="error">{msg}</div>}
+              />
+            </div>
+            <div className="input-error">
+              <Field
+                name="address"
+                type="text"
+                placeholder="آدرس خود را وارد کنید"
+              />
+              <ErrorMessage
+                className="ErrorMessage"
+                name="address"
+                render={(msg) => <div className="error">{msg}</div>}
+              />
+            </div>
+            <div className="input-error">
+              <Field
+                name="city"
+                type="text"
+                placeholder="شهر خود را وارد کنید"
+              />
+              <ErrorMessage
+                className="ErrorMessage"
+                name="city"
+                render={(msg) => <div className="error">{msg}</div>}
+              />
+            </div>
+            <div className="email-phone">
+              <div className="input-error">
+                <Field
+                  name="email"
+                  type="email"
+                  placeholder="ایمیل خود را وارد کنید"
+                />
+                <ErrorMessage
+                  className="ErrorMessage"
+                  name="email"
+                  render={(msg) => <div className="error">{msg}</div>}
+                />
+              </div>
+              <div className="input-error">
+                <Field
+                  name="phone"
+                  type="number"
+                  placeholder="تلفن خود را وارد کنید"
+                />
+                <ErrorMessage
+                  className="ErrorMessage"
+                  name="phone"
+                  render={(msg) => <div className="error">{msg}</div>}
+                />
+              </div>
+            </div>
+            <label>
+              <Field type="checkbox" name="toggle" />
+              آدرس صورتحساب و آدرس حمل و نقل من یکسان است
+            </label>
+          </Form>
+        </Formik>
       </div>
       <div className="delivery">
         <h2>آدرس تحویل</h2>
-        <form>
-          <div className="name">
-            <input type="text" placeholder="نام" />
-            <input type="text" placeholder="نام خانوادگی" />
-          </div>
-          <input type="text" placeholder="شرکت" />
-          <input type="text" placeholder="آدرس" />
-          <input type="text" placeholder="شهر" />
-          <div className="phone-mail">
-            <input type="text" placeholder="ایمیل" />
-            <input type="text" placeholder="تلفن" />
-          </div>
-        </form>
+        <Formik
+          initialValues={{
+            email: "",
+            name: "",
+            company: "",
+            address: "",
+            city: "",
+            family: "",
+            phone: "",
+          }}
+          validationSchema={Yup.object({
+            name: Yup.string().required("نام ضروری است"),
+            family: Yup.string().required("نام خانوادگی ضروری است"),
+            email: Yup.string()
+              .email("آدرس ایمیل نامعتبر است")
+              .required(" ایمیل ضروری است"),
+            phone: Yup.string().required("شماره تلفن ضروری است"),
+            company: Yup.string().required(" نام شرکت ضروری است"),
+            city: Yup.string().required(" نام شهر ضروری است"),
+            address: Yup.string().required(" آدرس ضروری است"),
+          })}
+          onSubmit={(values, { setSubmitting }) => {
+            setTimeout(() => {
+              alert(JSON.stringify(values, null, 2));
+              setSubmitting(false);
+            }, 400);
+          }}
+        >
+          <Form className="checkout-form">
+            <div className="name-family">
+              <div className="input-error">
+                <Field
+                  name="name"
+                  type="text"
+                  placeholder="نام خود را وارد کنید"
+                />
+                <ErrorMessage
+                  className="ErrorMessage"
+                  name="name"
+                  render={(msg) => <div className="error">{msg}</div>}
+                />
+              </div>
+              <div className="input-error">
+                <Field
+                  name="family"
+                  type="text"
+                  placeholder="نام خانوادگی خود را وارد کنید"
+                />
+                <ErrorMessage
+                  className="ErrorMessage"
+                  name="family"
+                  render={(msg) => <div className="error">{msg}</div>}
+                />
+              </div>
+            </div>
+            <div className="input-error">
+              <Field
+                name="company"
+                type="text"
+                placeholder="نام شرکت را وارد کنید"
+              />
+              <ErrorMessage
+                className="ErrorMessage"
+                name="company"
+                render={(msg) => <div className="error">{msg}</div>}
+              />
+            </div>
+            <div className="input-error">
+              <Field
+                name="address"
+                type="text"
+                placeholder="آدرس خود را وارد کنید"
+              />
+              <ErrorMessage
+                className="ErrorMessage"
+                name="address"
+                render={(msg) => <div className="error">{msg}</div>}
+              />
+            </div>
+            <div className="input-error">
+              <Field
+                name="city"
+                type="text"
+                placeholder="شهر خود را وارد کنید"
+              />
+              <ErrorMessage
+                className="ErrorMessage"
+                name="city"
+                render={(msg) => <div className="error">{msg}</div>}
+              />
+            </div>
+            <div className="email-phone">
+              <div className="input-error">
+                <Field
+                  name="email"
+                  type="email"
+                  placeholder="ایمیل خود را وارد کنید"
+                />
+                <ErrorMessage
+                  className="ErrorMessage"
+                  name="email"
+                  render={(msg) => <div className="error">{msg}</div>}
+                />
+              </div>
+              <div className="input-error">
+                <Field
+                  name="phone"
+                  type="number"
+                  placeholder="تلفن خود را وارد کنید"
+                />
+                <ErrorMessage
+                  className="ErrorMessage"
+                  name="phone"
+                  render={(msg) => <div className="error">{msg}</div>}
+                />
+              </div>
+            </div>
+          </Form>
+        </Formik>
       </div>
     </Address>
   );

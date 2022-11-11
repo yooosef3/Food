@@ -1,15 +1,52 @@
+import React, { useState } from "react";
+
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import React from "react";
+import { Link } from "react-router-dom";
+import { PRODUCTS } from "../../graphql/queries";
 import { RiSearchLine } from "react-icons/ri";
 import styles from "../../styles/header/MobileSearch.module.css";
+import { useQuery } from "@apollo/client";
 
 const MobileSearch = ({ search, setSearch }) => {
+  const { loading, data, error } = useQuery(PRODUCTS);
+  const [searched, setSearched] = useState("");
+
+  if (loading) return <h1>loading ...</h1>;
+  if (error) return <h1>Error</h1>;
+
+  const searchHandler = () => {
+    const filteredProducts = data.products.filter((product) => {
+      if (searched === "") {
+        return "";
+      } else {
+        return product.name.includes(searched);
+      }
+    });
+    return filteredProducts;
+  };
+
+  const filtered = searchHandler();
+  console.log(filtered);
+
   return (
     <section className={search ? styles.background : styles.hide}>
       <div className={styles.container}>
-        <input type="text" placeholder={search && 'جستجو ...'}/>
-        <RiSearchLine className={styles.search} />
-        <AiOutlineCloseCircle className={styles.close} onClick={() => setSearch(!search)}/>
+        <input
+          type="text"
+          value={searched}
+          onChange={(event) => setSearched(event.target.value)}
+          placeholder={search && "جستجوی محصول ..."}
+        />
+        <Link
+          onClick={searchHandler}
+          to={{ pathname: "/searchlist", state: filtered }}
+        >
+          <RiSearchLine className={styles.search} />
+        </Link>
+        <AiOutlineCloseCircle
+          className={styles.close}
+          onClick={() => setSearch(!search)}
+        />
       </div>
     </section>
   );

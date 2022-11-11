@@ -10,7 +10,7 @@ const Map = () => {
       <MapContainer
         center={[51.505, -0.09]}
         style={{ height: "500px" }}
-        zoom={5}
+        zoom={15}
         scrollWheelZoom={true}
       >
         <TileLayer

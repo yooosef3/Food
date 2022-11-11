@@ -57,13 +57,18 @@ const Div = styled.div`
       input {
         border: 1px solid #8b8b8b;
         width: 150px;
+        height: 30px;
         padding: 13px;
         border-radius: 8px;
         text-align: center;
+        outline: 0;
         color: #464646;
         &::placeholder {
           font-size: 22px;
           color: #464646;
+        }
+        &:focus{
+          border-color: green;
         }
       }
       span {

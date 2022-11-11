@@ -15,6 +15,7 @@ import Offer from "./components/main/offer/Offer";
 import OurTeam from "./components/main/OurTeam";
 import PricingList from "./components/main/PricingList";
 import ScrollToTop from "./components/shared/ScrollToTop";
+import SearchList from "./components/SearchList";
 import Shop from "./components/main/shop/Shop";
 import SingleProduct from "./components/main/shop/SingleProduct";
 import Testimonals from "./components/main/testimonals/Testimonals";
@@ -44,6 +45,7 @@ function App() {
           <Route path="/singleproduct/:slug" element={<SingleProduct />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/searchlist" element={<SearchList />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/*" element={<Navigate to="/home" />} />
         </Routes>

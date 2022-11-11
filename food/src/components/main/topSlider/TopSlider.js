@@ -7,6 +7,7 @@ import "../../../styles/main/slider/TopSlider.css";
 import { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { Link } from "react-router-dom";
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -35,7 +36,7 @@ const TopSlider = () => {
           <motion.h1
             initial={{ opacity: 0, transform: "translateX(100%)" }}
             whileInView={{ opacity: 1, transform: "translateX(0%)" }}
-            transition={{ duration: 1}}
+            transition={{ duration: 1 }}
           >
             فروشــگاه های مــواد غــذایی
           </motion.h1>
@@ -50,9 +51,8 @@ const TopSlider = () => {
             initial={{ opacity: 0, transform: "translateX(-100%)" }}
             whileInView={{ opacity: 1, transform: "translateX(0%)" }}
             transition={{ duration: 0.6 }}
-            type="button"
           >
-            خریــد کن
+            <Link to="/singleproduct/meat-ball">خریــد کن</Link>
           </motion.button>
         </section>
       </SwiperSlide>
@@ -69,7 +69,7 @@ const TopSlider = () => {
           <motion.h1
             initial={{ opacity: 0, transform: "translateX(100%)" }}
             whileInView={{ opacity: 1, transform: "translateX(0%)" }}
-            transition={{ duration: 1}}
+            transition={{ duration: 1 }}
           >
             {" "}
             محصــولات پخته شـده
@@ -88,7 +88,7 @@ const TopSlider = () => {
             transition={{ duration: 0.6 }}
             type="button"
           >
-            خریــد کن
+            <Link to="/singleproduct/bagels">خریــد کن</Link>
           </motion.button>
         </section>
       </SwiperSlide>
@@ -105,7 +105,7 @@ const TopSlider = () => {
           <motion.h1
             initial={{ opacity: 0, transform: "translateX(100%)" }}
             whileInView={{ opacity: 1, transform: "translateX(0%)" }}
-            transition={{ duration: 1}}
+            transition={{ duration: 1 }}
           >
             {" "}
             سبـزیجــات
@@ -124,7 +124,7 @@ const TopSlider = () => {
             transition={{ duration: 0.6 }}
             type="button"
           >
-            خریــد کن
+            <Link to="/singleproduct/sweet-peppers">خریــد کن</Link>
           </motion.button>
         </section>
       </SwiperSlide>

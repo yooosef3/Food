@@ -101,6 +101,10 @@
   background-color: #be1b23;
 }
 
+.topSlider section button a{
+  color: #ffff;
+}
+
 @media (min-width: 600px) {
   .slide1 section,
   .slide2 section,

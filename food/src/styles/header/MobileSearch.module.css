@@ -59,12 +59,23 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
+.hide .container input{
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
 .background .container input::placeholder {
   font-size: 28px;
 }
 
 .background .container input:focus {
   outline: none;
+}
+
+.container a{
+  position: absolute;
+  left: 0px ;
+  bottom: 35px;
 }
 
 .container .search {
@@ -93,6 +104,10 @@
     height: 50px;
     border-bottom: 2px solid #ffff;
     width: 1000px;
+  }
+
+  .hide .container{
+    border: 0;
   }
 
   .background .container input {

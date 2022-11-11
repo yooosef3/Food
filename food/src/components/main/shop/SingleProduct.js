@@ -200,65 +200,54 @@ const Detail = styled.div`
     }
 
     .comment-form {
-      .inputs {
-        display: flex;
-        flex-direction: column;
-        @media (min-width: 992px) { 
+
+      .input-comment{
+        margin: 0 auto;
+      }
+      
+      @media (min-width: 768px) {
+        .name-family,
+        .email-phone {
+          display: flex;
+          gap: 10px;
           justify-content: center;
-          gap: 15px;
           flex-wrap: wrap;
+          input {
+            display: flex;
+            width: 400px;
+          }
+        }
+        .input-comment{
+          input {
+            width: 400px;
+          }
         }
       }
-    }
 
-    input {
-      background-color: transparent;
-      border: 1px solid #b7b7b7;
-      padding: 10px;
-      border-radius: 8px;
-      color: #292929;
-      height: 40px;
-      outline: 0;
-      font-size: 24px;
-      margin: 5px 0;
-
-      &:focus {
-        border: 2px solid #1d6adc;
+      input {
+        width: 100%;
+        height: 45px;
+        border-radius: 6px;
+        border: 1px solid gray;
+        font-size: 20px;
+        padding: 0 5px 0 0;
+        outline: 0;
+        margin-top: 10px;
+        &::placeholder {
+          font-size: 16px;
+        }
+        &:focus {
+          border: 2px solid #1d6adc;
+        }
+        &:invalid {
+          border: 2px solid #ff7d87;
+        }
       }
-
-      &::placeholder {
-        font-size: 18px;
-        color: #939393;
-      }
-
-      &:invalid {
-        border: 2px solid #ff7d87;
-      }
-
-    }
-    
-    .error {
-      color: #292929;
-      height: fit-content;
-      margin-bottom: 10px;
-      text-shadow: 1px 1px #ff000d;
-    }
-
-    textarea {
-      width: 100%;
-      border-bottom: 1px solid #939393;
-      margin: 20px auto;
-      padding: 10px 5px;
-      outline: none;
-      border-radius: 6px;
-      color: #939393;
-      &::placeholder {
-        font-size: 18px;
-        color: #939393;
-      }
-      @media (min-width: 992px) {
-        width: 65%;
-        margin-top: 50px;
+      .error {
+        color: #292929;
+        height: fit-content;
+        margin-bottom: 10px;
+        text-shadow: 1px 1px #ff000d;
       }
     }
 
@@ -270,6 +259,7 @@ const Detail = styled.div`
       padding: 15px;
       font-size: 22px;
       width: 300px;
+      margin-top: 15px;
       transition: all 0.2s linear;
       cursor: pointer;
       &:hover {
@@ -451,20 +441,18 @@ const SingleProduct = () => {
               initialValues={{
                 email: "",
                 name: "",
-                textarea: "",
+                comment: "",
                 family: "",
                 phone: "",
               }}
               validationSchema={Yup.object({
-                name: Yup.string()
-                  .max(15, " نام باید کمتر از 15 حرف باشد")
-                  .required("نام ضروری است"),
+                name: Yup.string().required("نام ضروری است"),
                 family: Yup.string().required("نام خانوادگی ضروری است"),
                 email: Yup.string()
                   .email("آدرس ایمیل نامعتبر است")
-                  .required("ایمیل ضروری است"),
+                  .required(" ایمیل ضروری است"),
                 phone: Yup.string().required("شماره تلفن ضروری است"),
-                textarea: Yup.string().required("لطفا یک کامنت بنویسید"),
+                comment: Yup.string().required(" یک نظر بنویسید"),
               })}
               onSubmit={(values, { setSubmitting }) => {
                 setTimeout(() => {
@@ -474,7 +462,7 @@ const SingleProduct = () => {
               }}
             >
               <Form className="comment-form">
-                <div className="inputs">
+                <div className="name-family">
                   <div className="input-error">
                     <Field
                       name="name"
@@ -499,6 +487,8 @@ const SingleProduct = () => {
                       render={(msg) => <div className="error">{msg}</div>}
                     />
                   </div>
+                </div>
+                <div className="email-phone">
                   <div className="input-error">
                     <Field
                       name="email"
@@ -514,7 +504,7 @@ const SingleProduct = () => {
                   <div className="input-error">
                     <Field
                       name="phone"
-                      type="text"
+                      type="number"
                       placeholder="تلفن خود را وارد کنید"
                     />
                     <ErrorMessage
@@ -524,18 +514,19 @@ const SingleProduct = () => {
                     />
                   </div>
                 </div>
-                <Field
-                  name="textarea"
-                  className="textarea"
-                  placeholder="نظر خود را وارد کنید"
-                />
-                <ErrorMessage
-                  className="ErrorMessage"
-                  name="textarea"
-                  render={(msg) => <div className="error">{msg}</div>}
-                />
-                <br />
-                <button type="submit">عضویت</button>
+                <div className="input-comment">
+                  <Field
+                    name="comment"
+                    type="text"
+                    placeholder=" یک نظر بنویسید"
+                  />
+                  <ErrorMessage
+                    className="ErrorMessage"
+                    name="comment"
+                    render={(msg) => <div className="error">{msg}</div>}
+                  />
+                </div>
+                <button type="submit">ثبت</button>
               </Form>
             </Formik>
           </div>
@@ -552,11 +543,7 @@ const SingleProduct = () => {
           >
             <TbTruckDelivery />
             <p>
-              عضویت در خبرنامه grocmart یکی از بهترین روش ها و یکی سریعترین روش
-              ها ببرای پیدا کردن کد تخفیف grocmart است. شما میتونید به راحتی با
-              ثبت نام در خبرنامه grocmart و فقط با چند کلیک در خبرنامه grocmart
-              ثبت نام کنید تا از کد تخفیف های روز مطلع شوید.
-            </p>
+            یک خرید اینترنتی مطمئن، نیازمند فروشگاهی است که بتواند کالاهایی متنوع، باکیفیت و دارای قیمت مناسب را در مدت زمانی کوتاه به دست مشتریان خود برساند و ضمانت بازگشت کالا هم داشته باشد؛ ویژگی‌هایی که فروشگاه اینترنتی grocmart سال‌هاست بر روی آن‌ها کار کرده و توانسته از این طریق مشتریان ثابت خود را داشته باشد.            </p>
           </div>
           <h3>محصولات برتر</h3>
           <ProductPack />

@@ -18,8 +18,12 @@ const Store = styled.div`
     margin: 0 auto;
     width: 350px;
     input {
+      height: 30px;
+      width: 100%;
       border: 1px solid silver;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-size: 20px;
+      outline: 0;
       &:focus {
         box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
         border: 1px solid #ffff;
