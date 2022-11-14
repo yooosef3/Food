@@ -17,23 +17,23 @@ const PRODUCTS = gql`
 `;
 
 const PRODUCT = gql`
-  query product($slug : String!) {
-  product(where: {slug: $slug}) {
-    category
-    details
-    dimensions
-    imageAll {
-      id
-      url
+  query product($slug: String!) {
+    product(where: { slug: $slug }) {
+      category
+      details
+      dimensions
+      imageAll {
+        id
+        url
+      }
+      information
+      name
+      price
+      slug
+      weight
     }
-    information
-    name
-    price
-    slug
-    weight
   }
-}
-`
+`;
 
 const BLOGS = gql`
   query {
@@ -43,9 +43,7 @@ const BLOGS = gql`
       subText
       subTitle
       slug
-      text {
-        html
-      }
+      text
       images {
         url
       }
@@ -54,20 +52,18 @@ const BLOGS = gql`
 `;
 
 const BLOG = gql`
-  query blog ($slug: String!){
-  blog(where: {slug: $slug}) {
-    images {
-      url
-    }
-    subText
-    subTitle
-    title
-    text {
-      html
+  query blog($slug: String!) {
+    blog(where: { slug: $slug }) {
+      images {
+        url
+      }
+      subText
+      subTitle
+      title
+      text
     }
   }
-}
-`
+`;
 
 const TEAM = gql`
   query {

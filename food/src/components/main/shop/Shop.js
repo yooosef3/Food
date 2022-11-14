@@ -13,35 +13,7 @@ import vegetable from "../../../assets/images/1112951441.jpg";
 const Store = styled.div`
   padding: 60px 15px;
   border-bottom: 1px solid #a9a9a9;
-  .search-store {
-    position: relative;
-    margin: 0 auto;
-    width: 350px;
-    input {
-      height: 30px;
-      width: 100%;
-      border: 1px solid silver;
-      border-radius: 6px;
-      font-size: 20px;
-      outline: 0;
-      &:focus {
-        box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-        border: 1px solid #ffff;
-      }
-    }
-    svg {
-      position: absolute;
-      left: 0;
-      top: 8px;
-      color: grey;
-      cursor: pointer;
-      transition: all 0.2s linear;
-      font-size: 20px;
-      &:hover {
-        color: red;
-      }
-    }
-  }
+  
   .filter {
     margin: 50px 0;
     display: flex;
@@ -140,14 +112,12 @@ const Shop = () => {
   const [category, setCategory] = useState("meat");
   const { loading, data, error } = useQuery(PRODUCTS);
 
+  
   return (
     <div>
       <PagesHeader headline={"فروشگاه"} path={"shop"} page={"فروشگاه"} />
       <Store>
-        <div className="search-store">
-          <input type="text" />
-          <RiSearchLine />
-        </div>
+    
         <div className="filter">
           <div className="meat" onClick={() => setCategory('meat')}>
             <img alt="filter" src={meat} />

@@ -1,12 +1,13 @@
-import Product from "./main/products/Product";
+import { Link, useLocation } from "react-router-dom";
+
+import BlogListCard from "../main/grid/BlogListCard";
 import React from "react";
 import styled from "styled-components";
-import { useLocation } from "react-router-dom";
 
-const Search = styled.div`
+const SearchBlog = styled.div`
   padding: 150px 15px 40px 15px;
   border-bottom: 1px solid gray;
-  h2{
+  h2 {
     text-align: center;
     margin-bottom: 40px;
   }
@@ -20,19 +21,26 @@ const Search = styled.div`
     }
   }
 `;
-const SearchList = () => {
+const SearchedBlogs = (props) => {
   const location = useLocation();
   const data = location.state;
+  console.log(data);
   return (
-    <Search>
+    <SearchBlog>
       <h2>نتایج جستجو</h2>
       <div className="list">
         {data.map((item) => (
-          <Product key={item.id} {...item} />
+          <BlogListCard
+            key={item.id}
+            image={item.images.url}
+            title={item.title}
+            text={item.text}
+            slug={item.slug}
+          />
         ))}
       </div>
-    </Search>
+    </SearchBlog>
   );
 };
 
-export default SearchList;
+export default SearchedBlogs;

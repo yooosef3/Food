@@ -77,46 +77,45 @@ const Filter = styled.div`
   }
 
   .filter-search {
-  position: relative;
-  width: 350px;
-  margin: 0 auto;
-  margin-top: 30px;
-}
+    position: relative;
+    width: 350px;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
 
-.filter-search svg {
-  position: absolute;
-  left: 0px;
-  top: 10px;
-  font-size: 26px;
-  color: #767676;
-  cursor: pointer;
-  transition: all 0.2s linear;
-}
+  .filter-search svg {
+    position: absolute;
+    left: 0px;
+    top: 10px;
+    font-size: 26px;
+    color: #767676;
+    cursor: pointer;
+    transition: all 0.2s linear;
+  }
 
-.filter-search svg:hover {
-  color: #ff0000;
-}
+  .filter-search svg:hover {
+    color: #ff0000;
+  }
 
-.filter-search input {
-  border-radius: 6px !important;
-  background-color: #f0f0f0;
-  color: #292929;
-  padding: 15px 5px;
-  border: 1px solid #767676;
-  width: 100%;
-  outline: 0;
-  transition: all 0.2s linear;
-}
+  .filter-search input {
+    border-radius: 6px !important;
+    background-color: #f0f0f0;
+    color: #292929;
+    padding: 15px 5px;
+    border: 1px solid #767676;
+    width: 100%;
+    outline: 0;
+    transition: all 0.2s linear;
+  }
 
-.filter-search input:focus {
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  border: 0;
-}
+  .filter-search input:focus {
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    border: 0;
+  }
 
-.filter-search input::placeholder {
-  font-size: 22px;
-}
-
+  .filter-search input::placeholder {
+    font-size: 22px;
+  }
 
   h2 {
     margin-top: 50px;
@@ -161,7 +160,7 @@ const Filter = styled.div`
       }
     }
 
-    a{
+    a {
       color: #373737;
     }
   }
@@ -169,8 +168,21 @@ const Filter = styled.div`
 const ShopSidebar = () => {
   const [price, setPrice] = useState(50);
   const { loading, data, error } = useQuery(PRODUCTS);
+  const [catalog, setCatalog] = useState("");
+  if(loading) return  <small style={{display: 'none'}}></small>;
+  if(error) return <small style={{display: 'none'}}></small>;
+  const searchHandler = () => {
+    const filteredCatalog = data.products.filter((product) => {
+      if (catalog === "") {
+        return ' ';
+      }else {
+        return product.name.includes(catalog);
+      }
+    });
+    return filteredCatalog;
+  };
 
-  console.log(data);
+  const filtered = searchHandler();
 
   const handleInput = (e) => {
     setPrice(e.target.value);
@@ -188,43 +200,55 @@ const ShopSidebar = () => {
           <h4>گالری</h4>
           <div className="category">
             <div className="checkbox">
-              <input type="checkbox" />
+              <input type="checkbox" checked />
               <label>همه</label>
             </div>
-            <span>(23)</span>
+            <span>(10)</span>
           </div>
           <div className="category">
             <div className="checkbox">
               <input type="checkbox" />
               <label>سبزیجات</label>
             </div>
-            <span>(14)</span>
+            <span>(2)</span>
           </div>
           <div className="category">
             <div className="checkbox">
               <input type="checkbox" />
               <label>میوه</label>
             </div>
-            <span>(9)</span>
+            <span>(2)</span>
           </div>
           <div className="category">
             <div className="checkbox">
               <input type="checkbox" />
               <label>نان</label>
             </div>
-            <span>(12)</span>
+            <span>(2)</span>
+          </div>
+          <div className="category">
+            <div className="checkbox">
+              <input type="checkbox" />
+              <label>گوشت</label>
+            </div>
+            <span>(4)</span>
           </div>
         </div>
         <div className="filter-search">
-          <input type="text" placeholder="جستجو ..." />
-          <RiSearchLine />
+          <input
+            type="text"
+            value={catalog}
+            onChange={(event) => setCatalog(event.target.value)}
+            placeholder="جستجو ..."
+          />
+          <RiSearchLine className="search" onClick={searchHandler} />
         </div>
         <h2>محصولات محبوب</h2>
         <div className="popular">
           <div className="product">
             <img alt="popular" src={popular1} />
             <div>
-              <Link to='/singleproduct/bananas'>
+              <Link to="/singleproduct/bananas">
                 <h4>موز</h4>
               </Link>
               <span>$23.00</span>
@@ -233,7 +257,7 @@ const ShopSidebar = () => {
           <div className="product">
             <img alt="popular" src={popular2} />
             <div>
-              <Link to='/singleproduct/bagels'>
+              <Link to="/singleproduct/bagels">
                 <h4>نان شیرینی</h4>
               </Link>
               <span>$10.00</span>
@@ -242,7 +266,7 @@ const ShopSidebar = () => {
           <div className="product">
             <img alt="popular" src={popular3} />
             <div>
-              <Link to='/singleproduct/bread'>
+              <Link to="/singleproduct/bread">
                 <h4>نان</h4>
               </Link>
               <span>$11.00</span>
@@ -258,7 +282,7 @@ const ShopSidebar = () => {
             یک خطای شبکه رخ داده است, بعدا امتحان کنید
           </h1>
         ) : (
-          data.products
+          filtered
             .filter((product) => {
               return product.price < parseInt(price, 10);
             })

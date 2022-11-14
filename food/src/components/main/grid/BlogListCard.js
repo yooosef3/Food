@@ -90,7 +90,7 @@ const Card = styled.div`
     }
   }
 `;
-const BlogListCard = ({ title, image, text, more }) => {
+const BlogListCard = ({ title, image, text, slug }) => {
   return (
     <Card>
       <div>
@@ -104,7 +104,7 @@ const BlogListCard = ({ title, image, text, more }) => {
             <img alt="blog" src={image} />
           </div>
           <p>{text}</p>
-          <Link to={`/blogpost/${more}`}>بیشتر بخوانید</Link>
+          <Link to={`/blogpost/${slug}`}>بیشتر بخوانید</Link>
         </section>
       </div>
     </Card>

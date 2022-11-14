@@ -12,7 +12,6 @@ import React from "react";
 import SocialIcons from "../../Header/SocialIcons";
 import blogCard2 from "../../../assets/images/post-8-800x394.jpg";
 import blogCard3 from "../../../assets/images/post-9-800x394.jpg";
-import sanitizeHtml from "sanitize-html";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
@@ -233,7 +232,7 @@ const BlogDetails = () => {
         یک خطای شبکه رخ داده است, بعدا امتحان کنید
       </h1>
     );
-  const { text, title, subTitle, subText, images } = data.blog;
+  const { title, text, subTitle, subText, images } = data.blog;
   return (
     <Detail>
       <section className="post-blog">
@@ -246,11 +245,7 @@ const BlogDetails = () => {
           <div>
             <img alt="post" src={images.url} />
           </div>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: sanitizeHtml(text.html),
-            }}
-          ></p>
+          <p>{text}</p>
           <FaQuoteLeft />
           <h3>{subTitle}</h3>
           <p>{subText}</p>

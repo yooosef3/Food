@@ -70,7 +70,7 @@
 
 .blogListSidebar .searchBlog input:focus {
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  border: 0;
+  border: 1px solid #ffff;
 }
 
 .blogListSidebar .searchBlog input::placeholder {

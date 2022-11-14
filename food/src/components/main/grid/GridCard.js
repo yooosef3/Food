@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import React from "react";
-import sanitizeHtml from 'sanitize-html'
 import styles from "../../../styles/main/grid/GridCard.module.css";
 import { truncate } from "../../helper/truncate";
 
@@ -19,7 +18,7 @@ const GridCard = ({ image, title, text, text1, slug }) => {
           <h4>{title}</h4>
         </Link>
         <p>{text1}</p>
-        <p dangerouslySetInnerHTML={{__html: sanitizeHtml(truncate(text.html))}}></p>
+        <p>{truncate(text)}</p>
       </section>
     </div>
   );

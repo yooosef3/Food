@@ -27,6 +27,7 @@ const GridBlog = () => {
           title={blog.title}
           text={blog.text}
           slug={blog.slug}
+          key={blog.id}
         />
         )
       }

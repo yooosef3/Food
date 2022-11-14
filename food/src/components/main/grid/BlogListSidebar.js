@@ -1,12 +1,35 @@
+import React, { useState } from "react";
+
+import { BLOGS } from "../../../graphql/queries";
 import { Link } from "react-router-dom";
-import React from "react";
 import { RiSearchLine } from "react-icons/ri";
 import lopez from "../../../assets/images/user-4-123x123.jpg";
 import post1 from "../../../assets/images/post-mini-1-106x104.jpg";
 import post2 from "../../../assets/images/post-mini-2-106x104.jpg";
 import styles from "../../../styles/main/grid/BlogListSidebar.module.css";
+import { useQuery } from "@apollo/client";
 
 const BlogListSidebar = () => {
+  const [blog, setBlog] = useState("");
+  const { loading, data, error } = useQuery(BLOGS);
+
+  if (loading) return <p style={{ display: "none" }}></p>;
+  if (error) return <p style={{ display: "none" }}></p>;
+
+  const blogHandler = () => {
+    const filteredBlogs = data.blogs.filter((item) => {
+      if (blog === "") {
+        return "";
+      } else {
+        return item.title.includes(blog);
+      }
+    });
+    return filteredBlogs;
+  };
+
+  const blogsFiltered = blogHandler();
+  console.log(blogsFiltered);
+  
   return (
     <div className={styles.blogListSidebar}>
       <div className={styles.lopez}>
@@ -17,8 +40,20 @@ const BlogListSidebar = () => {
         <p>خانم Lopez اینجاست تا پاسخگوی سوالات شما در زمینه خرید مناسب باشد</p>
       </div>
       <div className={styles.searchBlog}>
-        <input placeholder="جستجوی بلاگ ..." />
-        <RiSearchLine />
+        <input
+          placeholder="جستجوی بلاگ ..."
+          value={blog}
+          onChange={(event) => setBlog(event.target.value)}
+        />
+        <Link
+          onClick={blogHandler}
+          to={{
+            pathname: "/searchedblog",
+          }}
+          state={blogsFiltered}
+        >
+          <RiSearchLine className={styles.search} />
+        </Link>
       </div>
       <section className={styles.category}>
         <div className={styles.galery}>
