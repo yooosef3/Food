@@ -1,7 +1,10 @@
+import "react-toastify/dist/ReactToastify.css";
+
 import * as Yup from "yup";
 
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import { AiTwotoneStar } from "react-icons/ai";
@@ -200,11 +203,10 @@ const Detail = styled.div`
     }
 
     .comment-form {
-
-      .input-comment{
+      .input-comment {
         margin: 0 auto;
       }
-      
+
       @media (min-width: 768px) {
         .name-family,
         .email-phone {
@@ -217,7 +219,7 @@ const Detail = styled.div`
             width: 400px;
           }
         }
-        .input-comment{
+        .input-comment {
           input {
             width: 400px;
           }
@@ -456,7 +458,9 @@ const SingleProduct = () => {
               })}
               onSubmit={(values, { setSubmitting }) => {
                 setTimeout(() => {
-                  alert(JSON.stringify(values, null, 2));
+                  toast.success("نظر شما با موفقیت ثبت شد", {
+              position: 'bottom-center',
+            });
                   setSubmitting(false);
                 }, 400);
               }}
@@ -527,6 +531,7 @@ const SingleProduct = () => {
                   />
                 </div>
                 <button type="submit">ثبت</button>
+                <ToastContainer />
               </Form>
             </Formik>
           </div>
@@ -543,7 +548,12 @@ const SingleProduct = () => {
           >
             <TbTruckDelivery />
             <p>
-            یک خرید اینترنتی مطمئن، نیازمند فروشگاهی است که بتواند کالاهایی متنوع، باکیفیت و دارای قیمت مناسب را در مدت زمانی کوتاه به دست مشتریان خود برساند و ضمانت بازگشت کالا هم داشته باشد؛ ویژگی‌هایی که فروشگاه اینترنتی grocmart سال‌هاست بر روی آن‌ها کار کرده و توانسته از این طریق مشتریان ثابت خود را داشته باشد.            </p>
+              یک خرید اینترنتی مطمئن، نیازمند فروشگاهی است که بتواند کالاهایی
+              متنوع، باکیفیت و دارای قیمت مناسب را در مدت زمانی کوتاه به دست
+              مشتریان خود برساند و ضمانت بازگشت کالا هم داشته باشد؛ ویژگی‌هایی
+              که فروشگاه اینترنتی grocmart سال‌هاست بر روی آن‌ها کار کرده و
+              توانسته از این طریق مشتریان ثابت خود را داشته باشد.{" "}
+            </p>
           </div>
           <h3>محصولات برتر</h3>
           <ProductPack />

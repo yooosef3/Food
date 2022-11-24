@@ -11,7 +11,7 @@ const OffHome = () => {
     <div>
       <div className={styles.container}>
         <motion.a
-          href="/"
+          href="/singleproduct/sweet-peppers"
           initial={{ opacity: 0, transform: "translateX(50%)" }}
           whileInView={{ opacity: 1, transform: "translateX(0%)" }}
           transition={{ duration: 0.6 }}
@@ -25,10 +25,10 @@ const OffHome = () => {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <Link to="/">
+          <Link to="/singleproduct/bread">
             <img alt="off" src={off2} />
           </Link>
-          <Link to="/">
+          <Link to="/singleproduct/bagels">
             <img alt="off" src={off3} />
           </Link>
         </motion.div>
@@ -36,5 +36,4 @@ const OffHome = () => {
     </div>
   );
 };
-
 export default OffHome;

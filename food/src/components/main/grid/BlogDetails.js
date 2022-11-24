@@ -1,9 +1,6 @@
-import * as Yup from "yup";
-
-import { ErrorMessage, Field, Form, Formik } from "formik";
-
 import { BLOG } from "../../../graphql/queries";
 import BlogListSidebar from "./BlogListSidebar";
+import CommentForm from "./CommentForm";
 import Comments from "./Comments";
 import { FaQuoteLeft } from "react-icons/fa";
 import GridCard from "./GridCard";
@@ -132,91 +129,7 @@ const Detail = styled.div`
     text-align: right;
   }
 
-  .comment-form {
-    margin-bottom: 60px;
-    h3 {
-      @media (min-width: 768px) {
-        text-align: right;
-      }
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      padding: 15px;
-      gap: 50px;
-      .inputs {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        @media (min-width: 768px) {
-          flex-direction: row;
-          justify-content: center;
-        }
-
-        input {
-          border: 1px solid gray;
-          width: 100%;
-          height: 30px;
-          border-radius: 6px;
-          padding: 5px;
-          color: #414141;
-          outline: 0;
-          @media (min-width: 768px) {
-            width: 100%;
-          }
-          &::placeholder {
-            color: #414141;
-            font-size: 20px;
-          }
-          &:focus {
-            border: 2px solid #1d6adc;
-          }
-          &:invalid {
-            border: 2px solid #ff7d87;
-          }
-        }
-      }
-      .textarea {
-        border: 1px solid gray;
-        border-radius: 6px;
-        outline: 0;
-        width: 95%;
-        padding: 15px;
-        &::placeholder {
-          font-size: 20px;
-          color: #414141;
-        }
-        &:focus {
-          border: 2px solid #1d6adc;
-        }
-      }
-
-      .error {
-        color: #ffffff;
-        height: fit-content;
-        margin-bottom: 10px;
-        font-weight: 600;
-        text-shadow: 1px 1px #ff000d;
-      }
-
-      button {
-        background-color: #54ab02;
-        color: #ffff;
-        font-size: 24px;
-        padding: 10px 0;
-        border-radius: 6px;
-        border: none;
-        cursor: pointer;
-        transition: all 0.2s linear;
-        &:hover {
-          background-color: #e52029;
-        }
-        @media (min-width: 768px) {
-          width: 130px;
-        }
-      }
-    }
-  }
+  
 `;
 const BlogDetails = () => {
   const { slug } = useParams();
@@ -233,6 +146,7 @@ const BlogDetails = () => {
       </h1>
     );
   const { title, text, subTitle, subText, images } = data.blog;
+  
   return (
     <Detail>
       <section className="post-blog">
@@ -287,64 +201,7 @@ const BlogDetails = () => {
         <Comments />
         <div className="comment-form">
           <h3>یک کامنت بنویسید</h3>
-          <Formik
-            initialValues={{ email: "", name: "", textarea: "" }}
-            validationSchema={Yup.object({
-              name: Yup.string()
-                .max(15, " نام باید کمتر از 15 حرف باشد")
-                .required("نام ضروری است"),
-              email: Yup.string()
-                .email("آدرس ایمیل نامعتبر است")
-                .required("ایمیل ضروری است"),
-              textarea: Yup.string().required("لطفا یک کامنت بنویسید"),
-            })}
-            onSubmit={(values, { setSubmitting }) => {
-              setTimeout(() => {
-                alert(JSON.stringify(values, null, 2));
-                setSubmitting(false);
-              }, 400);
-            }}
-          >
-            <Form className="comment-form">
-              <div className="inputs">
-                <div className="input-error">
-                  <Field
-                    name="name"
-                    type="text"
-                    placeholder="نام خود را وارد کنید"
-                  />
-                  <ErrorMessage
-                    className="ErrorMessage"
-                    name="name"
-                    render={(msg) => <div className="error">{msg}</div>}
-                  />
-                </div>
-                <div className="input-error">
-                  <Field
-                    name="email"
-                    type="email"
-                    placeholder="ایمیل خود را وارد کنید"
-                  />
-                  <ErrorMessage
-                    className="ErrorMessage"
-                    name="email"
-                    render={(msg) => <div className="error">{msg}</div>}
-                  />
-                </div>
-              </div>
-              <Field
-                name="textarea"
-                className="textarea"
-                placeholder="نظر خود را وارد کنید"
-              />
-              <ErrorMessage
-                className="ErrorMessage"
-                name="textarea"
-                render={(msg) => <div className="error">{msg}</div>}
-              />
-              <button type="submit">عضویت</button>
-            </Form>
-          </Formik>
+          <CommentForm slug={slug}/>
         </div>
       </section>
       <BlogListSidebar />

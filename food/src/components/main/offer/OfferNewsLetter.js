@@ -1,6 +1,9 @@
+import "react-toastify/dist/ReactToastify.css";
+
 import * as Yup from "yup";
 
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import { ToastContainer, toast } from "react-toastify";
 
 import React from "react";
 import styles from "../../../styles/main/offer/OfferNewsLetter.module.css";
@@ -24,7 +27,10 @@ const OfferNewsLetter = () => {
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
+            toast.success("عضویت شما با موفقیت انجام شد", {
+              position: 'bottom-center',
+            });
+
             setSubmitting(false);
           }, 400);
         }}
@@ -43,6 +49,7 @@ const OfferNewsLetter = () => {
             />
           </div>
           <button type="submit">عضویت</button>
+          <ToastContainer />
         </Form>
       </Formik>
     </div>

@@ -169,13 +169,43 @@ const ShopSidebar = () => {
   const [price, setPrice] = useState(50);
   const { loading, data, error } = useQuery(PRODUCTS);
   const [catalog, setCatalog] = useState("");
-  if(loading) return  <small style={{display: 'none'}}></small>;
-  if(error) return <small style={{display: 'none'}}></small>;
+
+  const checkList = [
+    {
+      type: "bread",
+      name: "نان",
+      count: 2,
+      id: 1,
+    },
+    {
+      type: "meat",
+      name: "گوشت",
+      count: 4,
+      id: 2,
+    },
+    {
+      type: "vegetable",
+      name: "سبزیجات",
+      count: 2,
+      id: 3,
+    },
+    {
+      type: "fruit",
+      name: "میوه",
+      count: 2,
+      id: 4,
+    },
+  ];
+
+  const [checked, setChecked] = useState([]);
+
+  if (loading) return <small style={{ display: "none" }}></small>;
+  if (error) return <small style={{ display: "none" }}></small>;
   const searchHandler = () => {
     const filteredCatalog = data.products.filter((product) => {
       if (catalog === "") {
-        return ' ';
-      }else {
+        return " ";
+      } else {
         return product.name.includes(catalog);
       }
     });
@@ -184,6 +214,19 @@ const ShopSidebar = () => {
 
   const filtered = searchHandler();
 
+  const onchangeHandler = (event) => {
+    const type = event.target.value;
+    const isChecked = event.target.checked;
+    const checkedProducts = data.products.filter((product) => {
+      if (isChecked) {
+        return  product.type === type;
+      }else{
+        return checked;
+      }
+    });
+    setChecked([...checkedProducts]);
+  };
+  
   const handleInput = (e) => {
     setPrice(e.target.value);
   };
@@ -198,42 +241,26 @@ const ShopSidebar = () => {
         </h1>
         <div className="category-filter">
           <h4>گالری</h4>
-          <div className="category">
-            <div className="checkbox">
-              <input type="checkbox" checked />
-              <label>همه</label>
-            </div>
-            <span>(10)</span>
-          </div>
-          <div className="category">
-            <div className="checkbox">
-              <input type="checkbox" />
-              <label>سبزیجات</label>
-            </div>
-            <span>(2)</span>
-          </div>
-          <div className="category">
-            <div className="checkbox">
-              <input type="checkbox" />
-              <label>میوه</label>
-            </div>
-            <span>(2)</span>
-          </div>
-          <div className="category">
-            <div className="checkbox">
-              <input type="checkbox" />
-              <label>نان</label>
-            </div>
-            <span>(2)</span>
-          </div>
-          <div className="category">
-            <div className="checkbox">
-              <input type="checkbox" />
-              <label>گوشت</label>
-            </div>
-            <span>(4)</span>
+          <div className="list-container">
+            {checkList.map((item) => (
+              <div key={item.id}>
+                <div className="category">
+                  <div className="checkbox">
+                    <input
+                      name="radio"
+                      type="radio"
+                      value={item.type}
+                      onChange={onchangeHandler}
+                    />
+                    <label>{item.name}</label>
+                  </div>
+                  <span>({item.count})</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
+
         <div className="filter-search">
           <input
             type="text"
@@ -241,7 +268,7 @@ const ShopSidebar = () => {
             onChange={(event) => setCatalog(event.target.value)}
             placeholder="جستجو ..."
           />
-          <RiSearchLine className="search" onClick={searchHandler} />
+          <RiSearchLine className="search" />
         </div>
         <h2>محصولات محبوب</h2>
         <div className="popular">
@@ -275,6 +302,9 @@ const ShopSidebar = () => {
         </div>
       </section>
       <div className="products">
+        {checked.map((product) => {
+          return <Product key={product.id} {...product} />;
+        })}
         {loading ? (
           <Loader />
         ) : error ? (

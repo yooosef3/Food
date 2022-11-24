@@ -15,6 +15,7 @@
         "mius",
         "ourteam",
         "pricinglist",
+        "searchedblog",
         "searchlist",
         "singleproduct",
         "Swipper",
@@ -24,5 +25,10 @@
         "مستقیم"
     ],
     "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 500
+    "files.autoSaveDelay": 500,
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#3D272E",
+        "titleBar.activeBackground": "#563740",
+        "titleBar.activeForeground": "#FCFAFA"
+    }
 }

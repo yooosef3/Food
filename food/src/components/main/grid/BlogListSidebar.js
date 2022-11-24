@@ -28,7 +28,6 @@ const BlogListSidebar = () => {
   };
 
   const blogsFiltered = blogHandler();
-  console.log(blogsFiltered);
   
   return (
     <div className={styles.blogListSidebar}>

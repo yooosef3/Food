@@ -5,7 +5,7 @@ import { Autoplay, Thumbs } from "swiper";
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const DetailSlider = ({data}) => {
+const DetailSlider = ({ data }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
@@ -35,7 +35,7 @@ const DetailSlider = ({data}) => {
         loop={true}
         onSwiper={setThumbsSwiper}
       >
-      {data.product.imageAll.map((image) => (
+        {data.product.imageAll.map((image) => (
           <SwiperSlide>
             <img alt="detail" src={image.url} />
           </SwiperSlide>

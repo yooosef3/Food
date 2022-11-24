@@ -16,9 +16,9 @@ const LatestNewsSlider = () => {
   if (loading) return <Loader />;
   if (error)
     return (
-      <h1 style={{ color: "#e52029", textAlign: "center" }}>
+      <h3 style={{ color: "#e52029", textAlign: "center" }}>
         یک خطای شبکه رخ داده است, بعدا امتحان کنید
-      </h1>
+      </h3>
     );
   return (
     <Swiper

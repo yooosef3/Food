@@ -5,7 +5,7 @@ import ShopSidebar from "./ShopSidebar";
 import styled from "styled-components";
 
 const Shop = styled.div`
-    .result {
+  .result {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,7 +21,6 @@ const Shop = styled.div`
     }
     select {
       height: 30px;
-      width: 205px;
       box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
       padding-right: 15px;
       border-radius: 6px;
@@ -35,7 +34,7 @@ const Shop = styled.div`
     margin: 50px auto;
     text-align: center;
     padding-bottom: 50px;
-    border-bottom:1px solid #b5b5b5;
+    border-bottom: 1px solid #b5b5b5;
   }
 
   .grid-shop a {
@@ -60,11 +59,10 @@ const GridShop = () => {
       <PagesHeader headline={"قفسه"} page={"فروشگاه"} path={"gridshop"} />
       <div>
         <section className="result">
-          <p>نمایش 1-8 از 28 نتیجه</p>
+          <p>نمایش 1-10 از 28 نتیجه</p>
           <select>
-            <option>دسته بندی براساس جدیدترین</option>
-            <option>دسته بندی براساس محبوبیت</option>
-            <option>دسته بندی براساس الفبا</option>
+            <option> براساس ارزان ترین</option>
+            <option> براساس گران ترین</option>
           </select>
         </section>
         <ShopSidebar />
