@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 
 import AboutUs from "./components/main/AboutUs/AboutUs";
 import BlogList from "./components/main/grid/BlogList";

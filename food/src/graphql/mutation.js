@@ -12,11 +12,35 @@ const SEND_COMMENT = gql`
         name: $name
         email: $email
         text: $text
-        clau037zo1jrw01t48ce49tab: { connect: { slug: $slug } }
+        blog: { connect: { slug: $slug } }
       }
     ) {
       id
     }
   }
 `;
-export { SEND_COMMENT };
+
+const SEND_REVIEW = gql`
+  mutation sendReview(
+    $name: String!
+    $email: String!
+    $text: String!
+    $lastname: String!
+    $phone: String!
+    $slug: String!
+  ) {
+    createComment(
+      data: {
+        name: $name
+        lastname: $lastname
+        phone: $phone
+        email: $email
+        text: $text
+        product: { connect: { slug: $slug } }
+      }
+    ) {
+      id
+    }
+  }
+`;
+export { SEND_COMMENT, SEND_REVIEW };

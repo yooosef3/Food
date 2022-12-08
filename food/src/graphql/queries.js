@@ -95,4 +95,34 @@ const OFFER = gql`
   }
 `;
 
-export { TEAM, PRODUCTS, PRODUCT, BLOGS, BLOG, OFFER };
+const GET_BLOG_COMMENTS = gql`
+  query getBlogComments($slug: String!) {
+    comments(where: { blog: { slug: $slug } }) {
+      id
+      name
+      text
+    }
+  }
+`;
+const GET_PRODUCT_REVIEWS = gql`
+  query getProductComments($slug: String!) {
+  comments(where: {product: {slug: $slug }}) {
+    id
+    name
+    email
+    lastname
+    phone
+    text
+  }
+}
+`;
+export {
+  TEAM,
+  PRODUCTS,
+  PRODUCT,
+  BLOGS,
+  BLOG,
+  OFFER,
+  GET_BLOG_COMMENTS,
+  GET_PRODUCT_REVIEWS,
+};

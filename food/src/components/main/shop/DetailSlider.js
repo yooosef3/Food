@@ -20,7 +20,7 @@ const DetailSlider = ({ data }) => {
         thumbs={{ swiper: thumbsSwiper }}
       >
         {data.product.imageAll.map((image) => (
-          <SwiperSlide>
+          <SwiperSlide key={image.id}>
             <img alt="detail" src={image.url} />
           </SwiperSlide>
         ))}

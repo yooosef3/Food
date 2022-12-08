@@ -1,5 +1,6 @@
 import { BLOG } from "../../../graphql/queries";
 import BlogListSidebar from "./BlogListSidebar";
+import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 import Comments from "./Comments";
 import { FaQuoteLeft } from "react-icons/fa";
@@ -128,14 +129,12 @@ const Detail = styled.div`
   .comments {
     text-align: right;
   }
-
-  
 `;
 const BlogDetails = () => {
   const { slug } = useParams();
   const { loading, data, error } = useQuery(BLOG, {
     variables: {
-      slug,
+      slug
     },
   });
   if (loading) return <Loader />;
@@ -146,7 +145,7 @@ const BlogDetails = () => {
       </h1>
     );
   const { title, text, subTitle, subText, images } = data.blog;
-  
+
   return (
     <Detail>
       <section className="post-blog">
@@ -195,14 +194,11 @@ const BlogDetails = () => {
             slug="navigating-the-grocery-store-for-healthy-eating"
           />
         </div>
-        <h3 className="comments"> کامنت</h3>
-        <Comments />
-        <Comments />
-        <Comments />
+        <h3 className="comments"> کامنت ها</h3>
         <div className="comment-form">
-          <h3>یک کامنت بنویسید</h3>
-          <CommentForm slug={slug}/>
+          <CommentForm slug={slug} />
         </div>
+        <Comments slug={slug} />
       </section>
       <BlogListSidebar />
     </Detail>

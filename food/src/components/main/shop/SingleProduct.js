@@ -1,10 +1,6 @@
 import "react-toastify/dist/ReactToastify.css";
 
-import * as Yup from "yup";
-
-import { ErrorMessage, Field, Form, Formik } from "formik";
 import React, { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
 
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import { AiTwotoneStar } from "react-icons/ai";
@@ -14,7 +10,8 @@ import Loader from "../../shared/Loader";
 import { PRODUCT } from "../../../graphql/queries";
 import PagesHeader from "../PagesHeader";
 import ProductPack from "../products/ProductPack";
-import Review from "./Review";
+import ReviewForm from "./ReviewForm";
+import Reviews from "./Reviews";
 import SocialIcons from "../../Header/SocialIcons";
 import { TbTruckDelivery } from "react-icons/tb";
 import styled from "styled-components";
@@ -308,6 +305,7 @@ const Detail = styled.div`
       text-align: right;
       font-size: 16px;
       font-weight: 600;
+      margin: 0;
       max-width: 620px;
       @media (min-width: 1200px) {
         max-width: 800px;
@@ -315,6 +313,7 @@ const Detail = styled.div`
     }
     @media (min-width: 768px) {
       flex-direction: row;
+      align-items: center;
       width: 95%;
       svg {
         width: 20%;
@@ -337,6 +336,7 @@ const Detail = styled.div`
       font-size: 16px;
       font-weight: 600;
       max-width: 620px;
+      margin: 0;
       @media (min-width: 1200px) {
         max-width: 800px;
       }
@@ -437,103 +437,10 @@ const SingleProduct = () => {
             </li>
           </ul>
           <div className={`${!info.review && "more-info-hide"} ${"reviews"}`}>
-            <Review />
+            
             <h3>یک نظر بنویسید</h3>
-            <Formik
-              initialValues={{
-                email: "",
-                name: "",
-                comment: "",
-                family: "",
-                phone: "",
-              }}
-              validationSchema={Yup.object({
-                name: Yup.string().required("نام ضروری است"),
-                family: Yup.string().required("نام خانوادگی ضروری است"),
-                email: Yup.string()
-                  .email("آدرس ایمیل نامعتبر است")
-                  .required(" ایمیل ضروری است"),
-                phone: Yup.string().required("شماره تلفن ضروری است"),
-                comment: Yup.string().required(" یک نظر بنویسید"),
-              })}
-              onSubmit={(values, { setSubmitting }) => {
-                setTimeout(() => {
-                  toast.success("نظر شما با موفقیت ثبت شد", {
-              position: 'bottom-center',
-            });
-                  setSubmitting(false);
-                }, 400);
-              }}
-            >
-              <Form className="comment-form">
-                <div className="name-family">
-                  <div className="input-error">
-                    <Field
-                      name="name"
-                      type="text"
-                      placeholder="نام خود را وارد کنید"
-                    />
-                    <ErrorMessage
-                      className="ErrorMessage"
-                      name="name"
-                      render={(msg) => <div className="error">{msg}</div>}
-                    />
-                  </div>
-                  <div className="input-error">
-                    <Field
-                      name="family"
-                      type="text"
-                      placeholder="نام خانوادگی خود را وارد کنید"
-                    />
-                    <ErrorMessage
-                      className="ErrorMessage"
-                      name="family"
-                      render={(msg) => <div className="error">{msg}</div>}
-                    />
-                  </div>
-                </div>
-                <div className="email-phone">
-                  <div className="input-error">
-                    <Field
-                      name="email"
-                      type="email"
-                      placeholder="ایمیل خود را وارد کنید"
-                    />
-                    <ErrorMessage
-                      className="ErrorMessage"
-                      name="email"
-                      render={(msg) => <div className="error">{msg}</div>}
-                    />
-                  </div>
-                  <div className="input-error">
-                    <Field
-                      name="phone"
-                      type="number"
-                      placeholder="تلفن خود را وارد کنید"
-                    />
-                    <ErrorMessage
-                      className="ErrorMessage"
-                      name="phone"
-                      render={(msg) => <div className="error">{msg}</div>}
-                    />
-                  </div>
-                </div>
-                <div className="input-comment">
-                  <Field
-                    name="comment"
-                    type="text"
-                    placeholder=" یک نظر بنویسید"
-                  />
-                  <ErrorMessage
-                    className="ErrorMessage"
-                    name="comment"
-                    render={(msg) => <div className="error">{msg}</div>}
-                  />
-                </div>
-                <button type="submit">ثبت</button>
-                <ToastContainer />
-              </Form>
-            </Formik>
+            <ReviewForm slug={slug}/>
+            <Reviews slug={slug}/>
           </div>
           <div
             className={`${

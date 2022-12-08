@@ -1,12 +1,11 @@
-import { AiTwotoneStar } from "react-icons/ai";
-import { BsStarHalf } from "react-icons/bs";
 import React from "react";
 import styled from "styled-components";
 import user1 from "../../../assets/images/3219840.png";
 
-const Reviews = styled.div`
+const Div = styled.div`
   display: flex;
   flex-direction: column;
+  border-bottom: 1px solid #bdbdbd;
   margin-bottom: 70px;
   @media (min-width: 768px) {
     flex-direction: row;
@@ -15,6 +14,7 @@ const Reviews = styled.div`
   img {
     width: 70px;
     height: 70px;
+    border-radius: 100%;
     margin-bottom: -30px;
     @media (min-width: 768px) {
       width: 150px;
@@ -22,19 +22,12 @@ const Reviews = styled.div`
       margin-left: 30px;
     }
   }
-  .review {
+  .comment {
     padding: 0;
-    .stars {
-      margin-left: 200px;
-      svg {
-        color: #ffcc00;
-      }
-    }
     p {
       color: #bdbdbd;
       text-align: right;
       margin-top: -35px;
-      font-size: 16px;
       color: #707070;
       padding-bottom: 30px;
       @media (min-width: 768px) {
@@ -52,6 +45,7 @@ const Reviews = styled.div`
         h3 {
           margin-left: 15px;
           transition: all 0.2s linear;
+          font-weight: 500;
           cursor: pointer;
           &:hover {
             color: red;
@@ -71,35 +65,27 @@ const Reviews = styled.div`
       }
       small {
         color: #8b8b8b;
-        margin-right: auto;
       }
     }
   }
 `;
-const Review = ({name, lastname, text}) => {
+
+const Comment = ({ name, text }) => {
   return (
-    <Reviews>
-      <img alt="review" src={user1} />
-      <section className="review">
+    <Div>
+      <img alt="comment" src={user1} />
+      <section className="comment">
         <div>
           <section>
-            <h3>{name} {lastname}</h3>
-            <div className="stars">
-              <AiTwotoneStar />
-              <AiTwotoneStar />
-              <AiTwotoneStar />
-              <AiTwotoneStar />
-              <BsStarHalf />
-            </div>
+            <h3>{name}</h3>
+            <span>پاسخ</span>
           </section>
           <small>22 مهر 1401</small>
         </div>
-        <p>
-          {text}
-        </p>
+        <p>{text}</p>
       </section>
-    </Reviews>
+    </Div>
   );
 };
 
-export default Review;
+export default Comment;

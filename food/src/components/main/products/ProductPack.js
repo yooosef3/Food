@@ -22,7 +22,7 @@ const Prd = styled.div`
 `;
 const ProductPack = () => {
   const { loading, data, error } = useQuery(PRODUCTS);
-  const { category, setCategory } = useContext(CategoryContext);
+  const { category } = useContext(CategoryContext);
   return (
     <Prd>
       {loading ? (
