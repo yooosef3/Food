@@ -15,25 +15,25 @@ const Review = styled.div`
   @media (min-width: 1000px) {
     width: 75%;
   }
-  h1{
+  h1 {
     text-align: right;
     font-size: 20px;
-    background-color: #58BA17;
+    background-color: #58ba17;
     width: fit-content;
     color: #ffff;
     padding: 4px 8px 6px 8px;
     border-radius: 6px;
-    margin-bottom:15px;
-    transition: all .2s linear;
+    margin-bottom: 15px;
+    transition: all 0.2s linear;
     cursor: pointer;
-    &:hover{
+    &:hover {
       opacity: 90%;
     }
   }
-  p{
+  p {
     color: #ffff;
     border-radius: 6px;
-    margin-bottom:15px;
+    margin-bottom: 15px;
     width: fit-content;
     font-size: 20px;
     border: 1px solid gray;
@@ -50,19 +50,19 @@ const Review = styled.div`
     display: flex;
     flex-direction: column;
     gap: 15px;
-    .textarea{
+    .textarea {
       display: flex;
       flex-direction: column;
-      textarea{
+      textarea {
         padding: 15px;
         border: 1px solid gray;
         border-radius: 6px;
         outline: 0;
-        &:focus{
+        &:focus {
           border: 1px solid blue;
         }
       }
-      label{
+      label {
         text-align: right;
         color: gray;
         font-weight: 500;
@@ -77,7 +77,7 @@ const Review = styled.div`
       @media (min-width: 768px) {
         flex-direction: row;
       }
-      input{
+      input {
         height: 40px;
         border-radius: 6px;
         outline: 0;
@@ -85,15 +85,15 @@ const Review = styled.div`
         padding-right: 10px;
         color: gray;
         font-size: 16px;
-        &:focus{
+        &:focus {
           border: 1px solid blue;
         }
       }
-      .input{
+      .input {
         display: flex;
         flex-direction: column;
         flex-grow: 1;
-        label{
+        label {
           text-align: right;
           color: gray;
           font-weight: 500;
@@ -130,6 +130,7 @@ const ReviewForm = ({ slug }) => {
     } else {
       toast.warn("تمام فیلد هارو پر کن", {
         position: "top-center",
+        closeOnClick: false,
       });
     }
   };
@@ -137,6 +138,7 @@ const ReviewForm = ({ slug }) => {
   if (data && pressed) {
     toast.success("کامنت ارسال شد و منتظر تایید می باشد", {
       position: "top-center",
+      closeOnClick: false,
     });
     setPressed(false);
   }

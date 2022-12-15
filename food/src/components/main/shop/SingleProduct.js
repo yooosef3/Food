@@ -1,11 +1,13 @@
 import "react-toastify/dist/ReactToastify.css";
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import { AiTwotoneStar } from "react-icons/ai";
 import { BsStarHalf } from "react-icons/bs";
+import { CartContext } from "../../context/CartContextProvider";
 import DetailSlider from "./DetailSlider";
+import { FaTrashAlt } from "react-icons/fa";
 import Loader from "../../shared/Loader";
 import { PRODUCT } from "../../../graphql/queries";
 import PagesHeader from "../PagesHeader";
@@ -146,17 +148,6 @@ const Detail = styled.div`
         transition: all 0.2s linear;
         &:hover {
           color: red;
-        }
-      }
-      .counter {
-        padding: 16px 24px;
-      }
-      .plus-minus {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        span {
-          padding: 0 5px;
         }
       }
     }
@@ -351,6 +342,8 @@ const Detail = styled.div`
   }
 `;
 const SingleProduct = () => {
+  const { state, dispatch } = useContext(CartContext);
+
   const [info, setInfo] = useState({
     review: true,
     moreInfo: false,
@@ -402,12 +395,7 @@ const SingleProduct = () => {
               ابعاد: <span dir="ltr">{data.product.dimensions}</span>
             </h4>
             <div className="add-cart">
-              <span className="counter">1</span>
-              <div className="plus-minus">
-                <span>+</span>
-                <span>-</span>
-              </div>
-              <button>اضافه به سبد خرید</button>
+              
             </div>
             <div className="socials-share">
               <h5>اشتراک:</h5>
@@ -437,10 +425,9 @@ const SingleProduct = () => {
             </li>
           </ul>
           <div className={`${!info.review && "more-info-hide"} ${"reviews"}`}>
-            
             <h3>یک نظر بنویسید</h3>
-            <ReviewForm slug={slug}/>
-            <Reviews slug={slug}/>
+            <ReviewForm slug={slug} />
+            <Reviews slug={slug} />
           </div>
           <div
             className={`${

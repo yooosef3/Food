@@ -24,6 +24,7 @@ const Reviews = styled.div`
   }
   .review {
     padding: 0;
+
     .stars {
       margin-left: 200px;
       svg {
@@ -49,6 +50,7 @@ const Reviews = styled.div`
       section {
         display: flex;
         align-items: center;
+        width: 80%;
         h3 {
           margin-left: 15px;
           transition: all 0.2s linear;
@@ -76,14 +78,16 @@ const Reviews = styled.div`
     }
   }
 `;
-const Review = ({name, lastname, text}) => {
+const Review = ({ name, lastname, text }) => {
   return (
     <Reviews>
       <img alt="review" src={user1} />
       <section className="review">
         <div>
           <section>
-            <h3>{name} {lastname}</h3>
+            <h3>
+              {name}{lastname}
+            </h3>
             <div className="stars">
               <AiTwotoneStar />
               <AiTwotoneStar />
@@ -94,9 +98,7 @@ const Review = ({name, lastname, text}) => {
           </section>
           <small>22 مهر 1401</small>
         </div>
-        <p>
-          {text}
-        </p>
+        <p>{text}</p>
       </section>
     </Reviews>
   );

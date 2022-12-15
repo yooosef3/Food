@@ -219,14 +219,14 @@ const ShopSidebar = () => {
     const isChecked = event.target.checked;
     const checkedProducts = data.products.filter((product) => {
       if (isChecked) {
-        return  product.type === type;
-      }else{
+        return product.type === type;
+      } else {
         return checked;
       }
     });
     setChecked([...checkedProducts]);
   };
-  
+
   const handleInput = (e) => {
     setPrice(e.target.value);
   };
