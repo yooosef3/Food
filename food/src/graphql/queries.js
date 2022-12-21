@@ -29,6 +29,7 @@ const PRODUCT = gql`
       information
       name
       price
+      id
       slug
       weight
     }

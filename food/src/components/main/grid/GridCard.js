@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
 import React from "react";
 import styles from "../../../styles/main/grid/GridCard.module.css";
-import { truncate } from "../../helper/truncate";
+import { truncate } from "../../helper/function";
 
 const GridCard = ({ image, title, text, text1, slug }) => {
-  
-  
-
   return (
     <div className={styles.GridCard}>
       <div>

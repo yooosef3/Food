@@ -1,6 +1,7 @@
 import "react-toastify/dist/ReactToastify.css";
 
 import React, { useContext, useState } from "react";
+import { isInCart, quantityCount } from "../../helper/function";
 
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import { AiTwotoneStar } from "react-icons/ai";
@@ -136,33 +137,63 @@ const Detail = styled.div`
       display: flex;
       align-items: center;
       margin-top: 40px;
-      span {
-        background-color: #f2f2f2;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      .add-to-cart {
+        padding: 18px;
+        background-color: #e52029;
+        border: 0;
+        color: #ffff;
         font-size: 20px;
-        color: #292929;
         border-radius: 6px;
         cursor: pointer;
         transition: all 0.2s linear;
         &:hover {
-          color: red;
+          background-color: #b51a22;
         }
       }
-    }
-    button {
-      margin-right: 20px;
-      padding: 18px;
-      background-color: #e52029;
-      border: 0;
-      color: #ffff;
-      font-size: 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.2s linear;
-      &:hover {
-        background-color: #b51a22;
+      .add{
+        padding: 18px;
+        background-color: #028a02;
+        border: 0;
+        color: #ffff;
+        font-size: 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s linear;
+        &:hover{
+          background-color: #026702;
+        }
+      }
+      .count{
+        font-weight: 800;
+        font-size: 28px;
+        width: 50px;
+        text-align: center;
+      }
+      .trash{
+        padding: 18px 15px;
+        border: 0;
+        color: #ffff;
+        font-size: 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s linear;
+        background-color: #e52029;
+        &:hover {
+          background-color: #b51a22;
+        }
+      }
+      .minus{
+        padding: 19px 20px;
+        border: 0;
+        color: #ffff;
+        font-size: 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s linear;
+        background-color: #e52029;
+        &:hover {
+          background-color: #b51a22;
+        }
       }
     }
 
@@ -353,6 +384,7 @@ const SingleProduct = () => {
   const { loading, data, error } = useQuery(PRODUCT, {
     variables: { slug },
   });
+
   if (loading) return <Loader />;
   if (error)
     return (
@@ -395,7 +427,52 @@ const SingleProduct = () => {
               ابعاد: <span dir="ltr">{data.product.dimensions}</span>
             </h4>
             <div className="add-cart">
-              
+              {isInCart(state, data.product.id) ? (
+                <button
+                  className="add"
+                  onClick={() =>
+                    dispatch({ type: "INCREASE", payload: data.product })
+                  }
+                >
+                  +
+                </button>
+              ) : (
+                <button
+                  className="add-to-cart"
+                  onClick={() =>
+                    dispatch({ type: "ADD_ITEM", payload: data.product })
+                  }
+                >
+                  اضافه به سبد خرید
+                </button>
+              )}
+              {quantityCount(state, data.product.id) > 0 && (
+                <span className="count">
+                  {quantityCount(state, data.product.id)}
+                </span>
+              )}
+              {quantityCount(state, data.product.id) === 1 && (
+                <button
+                  className="trash"
+                  onClick={() =>
+                    dispatch({ type: "REMOVE_ITEM", payload: data.product })
+                  }
+                >
+                  {" "}
+                  <FaTrashAlt />{" "}
+                </button>
+              )}
+
+              {quantityCount(state, data.product.id) > 1 && (
+                <button
+                  className="minus"
+                  onClick={() =>
+                    dispatch({ type: "DECREASE", payload: data.product })
+                  }
+                >
+                  -
+                </button>
+              )}
             </div>
             <div className="socials-share">
               <h5>اشتراک:</h5>

@@ -28,9 +28,9 @@ function App() {
   const [category, setCategory] = useState("all");
 
   return (
-    <Layout>
-      <ScrollToTop />
-      <CartContextProvider>
+    <CartContextProvider>
+      <Layout>
+        <ScrollToTop />
         <CategoryContext.Provider value={{ category, setCategory }}>
           <Routes>
             <Route path="/aboutus" element={<AboutUs />} />
@@ -53,8 +53,8 @@ function App() {
             <Route path="/*" element={<Navigate to="/home" />} />
           </Routes>
         </CategoryContext.Provider>
-      </CartContextProvider>
-    </Layout>
+      </Layout>
+    </CartContextProvider>
   );
 }
 
