@@ -37,6 +37,9 @@ $transition: all 0.2s linear;
   }
 
   .quantity {
+    .trash{
+      font-size: 13px;
+    }
     span:nth-of-type(1){
             padding: 1px 10px 2px 10px;
             border-radius: 4px;

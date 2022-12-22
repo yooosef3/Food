@@ -1,32 +1,40 @@
+import React, { useContext } from "react";
+
+import { CartContext } from "../../context/CartContextProvider";
+import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import React from "react";
-import prod from "../../../assets/images/product-mini-4-146x132.png";
 import styles from "../../../styles/main/Cart.module.scss";
 
-const Cart = () => {
+const Cart = (props) => {
+  const {name, price, quantity, imageAll, slug} = props.data;
+  const {dispatch} = useContext(CartContext);
   return (
     <tbody className={styles.cart}>
       <tr>
         <td className={styles.cartImage}>
-          <Link to="/singleproduct">
-            <img alt="product" src={prod} />
+          <Link to={`/singleproduct/${slug}`}>
+            <img alt="product" src={imageAll[0].url} />
           </Link>
-          <Link to="/singleproduct">
-            <h4> پرتقال</h4>
+          <Link to={`/singleproduct/${slug}`}>
+            <h4>{name}</h4>
           </Link>
         </td>
         <td className={styles.price}>
-          <h5>$23.00 </h5>
+          <h5>{price} $</h5>
         </td>
         <td className={styles.quantity}>
           <div>
-            <span>-</span>
-            <span>2</span>
-            <span>+</span>
+          {
+            quantity === 1 ? 
+            <span><FaTrashAlt className={styles.trash} onClick={()=> dispatch({type: 'REMOVE_ITEM', payload: props.data})}/></span>:
+            <span className={styles.decrease} onClick={()=> dispatch({type: 'DECREASE', payload: props.data})}>-</span>
+          }
+            <span>{quantity}</span>
+            <span className={styles.increase} onClick={()=> dispatch({type: 'INCREASE', payload: props.data})}>+</span>
           </div>
         </td>
         <td className={styles.total}>
-          <span>$46.00</span>
+          <span>{quantity*price} $</span>
         </td>
       </tr>
     </tbody>

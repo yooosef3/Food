@@ -1,6 +1,8 @@
+import React, { useContext } from "react";
+
 import Cart from "./Cart";
+import { CartContext } from "../../context/CartContextProvider";
 import PagesHeader from "../PagesHeader";
-import React from "react";
 import styled from "styled-components";
 
 const Div = styled.div`
@@ -119,6 +121,7 @@ const Div = styled.div`
   }
 `;
 const CartPage = () => {
+  const {state} = useContext(CartContext);
   return (
     <Div>
       <PagesHeader headline={"سبد خرید"} path={"cart"} page={" فروشگاه"} />
@@ -132,9 +135,11 @@ const CartPage = () => {
               <th> قیمت کل</th>
             </tr>
           </thead>
-          <Cart />
-          <Cart />
-          <Cart />
+          {
+            state.selectedItems.map(item => 
+            <Cart key={item.id} data={item}/>
+            )
+          }
         </table>
       </div>
       <div className="coupon-pay">
