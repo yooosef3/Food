@@ -26,7 +26,7 @@ const Cart = (props) => {
           <div>
           {
             quantity === 1 ? 
-            <span><FaTrashAlt className={styles.trash} onClick={()=> dispatch({type: 'REMOVE_ITEM', payload: props.data})}/></span>:
+            <span className={styles.trashHolder}><FaTrashAlt className={styles.trash} onClick={()=> dispatch({type: 'REMOVE_ITEM', payload: props.data})}/></span>:
             <span className={styles.decrease} onClick={()=> dispatch({type: 'DECREASE', payload: props.data})}>-</span>
           }
             <span>{quantity}</span>
