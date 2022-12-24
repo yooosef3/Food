@@ -1,5 +1,7 @@
+import React, { useContext } from "react";
+
 import Cart from "./Cart";
-import React from "react";
+import { CartContext } from "../../context/CartContextProvider";
 import styled from "styled-components";
 
 const You = styled.div`
@@ -9,9 +11,9 @@ const You = styled.div`
   h1 {
     color: #292929;
     text-align: center;
-    @media(min-width: 1400px){
-    text-align: right;
-    margin-right:200px;
+    @media (min-width: 1400px) {
+      text-align: right;
+      margin-right: 200px;
     }
   }
   table {
@@ -36,26 +38,56 @@ const You = styled.div`
       padding-right: 25px;
     }
   }
+  .success {
+    background-color: #b0e1b0;
+    color: green;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    width: 85%;
+    margin: 30px auto;
+    border-radius: 8px;
+    padding: 2px 0 4px 0;
+  }
+
+  .empty {
+    background-color: #ecaaaa;
+    color: #d71515;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    width: 85%;
+    margin: 30px auto;
+    border-radius: 8px;
+    padding: 2px 0 4px 0;
+  }
 `;
 const YourCart = () => {
+  const { state } = useContext(CartContext);
   return (
     <You>
       <h1>سبد خرید شما</h1>
-      <div className="table">
-        <table>
-          <thead>
-            <tr>
-              <th>نام محصول</th>
-              <th>قیمت</th>
-              <th>تعداد</th>
-              <th> قیمت کل</th>
-            </tr>
-          </thead>
-          <Cart />
-          <Cart />
-          <Cart />
-        </table>
-      </div>
+      {state.checkout ? (
+        <p className="success">پرداخت با موفقیت انجام شد!</p>
+      ) : !state.checkout && !state.selectedItems.length ? (
+        <p className="empty">سبد خرید شما خالی است!</p>
+      ) : (
+        <div className="table">
+          <table>
+            <thead>
+              <tr>
+                <th>نام محصول</th>
+                <th>قیمت</th>
+                <th>تعداد</th>
+                <th> قیمت کل</th>
+              </tr>
+            </thead>
+            {state.selectedItems.map((item) => (
+              <Cart key={item.id} data={item} />
+            ))}
+          </table>
+        </div>
+      )}
     </You>
   );
 };

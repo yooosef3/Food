@@ -458,8 +458,7 @@ const SingleProduct = () => {
                     dispatch({ type: "REMOVE_ITEM", payload: data.product })
                   }
                 >
-                  {" "}
-                  <FaTrashAlt />{" "}
+                  <FaTrashAlt />
                 </button>
               )}
 

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
+import { CartContext } from "../../context/CartContextProvider";
 import { ImRadioChecked } from "react-icons/im";
 import { ImRadioUnchecked } from "react-icons/im";
 import styled from "styled-components";
@@ -11,6 +12,25 @@ const Pay = styled.div`
   }
   .pay-method,
   .total {
+    .checkout{
+      background-color: #bf1010;
+        color: #ffff;
+        border: none;
+        padding: 12px;
+        font-size: 22px;
+        margin-top: 20px;
+        width: 170px;
+        border-radius: 8px;
+        font-weight: 800;
+        transition: all 0.2s linear;
+        cursor: pointer;
+        &:hover {
+          background-color: #970e0e;
+        }
+        a {
+          color: #ffff;
+        }
+    }
     margin: 50px auto;
     h1 {
       text-align: center;
@@ -66,6 +86,7 @@ const Pay = styled.div`
   .subtotal {
     border: 1px solid #c2c2c2;
     padding: 0;
+    
     div {
       display: flex;
       justify-content: space-between;
@@ -109,6 +130,7 @@ const CheckoutPay = () => {
     setMethod('cheque')
   }
   
+  const {state, dispatch} = useContext(CartContext);
 
   return (
     <Pay method = {method}>
@@ -155,7 +177,7 @@ const CheckoutPay = () => {
         <section className="subtotal">
           <div>
             <span>کل</span>
-            <span>$43</span>
+            <span>${state.total}</span>
           </div>
           <div>
             <span>حمل دریایی</span>
@@ -163,9 +185,10 @@ const CheckoutPay = () => {
           </div>
           <div>
             <span>هزینه کل</span>
-            <span>$43</span>
+            <span>${state.total}</span>
           </div>
         </section>
+        <button onClick={() => dispatch({type:'CHECKOUT'})} className="checkout"> پرداخت</button>
       </div>
     </Pay>
   );

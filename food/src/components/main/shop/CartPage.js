@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import Cart from "./Cart";
 import { CartContext } from "../../context/CartContextProvider";
+import { Link } from "react-router-dom";
 import PagesHeader from "../PagesHeader";
 import styled from "styled-components";
 
@@ -40,9 +41,6 @@ const Div = styled.div`
     align-items: center;
     margin: 100px 30px;
     gap: 40px;
-    @media (min-width: 768px) {
-      align-items: start;
-    }
     @media (min-width: 992px) {
       flex-direction: row;
       gap: 80px;
@@ -69,7 +67,7 @@ const Div = styled.div`
           font-size: 22px;
           color: #464646;
         }
-        &:focus{
+        &:focus {
           border-color: green;
         }
       }
@@ -91,11 +89,17 @@ const Div = styled.div`
 
     .pay {
       display: flex;
-      gap: 60px;
+      flex-direction: column;
+      gap: 50px;
+      @media (min-width: 640px) {
+        flex-direction: row;
+        align-items: center;
+      }
       p {
         color: #767676;
         text-align: center;
         font-size: 22px;
+        font-weight: 600;
         margin: 10px 0;
         span {
           color: #1a5e0d;
@@ -116,12 +120,34 @@ const Div = styled.div`
         &:hover {
           background-color: #970e0e;
         }
+        a {
+          color: #ffff;
+        }
+      }
+
+      .clear {
+        background-color: #767676;
+        text-align: center;
+        color: #ffff;
+        padding: 15px;
+        border-radius: 8px;
+        transition: all 0.2s linear;
+        cursor: pointer;
+        &:hover {
+          background-color: #464646;
+        }
       }
     }
   }
+  .empty{
+    color: #bf1010;
+    font-weight: 600;
+    font-size: 20px;
+    margin-right: 25px;
+  }
 `;
 const CartPage = () => {
-  const {state} = useContext(CartContext);
+  const { state, dispatch } = useContext(CartContext);
   return (
     <Div>
       <PagesHeader headline={"سبد خرید"} path={"cart"} page={" فروشگاه"} />
@@ -135,11 +161,13 @@ const CartPage = () => {
               <th> قیمت کل</th>
             </tr>
           </thead>
-          {
-            state.selectedItems.map(item => 
-            <Cart key={item.id} data={item}/>
-            )
-          }
+          {!state.selectedItems.length ? (
+            <p className="empty">سبد خرید شما خالی است!</p>
+          ) : (
+            state.selectedItems.map((item) => (
+              <Cart key={item.id} data={item} />
+            ))
+          )}
         </table>
       </div>
       <div className="coupon-pay">
@@ -149,9 +177,14 @@ const CartPage = () => {
         </div>
         <div className="pay">
           <p>
-            قیمت کل: <span>$46</span>
+            قیمت کل: <span>{state.total}$</span>
           </p>
-          <button>پرداخت</button>
+          <Link to="/checkout">
+            <button>صفحه پرداخت</button>
+          </Link>
+          <h3 className="clear" onClick={() => dispatch({ type: "CLEAR" })}>
+            حذف محصولات
+          </h3>
         </div>
       </div>
     </Div>
