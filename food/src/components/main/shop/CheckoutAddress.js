@@ -103,10 +103,7 @@ const CheckoutAddress = () => {
             address: Yup.string().required(" آدرس ضروری است"),
           })}
           onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
+          
           }}
         >
           <Form className="checkout-form">
@@ -229,10 +226,7 @@ const CheckoutAddress = () => {
             address: Yup.string().required(" آدرس ضروری است"),
           })}
           onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
+          
           }}
         >
           <Form className="checkout-form">

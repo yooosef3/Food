@@ -388,7 +388,7 @@ const SingleProduct = () => {
   if (loading) return <Loader />;
   if (error)
     return (
-      <h1 style={{ color: "#e52029", textAlign: "center", fontSize: "18px" }}>
+      <h1 style={{ color: "#e52029", textAlign: "center", fontSize: "18px", marginTop: '130px' }}>
         یک خطای شبکه رخ داده است, بعدا امتحان کنید
       </h1>
     );

@@ -189,6 +189,7 @@ const CheckoutPay = () => {
           </div>
         </section>
         <button onClick={() => dispatch({type:'CHECKOUT'})} className="checkout"> پرداخت</button>
+        
       </div>
     </Pay>
   );
