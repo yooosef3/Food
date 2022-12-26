@@ -15,12 +15,14 @@ import Layout from "./components/layout/Layout";
 import Offer from "./components/main/offer/Offer";
 import OurTeam from "./components/main/OurTeam";
 import PricingList from "./components/main/PricingList";
+import { Provider } from "react-redux";
 import ScrollToTop from "./components/shared/ScrollToTop";
 import SearchList from "./components/SearchList";
 import SearchedBlogs from "./components/shared/SearchedBlogs";
 import Shop from "./components/main/shop/Shop";
 import SingleProduct from "./components/main/shop/SingleProduct";
 import Testimonals from "./components/main/testimonals/Testimonals";
+import store from "./components/redux/store";
 
 export const CategoryContext = createContext();
 
@@ -28,8 +30,8 @@ function App() {
   const [category, setCategory] = useState("all");
 
   return (
-    <CartContextProvider>
-      <Layout>
+    <Provider store={store}>
+      {/* <Layout> */}
         <ScrollToTop />
         <CategoryContext.Provider value={{ category, setCategory }}>
           <Routes>
@@ -53,8 +55,8 @@ function App() {
             <Route path="/*" element={<Navigate to="/home" />} />
           </Routes>
         </CategoryContext.Provider>
-      </Layout>
-    </CartContextProvider>
+      {/* </Layout> */}
+    </Provider>
   );
 }
 

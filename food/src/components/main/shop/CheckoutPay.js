@@ -31,6 +31,20 @@ const Pay = styled.div`
           color: #ffff;
         }
     }
+    .checkoutFalse{
+      background-color: #afaec8;
+        color: #ffff;
+        border: none;
+        padding: 12px;
+        font-size: 22px;
+        margin-top: 20px;
+        width: 170px;
+        border-radius: 8px;
+        font-weight: 800;
+        a {
+          color: #ffff;
+        }
+    }
     margin: 50px auto;
     h1 {
       text-align: center;
@@ -133,7 +147,7 @@ const CheckoutPay = () => {
   const {state, dispatch} = useContext(CartContext);
 
   return (
-    <Pay method = {method}>
+    <Pay method = {method} state={state}>
       <div className="pay-method">
         <h1>روش پرداخت</h1>
         <section className="method">
@@ -188,7 +202,11 @@ const CheckoutPay = () => {
             <span>${state.total}</span>
           </div>
         </section>
-        <button onClick={() => dispatch({type:'CHECKOUT'})} className="checkout"> پرداخت</button>
+        {
+        state.selectedItems.length ? 
+        <button onClick={() => dispatch({type:'CHECKOUT'})} className="checkout"> پرداخت</button>:
+        <button  className="checkoutFalse"> پرداخت</button>
+        }
         
       </div>
     </Pay>
