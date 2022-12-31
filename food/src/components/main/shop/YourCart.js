@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
-
 import Cart from "./Cart";
-import { CartContext } from "../../context/CartContextProvider";
+import React from "react";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 const You = styled.div`
   .table {
@@ -63,7 +62,7 @@ const You = styled.div`
   }
 `;
 const YourCart = () => {
-  const { state } = useContext(CartContext);
+  const state = useSelector(state => state.cartState) 
   return (
     <You>
       <h1>سبد خرید شما</h1>

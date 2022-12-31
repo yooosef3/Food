@@ -1,12 +1,12 @@
 import "react-toastify/dist/ReactToastify.css";
 
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { isInCart, quantityCount } from "../../helper/function";
+import { useDispatch, useSelector } from "react-redux";
 
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import { AiTwotoneStar } from "react-icons/ai";
 import { BsStarHalf } from "react-icons/bs";
-import { CartContext } from "../../context/CartContextProvider";
 import DetailSlider from "./DetailSlider";
 import { FaTrashAlt } from "react-icons/fa";
 import Loader from "../../shared/Loader";
@@ -150,7 +150,7 @@ const Detail = styled.div`
           background-color: #b51a22;
         }
       }
-      .add{
+      .add {
         padding: 18px;
         background-color: #028a02;
         border: 0;
@@ -159,17 +159,17 @@ const Detail = styled.div`
         border-radius: 6px;
         cursor: pointer;
         transition: all 0.2s linear;
-        &:hover{
+        &:hover {
           background-color: #026702;
         }
       }
-      .count{
+      .count {
         font-weight: 800;
         font-size: 28px;
         width: 50px;
         text-align: center;
       }
-      .trash{
+      .trash {
         padding: 18px 15px;
         border: 0;
         color: #ffff;
@@ -182,7 +182,7 @@ const Detail = styled.div`
           background-color: #b51a22;
         }
       }
-      .minus{
+      .minus {
         padding: 19px 20px;
         border: 0;
         color: #ffff;
@@ -373,8 +373,8 @@ const Detail = styled.div`
   }
 `;
 const SingleProduct = () => {
-  const { state, dispatch } = useContext(CartContext);
-
+  const dispatch = useDispatch();
+  const state = useSelector(state => state.cartState);
   const [info, setInfo] = useState({
     review: true,
     moreInfo: false,
@@ -388,7 +388,14 @@ const SingleProduct = () => {
   if (loading) return <Loader />;
   if (error)
     return (
-      <h1 style={{ color: "#e52029", textAlign: "center", fontSize: "18px", marginTop: '130px' }}>
+      <h1
+        style={{
+          color: "#e52029",
+          textAlign: "center",
+          fontSize: "18px",
+          marginTop: "130px",
+        }}
+      >
         یک خطای شبکه رخ داده است, بعدا امتحان کنید
       </h1>
     );

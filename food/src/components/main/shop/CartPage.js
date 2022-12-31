@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import Cart from "./Cart";
-import { CartContext } from "../../context/CartContextProvider";
 import { Link } from "react-router-dom";
 import PagesHeader from "../PagesHeader";
+import React from "react";
 import styled from "styled-components";
 
 const Div = styled.div`
@@ -147,7 +147,8 @@ const Div = styled.div`
   }
 `;
 const CartPage = () => {
-  const { state, dispatch } = useContext(CartContext);
+  const state = useSelector(state => state.cartState);
+  const dispatch = useDispatch();
   return (
     <Div>
       <PagesHeader headline={"سبد خرید"} path={"cart"} page={" فروشگاه"} />

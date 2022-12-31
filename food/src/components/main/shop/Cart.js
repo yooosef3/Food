@@ -1,13 +1,12 @@
-import React, { useContext } from "react";
-
-import { CartContext } from "../../context/CartContextProvider";
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import React from "react";
 import styles from "../../../styles/main/Cart.module.scss";
+import { useDispatch } from "react-redux";
 
 const Cart = (props) => {
   const {name, price, quantity, imageAll, slug} = props.data;
-  const {dispatch} = useContext(CartContext);
+  const dispatch = useDispatch();
   return (
     <tbody className={styles.cart}>
       <tr>

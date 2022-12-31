@@ -1,8 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, {useState} from "react";
 
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { BsCart3 } from "react-icons/bs";
-import { CartContext } from "../context/CartContextProvider";
 import HeaderMenu from "../Header/HeaderMenu";
 import LeftHamburger from "../Header/LeftHamburger";
 import LeftSidebar from "../Header/LeftSidebar";
@@ -12,11 +11,12 @@ import { RiSearchLine } from "react-icons/ri";
 import RightSidebar from "../Header/RightSidebar";
 import logo from "../../assets/images/logo.png";
 import styles from "../../styles/header/Header.module.css";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [searchM, setSearchM] = useState(false);
 
-  const  {state}=useContext(CartContext);
+  const state = useSelector(state => state.cartState)
   return (
     <>
       <header className={styles.container}>

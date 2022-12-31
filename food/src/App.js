@@ -4,7 +4,6 @@ import { createContext, useState } from "react";
 import AboutUs from "./components/main/AboutUs/AboutUs";
 import BlogList from "./components/main/grid/BlogList";
 import BlogPost from "./components/main/grid/BlogPost";
-import CartContextProvider from "./components/context/CartContextProvider";
 import CartPage from "./components/main/shop/CartPage";
 import Checkout from "./components/main/shop/Checkout";
 import GridBlog from "./components/main/grid/GridBlog";
@@ -31,7 +30,7 @@ function App() {
 
   return (
     <Provider store={store}>
-      {/* <Layout> */}
+      <Layout>
         <ScrollToTop />
         <CategoryContext.Provider value={{ category, setCategory }}>
           <Routes>
@@ -55,7 +54,7 @@ function App() {
             <Route path="/*" element={<Navigate to="/home" />} />
           </Routes>
         </CategoryContext.Provider>
-      {/* </Layout> */}
+      </Layout>
     </Provider>
   );
 }

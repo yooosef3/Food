@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 import { CategoryContext } from "../../../App";
 import Loader from "../../shared/Loader";
@@ -21,9 +21,10 @@ const Prd = styled.div`
   }
 `;
 const ProductPack = () => {
-  const { loading, data, error } = useQuery(PRODUCTS);
-  
+  const {loading, data, error} = useQuery(PRODUCTS);
   const { category } = useContext(CategoryContext);
+
+  
   return (
     <Prd>
       {loading ? (

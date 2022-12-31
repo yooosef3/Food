@@ -1,6 +1,9 @@
-import React, { useContext, useState } from "react";
+import "react-toastify/dist/ReactToastify.css";
 
-import { CartContext } from "../../context/CartContextProvider";
+import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import { useDispatch, useSelector } from "react-redux";
+
 import { ImRadioChecked } from "react-icons/im";
 import { ImRadioUnchecked } from "react-icons/im";
 import styled from "styled-components";
@@ -144,8 +147,14 @@ const CheckoutPay = () => {
     setMethod('cheque')
   }
   
-  const {state, dispatch} = useContext(CartContext);
+  const state = useSelector(state => state.cartState);
+  const dispatch = useDispatch();
 
+  const checkHandler = () => {
+    dispatch({type:'CHECKOUT'});
+    toast.success('!پرداخت با موفقیت انجام شد', {position: 'top-center'})
+  }
+  
   return (
     <Pay method = {method} state={state}>
       <div className="pay-method">
@@ -204,10 +213,10 @@ const CheckoutPay = () => {
         </section>
         {
         state.selectedItems.length ? 
-        <button onClick={() => dispatch({type:'CHECKOUT'})} className="checkout"> پرداخت</button>:
+        <button onClick={checkHandler} className="checkout"> پرداخت</button>:
         <button  className="checkoutFalse"> پرداخت</button>
         }
-        
+        <ToastContainer />
       </div>
     </Pay>
   );

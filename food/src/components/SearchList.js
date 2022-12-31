@@ -5,10 +5,12 @@ import { useLocation } from "react-router-dom";
 
 const Search = styled.div`
   padding: 150px 15px 40px 15px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid silver;
   h2{
     text-align: center;
     margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid gray;
   }
   .list {
     display: flex;

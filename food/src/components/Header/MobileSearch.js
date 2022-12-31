@@ -10,9 +10,8 @@ import { useQuery } from "@apollo/client";
 const MobileSearch = ({ search, setSearch }) => {
   const { loading, data, error } = useQuery(PRODUCTS);
   const [searched, setSearched] = useState("");
-  if(loading) return  <p style={{display: 'none'}}></p>;
-  if(error) return <p style={{display: 'none'}}></p>;
-
+  if (loading) return <p style={{ display: "none" }}></p>;
+  if (error) return <p style={{ display: "none" }}></p>;
 
   const searchHandler = () => {
     const filteredProducts = data.products.filter((product) => {
@@ -27,7 +26,6 @@ const MobileSearch = ({ search, setSearch }) => {
 
   const filtered = searchHandler();
 
-  
   return (
     <section className={search ? styles.background : styles.hide}>
       <div className={styles.container}>
@@ -42,7 +40,7 @@ const MobileSearch = ({ search, setSearch }) => {
           to={{
             pathname: "/searchlist",
           }}
-          state={ filtered }
+          state={filtered}
         >
           <RiSearchLine className={styles.search} />
         </Link>

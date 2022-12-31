@@ -86,7 +86,7 @@ const Review = ({ name, lastname, text }) => {
         <div>
           <section>
             <h3>
-              {name}{lastname}
+              {name} {lastname}
             </h3>
             <div className="stars">
               <AiTwotoneStar />
