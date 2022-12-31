@@ -1,6 +1,7 @@
 import "react-toastify/dist/ReactToastify.css";
 
 import React, { useState } from "react";
+import { addItem, decrease, increase, removeItem } from "../../redux/cart/cartActions";
 import { isInCart, quantityCount } from "../../helper/function";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -438,7 +439,7 @@ const SingleProduct = () => {
                 <button
                   className="add"
                   onClick={() =>
-                    dispatch({ type: "INCREASE", payload: data.product })
+                    dispatch(increase(data.product))
                   }
                 >
                   +
@@ -447,7 +448,7 @@ const SingleProduct = () => {
                 <button
                   className="add-to-cart"
                   onClick={() =>
-                    dispatch({ type: "ADD_ITEM", payload: data.product })
+                    dispatch(addItem(data.product))
                   }
                 >
                   اضافه به سبد خرید
@@ -462,7 +463,7 @@ const SingleProduct = () => {
                 <button
                   className="trash"
                   onClick={() =>
-                    dispatch({ type: "REMOVE_ITEM", payload: data.product })
+                    dispatch(removeItem(data.product))
                   }
                 >
                   <FaTrashAlt />
@@ -473,7 +474,7 @@ const SingleProduct = () => {
                 <button
                   className="minus"
                   onClick={() =>
-                    dispatch({ type: "DECREASE", payload: data.product })
+                    dispatch(decrease(data.product))
                   }
                 >
                   -

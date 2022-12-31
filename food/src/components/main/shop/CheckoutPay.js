@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { ImRadioChecked } from "react-icons/im";
 import { ImRadioUnchecked } from "react-icons/im";
+import { checkout } from "../../redux/cart/cartActions";
 import styled from "styled-components";
 
 const Pay = styled.div`
@@ -151,7 +152,7 @@ const CheckoutPay = () => {
   const dispatch = useDispatch();
 
   const checkHandler = () => {
-    dispatch({type:'CHECKOUT'});
+    dispatch(checkout());
     toast.success('!پرداخت با موفقیت انجام شد', {position: 'top-center'})
   }
   

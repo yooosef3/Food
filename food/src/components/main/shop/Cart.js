@@ -1,3 +1,5 @@
+import { decrease, increase, removeItem } from "../../redux/cart/cartActions";
+
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import React from "react";
@@ -25,11 +27,11 @@ const Cart = (props) => {
           <div>
           {
             quantity === 1 ? 
-            <span className={styles.trashHolder}><FaTrashAlt className={styles.trash} onClick={()=> dispatch({type: 'REMOVE_ITEM', payload: props.data})}/></span>:
-            <span className={styles.decrease} onClick={()=> dispatch({type: 'DECREASE', payload: props.data})}>-</span>
+            <span className={styles.trashHolder}><FaTrashAlt className={styles.trash} onClick={()=> dispatch(removeItem(props.data))}/></span>:
+            <span className={styles.decrease} onClick={()=> dispatch(decrease(props.data))}>-</span>
           }
             <span>{quantity}</span>
-            <span className={styles.increase} onClick={()=> dispatch({type: 'INCREASE', payload: props.data})}>+</span>
+            <span className={styles.increase} onClick={()=> dispatch(increase(props.data))}>+</span>
           </div>
         </td>
         <td className={styles.total}>

@@ -4,6 +4,7 @@ import Cart from "./Cart";
 import { Link } from "react-router-dom";
 import PagesHeader from "../PagesHeader";
 import React from "react";
+import { clear } from "../../redux/cart/cartActions";
 import styled from "styled-components";
 
 const Div = styled.div`
@@ -183,7 +184,7 @@ const CartPage = () => {
           <Link to="/checkout">
             <button>صفحه پرداخت</button>
           </Link>
-          <h3 className="clear" onClick={() => dispatch({ type: "CLEAR" })}>
+          <h3 className="clear" onClick={() => dispatch(clear())}>
             حذف محصولات
           </h3>
         </div>
