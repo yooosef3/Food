@@ -23,8 +23,8 @@ const Footer = () => {
       <div className={styles.container}>
         <div className={styles.twoCol}>
           <motion.div
-            initial={{ opacity: 0, transform: "translateX(50%)" }}
-            whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+            initial={{ opacity: 0, transform: "translateY(50%)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0%)" }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >

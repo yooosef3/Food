@@ -16,8 +16,8 @@ const SponsorSwiper = () => {
   return (
     <Swiper
       breakpoints={{
-        460: {
-          width: 460,
+        350: {
+          width: 350,
           slidesPerView: 2,
         },
 
@@ -32,9 +32,6 @@ const SponsorSwiper = () => {
       }}
       modules={[Pagination, Autoplay]}
       loop={true}
-      autoplay={{
-        delay: 4000,
-      }}
       pagination={{ clickable: true }}
       className="sponsorSlider"
     >

@@ -57,7 +57,7 @@
 .slide1 section h3,
 .slide2 section h3,
 .slide3 section h3 {
-  font-size: 24px;
+  font-size: 22px;
   color: #ffff;
   margin-bottom: 5px;
 }
@@ -67,7 +67,7 @@
 .slide3 section h1 {
   font-size: 36px;
   font-weight: 800;
-  color: #ffff;
+  color: #f4993e;
   margin-bottom: 5px;
   margin-top: 0;
 }
@@ -83,13 +83,13 @@
 .slide1 section button,
 .slide2 section button,
 .slide3 section button {
-  font-size: 24px;
+  font-size: 20px;
   background-color: #e52029;
   color: #ffff;
   font-weight: 800;
   border: none;
   border-radius: 4px;
-  padding: 10px 20px;
+  padding: 5px 20px;
   margin-top: 25px;
   cursor: pointer;
   transition: all 0.2s linear;
@@ -248,7 +248,7 @@
   .slide1 section button,
   .slide2 section button,
   .slide3 section button {
-    font-size: 34px;
+    font-size: 30px;
     padding: 10px 20px;
   }
 }

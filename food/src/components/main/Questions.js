@@ -17,8 +17,8 @@ const Questions = () => {
       <QuestionSwiper />
       <div className={styles.questions}>
         <motion.section
-          initial={{ opacity: 0, transform: "translateX(-50%)" }}
-          whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+          initial={{ opacity: 0, transform: "translateY(-50%)" }}
+          whileInView={{ opacity: 1, transform: "translateY(0%)" }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >

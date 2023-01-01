@@ -14,8 +14,8 @@ const HomeUs = () => {
       </div>
       <div className={styles.info}>
         <motion.div
-          initial={{ opacity: 0, transform: "translateX(-50%)" }}
-          whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+          initial={{ opacity: 0, transform: "translateY(-50%)" }}
+          whileInView={{ opacity: 1, transform: "translateY(0%)" }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
@@ -23,8 +23,8 @@ const HomeUs = () => {
           <h1>دربــاره ما</h1>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, transform: "translateX(50%)" }}
-          whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+          initial={{ opacity: 0, transform: "translateY(50%)" }}
+          whileInView={{ opacity: 1, transform: "translateY(0%)" }}
           transition={{ duration: .8 }}
           viewport={{ once: true }}
         >

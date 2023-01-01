@@ -12,16 +12,16 @@ const OffHome = () => {
       <div className={styles.container}>
         <motion.a
           href="/singleproduct/sweet-peppers"
-          initial={{ opacity: 0, transform: "translateX(50%)" }}
-          whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+          initial={{ opacity: 0, transform: "translateY(50%)" }}
+          whileInView={{ opacity: 1, transform: "translateY(0%)" }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
           <img alt="off" src={off1} />
         </motion.a>
         <motion.div
-          initial={{ opacity: 0, transform: "translateX(-50%)" }}
-          whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+          initial={{ opacity: 0, transform: "translateY(-50%)" }}
+          whileInView={{ opacity: 1, transform: "translateY(0%)" }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >

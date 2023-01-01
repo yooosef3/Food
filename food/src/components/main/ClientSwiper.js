@@ -18,9 +18,6 @@ const ClientSwiper = () => {
       modules={[Navigation, Pagination, Autoplay]}
       spaceBetween={160}
       slidesPerView={1}
-      autoplay={{
-        delay: 4000,
-      }}
       centeredSlides={true}
       loop={true}
       navigation

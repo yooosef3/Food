@@ -17,7 +17,6 @@ function SidebarSwiper() {
     <div className="container">
       <Swiper
         modules={[Autoplay, Navigation]}
-        autoplay={{ delay: 3000 }}
         loop={true}
         navigation
         className="sidebarSwiper"

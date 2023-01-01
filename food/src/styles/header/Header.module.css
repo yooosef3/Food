@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   justify-items: center;
+  max-width: 1543px;
   align-items: center;
   background-color: #ffffff !important;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;

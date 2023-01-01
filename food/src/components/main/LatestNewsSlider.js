@@ -37,9 +37,6 @@ const LatestNewsSlider = () => {
       }}
       navigation
       loop={true}
-      autoplay={{
-        delay: 4000,
-      }}
       pagination={{ clickable: true }}
       className="latestNewsSlider"
     >

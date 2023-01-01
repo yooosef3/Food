@@ -34,8 +34,8 @@ const TopSlider = () => {
             به فروشگاه آنلاین ما خوش آمدید
           </motion.h3>
           <motion.h1
-            initial={{ opacity: 0, transform: "translateX(100%)" }}
-            whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+            initial={{ opacity: 0, transform: "translateY(100%)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0%)" }}
             transition={{ duration: 1 }}
           >
             فروشــگاه های مــواد غــذایی
@@ -48,8 +48,8 @@ const TopSlider = () => {
             برای خوراک شناسان واقعی
           </motion.h2>
           <motion.button
-            initial={{ opacity: 0, transform: "translateX(-100%)" }}
-            whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+            initial={{ opacity: 0, transform: "translateY(-100%)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0%)" }}
             transition={{ duration: 0.6 }}
           >
             <Link to="/singleproduct/meat-ball">خریــد کن</Link>
@@ -67,8 +67,8 @@ const TopSlider = () => {
             انتخاب گسترده ای از نان صنعتگر
           </motion.h3>
           <motion.h1
-            initial={{ opacity: 0, transform: "translateX(100%)" }}
-            whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+            initial={{ opacity: 0, transform: "translateY(100%)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0%)" }}
             transition={{ duration: 1 }}
           >
             {" "}
@@ -83,8 +83,8 @@ const TopSlider = () => {
             در فروشگاه ما موجود است
           </motion.h2>
           <motion.button
-            initial={{ opacity: 0, transform: "translateX(-100%)" }}
-            whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+            initial={{ opacity: 0, transform: "translateY(-100%)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0%)" }}
             transition={{ duration: 0.6 }}
             type="button"
           >
@@ -103,8 +103,8 @@ const TopSlider = () => {
             تازه و خوش طعم
           </motion.h3>
           <motion.h1
-            initial={{ opacity: 0, transform: "translateX(100%)" }}
-            whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+            initial={{ opacity: 0, transform: "translateY(100%)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0%)" }}
             transition={{ duration: 1 }}
           >
             {" "}
@@ -119,8 +119,8 @@ const TopSlider = () => {
             که دوست داری
           </motion.h2>
           <motion.button
-            initial={{ opacity: 0, transform: "translateX(-100%)" }}
-            whileInView={{ opacity: 1, transform: "translateX(0%)" }}
+            initial={{ opacity: 0, transform: "translateY(-100%)" }}
+            whileInView={{ opacity: 1, transform: "translateY(0%)" }}
             transition={{ duration: 0.6 }}
             type="button"
           >
