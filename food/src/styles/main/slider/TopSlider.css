@@ -58,25 +58,33 @@
 .slide2 section h3,
 .slide3 section h3 {
   font-size: 22px;
+  padding:0;
+  margin:0;
   color: #ffff;
-  margin-bottom: 5px;
 }
 
 .slide1 section h1,
 .slide2 section h1,
 .slide3 section h1 {
   font-size: 36px;
+  padding:0;
+  margin:0;
   font-weight: 800;
   color: #f4993e;
-  margin-bottom: 5px;
-  margin-top: 0;
+  margin-top: 10px;
+}
+
+.slide1 section h1{
+  font-size: 30px;
+  font-weight: 800;
 }
 
 .slide1 section h2,
 .slide2 section h2,
 .slide3 section h2 {
   font-size: 28px;
-  margin-bottom: 5px;
+  padding:0;
+  margin:0;
   color: #ffff;
 }
 
