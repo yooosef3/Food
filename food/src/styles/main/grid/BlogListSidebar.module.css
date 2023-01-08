@@ -39,7 +39,7 @@
 
 .blogListSidebar .searchBlog {
   position: relative;
-  width: 350px;
+  width: 300px;
   margin: 0 auto;
 }
 
@@ -81,6 +81,11 @@
   margin: 0 auto;
 }
 
+.blogListSidebar .category .galery{
+  width: 90%;
+  margin: 0 auto;
+}
+
 .blogListSidebar .category h3 {
   border-bottom: 1px solid #cdcdcd;
   padding-bottom: 20px;
@@ -114,11 +119,12 @@
 
 .blogListSidebar .latestPost section {
   display: flex;
+  align-items: flex-start;
   gap: 20px;
 }
 
 .blogListSidebar .latestPost section img {
-  max-width: 90%;
+  width: 90%;
 }
 
 .blogListSidebar .latestPost section h4 {
@@ -181,7 +187,7 @@
   width: 13px;
   height: 13px;
   border-radius: 100%;
-  right: 135px;
+  right: 100px;
   top: 8px;
   background-color: #89d418;
 }

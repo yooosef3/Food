@@ -92,7 +92,7 @@ const BlogListSidebar = () => {
               <img alt="post" src={post2} />
               <div>
                 <Link to="/blogpost/why-people-are-shopping-for-groceries-online">
-                  <h4> دلیل خرید آنلاین مردم؟</h4>
+                  <h4> دلیل خرید کردن آنلاین مردم؟</h4>
                 </Link>
                 <p>15 مهر 1401</p>
               </div>

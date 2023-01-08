@@ -41,7 +41,9 @@ const Filter = styled.div`
   }
 
   .category-filter {
+    margin: 0 auto;
     margin-top: 80px;
+    width: 300px;
     h4 {
       border-bottom: 1px solid #9e9e9e;
       padding-bottom: 20px;
@@ -78,7 +80,7 @@ const Filter = styled.div`
 
   .filter-search {
     position: relative;
-    width: 350px;
+    width: 300px;
     margin: 0 auto;
     margin-top: 30px;
   }
@@ -133,10 +135,6 @@ const Filter = styled.div`
       align-items: start;
       gap: 30px;
     }
-    img {
-      width: 90px;
-      height: 70px;
-    }
 
     h4 {
       font-weight: 600;
@@ -154,9 +152,17 @@ const Filter = styled.div`
     }
 
     .product {
+      img {
+          width: 70px;
+          height: 50px;
+      }
       @media (min-width: 1200px) {
         display: flex;
         gap: 20px;
+        img{
+           width: 90px;
+          height: 70px;
+        }
       }
     }
 

@@ -5,7 +5,7 @@
 
 .clientSlider .clientSlide {
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  height: 75% !important;
+  height: 82% !important;
   background-color: #ffff;
   border-radius: 50px;
   padding: 25px 20px;
@@ -76,7 +76,7 @@
 
 @media (min-width: 600px) {
   .clientSlider .clientSlide {
-    width: 75% !important;
+    height: 70%;
     padding: 25px 5px;
   }
 

@@ -12,7 +12,7 @@
 .TestimonalStar section{
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
     border-radius: 6px;
-    width: 380px;
+    width: 300px;
     padding: 35px 20px;
 }
 
@@ -37,6 +37,10 @@
 }
 
 @media (min-width:768px) {
+    .TestimonalStar section{
+        width: 380px;
+    }
+
     .TestimonalStar{
         flex-direction: row;
         flex-wrap: wrap;

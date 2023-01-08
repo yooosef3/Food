@@ -3,7 +3,7 @@
 }
 
 .latestNewsSlider .swiper-slide{
-  width: 392px !important;
+  width: 100% !important;
 }
 
 .latestNewsSlider .newsImg img {
@@ -92,7 +92,7 @@
 @media (min-width: 992px) {
 
   .latestNewsSlider .swiper-slide{
-    width: 100%;
+    width: 33% !important;
   }
   .latestNewsSlider {
     width: 82%;

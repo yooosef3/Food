@@ -1,5 +1,5 @@
 .container{
-    height: 80vh;
+    height: 85vh;
     background: url('../../../assets/images/bg-pattern-1.jpg') no-repeat center;
     background-size: cover;
     position: relative;
@@ -8,13 +8,19 @@
 .container h1{
     text-align: center;
     margin-top: 0;
-    margin-bottom: -50px;
+    margin-bottom: -30px;
     padding: 50px 15px;
 }
 
 .container h2{
   color: #292929 !important;
   margin-bottom: 10px !important;
+}
+
+@media (min-width: 460px) {
+  .container {
+    height: 80vh;
+  }
 }
 
 @media (min-width: 768px) {

@@ -1,6 +1,6 @@
 .AboutSwiper {
   margin-top: 50px !important;
-  max-width: 95vw !important;
+  width: 85vw !important;
   margin: 0 auto;
 }
 
@@ -33,7 +33,7 @@
 
 @media (min-width: 640px) {
   .AboutSwiper {
-    max-width: 75vw !important;
+    max-width: 50vw !important;
   }
 }
 

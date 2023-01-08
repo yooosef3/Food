@@ -1,7 +1,7 @@
 .AboutTeamSlider {
   text-align: center;
   padding: 5px 15px !important;
-  height: 70vh;
+  height: 80vh;
 }
 
 .AboutTeamSlider .swiper-slide{
@@ -78,6 +78,12 @@
 
 .AboutTeamSlider .icons svg:hover {
   color: #e52029;
+}
+
+@media (min-width: 460px){
+  .AboutTeamSlider{
+    height: 70vh;
+  }
 }
 
 @media (min-width: 992px) {

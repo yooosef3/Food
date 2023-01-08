@@ -24,15 +24,15 @@ const LatestNewsSlider = () => {
     <Swiper
       // install Swiper modules
       modules={[Navigation, Autoplay, Pagination]}
-      spaceBetween={15}
+      spaceBetween={5}
       breakpoints={{
-        640: {
-          width: 640,
+        375: {
+          width: 375,
           slidesPerView: 1,
         },
         768: {
           width: 768,
-          slidesPerView: 2,
+          slidesPerView: 3,
         },
       }}
       navigation

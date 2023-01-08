@@ -37,16 +37,14 @@ section .filter {
   justify-content: center;
   border-bottom: 4px solid #b9b9b9;
   padding-bottom: 10px;
-  max-width: 350px;
+  width: 80%;
   margin: 0 auto;
-  gap: 20px;
-  font-size: 18px;
+  gap: 15px;
 }
 
 .filter .unselected-li {
   color: #b9b9b9 ;
   font-weight: 600 ;
-  font-size: 22px !important;
   cursor: pointer ;
   transition: all 0.2s linear;
 }
@@ -71,7 +69,16 @@ section .filter {
   gap: 40px;
 }
 
+@media (min-width: 460px){
+  .filter .unselected-li{
+    font-size: 18px;
+  }
+}
+
 @media (min-width: 640px) {
+  section .filter{
+    justify-content: space-evenly;
+  }
   .products {
     flex-direction: row;
     flex-wrap: wrap;
@@ -146,7 +153,7 @@ const GridGallery = () => {
           <li
             onClick={() => setCategory('meat')}
             className={`${category === 'meat' ? 'selectedFilter' : undefined} ${
-              'unselected.li'
+              'unselected-li'
             }`}
           >
             گوشت

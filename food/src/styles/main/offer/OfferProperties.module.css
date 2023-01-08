@@ -4,7 +4,7 @@
   align-items: center;
   text-align: justify;
   flex-direction: column;
-  padding: 40px 0;
+  padding: 40px 15px;
   gap: 20px;
 }
 
@@ -45,8 +45,8 @@
 }
 
 .offerProperties .property {
-  padding: 10px 20px;
-  width: 390px;
+  padding: 10px 25px;
+  flex-grow: 1;
 }
 
 @media (min-width: 768px) {

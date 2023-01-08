@@ -23,6 +23,7 @@
 
 .container h1 {
   margin-top: 10px;
+  font-size: 20px;
 }
 
 .container .aboutList {
@@ -34,16 +35,17 @@
   display: flex;
   list-style: none;
   justify-content: center;
-  min-width: 450px;
+  min-width: 250px !important;
   margin: 0 auto;
   padding: 0;
-  width: 95%;
+  /* width: 95%; */
   gap: 15px;
   border-bottom: 1px solid #aeaeae;
 }
 
 .aboutList p{
   font-weight: 600;
+  padding: 0 25px !important;
   color: #a1a1a1 !important;
 }
 
@@ -54,6 +56,10 @@
   margin-bottom: -5px;
   padding-bottom: 10px;
   cursor: pointer;
+}
+
+.aboutList ul li{
+  font-size: 14px !important;
 }
 
 .aboutList ul li:hover {
@@ -103,6 +109,15 @@
 
 .aboutBtn button:hover {
   background-color: #e52029;
+}
+
+@media (min-width: 460px) {
+  .container h1{
+    font-size: 24px;
+  }
+  .aboutList ul li{
+    font-size: 18px !important;
+  }
 }
 
 @media (min-width: 768px) {
