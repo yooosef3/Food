@@ -11,6 +11,8 @@ const Div = styled.div`
   border-bottom: 1px solid #d4d4d4;
   .table {
     overflow-x: auto;
+    width: 90%;
+    margin: 0 auto;
   }
   table {
     width: 1120px;

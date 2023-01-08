@@ -57,19 +57,25 @@ const Pay = styled.div`
   .subtotal {
     margin: 0 auto;
     border: 1px solid #c2c2c2;
-    width: 400px;
+    width: 310px;
     box-shadow: rgba(0, 0, 0, 0.3) 0 4px 12px;
     border: none;
     border-radius: 6px;
+    @media (min-width: 460px) {
+      width: 400px;
+    }
   }
   .method {
     margin: 0 auto;
     border: 1px solid #c2c2c2;
     padding: 15px;
     text-align: right;
-    width: 370px;
+    width: 290px;
     box-shadow: rgba(0, 0, 0, 0.3) 0 4px 12px;
     border-radius: 6px;
+    @media (min-width: 460px) {
+      width: 370px;
+    }
 
     svg{
       font-size:24px;

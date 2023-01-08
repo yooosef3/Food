@@ -54,11 +54,13 @@ const Detail = styled.div`
     ul {
       list-style: none;
       display: flex;
-      gap: 35px;
+      width: 70%;
+      gap: 20px;
+      margin: 0 auto;
       border-radius: 4px;
       border-bottom: 4px solid #c3c3c3;
       li {
-        font-size: 18px;
+        font-size: 14px;
         color: #c3c3c3;
         font-weight: 600;
         cursor: pointer;
@@ -66,6 +68,9 @@ const Detail = styled.div`
         padding-bottom: 15px;
         border-bottom: 4px solid #c3c3c3;
         margin-bottom: -4px;
+        @media (min-width: 460px) {
+          font-size: 18px;
+        }
         &:hover {
           color: #58ba17;
           border-bottom: 4px solid #58ba17;
@@ -90,7 +95,7 @@ const Detail = styled.div`
   .information {
     text-align: right;
     margin: 30px auto;
-    width: 100%;
+    width: 80%;
     @media (min-width: 992px) {
       padding-left: 220px;
     }
@@ -402,13 +407,13 @@ const SingleProduct = () => {
     );
   return (
     <Detail>
-      <PagesHeader
+      {/* <PagesHeader
         headline="اطلاعات محصول"
         path="singleproduct"
         page="فروشگاه"
-      />
+      /> */}
       <section className="product-info">
-        <div className="slider-info">
+        {/* <div className="slider-info">
           <div className="product-slider">
             <DetailSlider data={data} />
           </div>
@@ -486,8 +491,8 @@ const SingleProduct = () => {
               <SocialIcons />
             </div>
           </div>
-        </div>
-        <div className="more-info">
+        </div> */}
+        {/* <div className="more-info">
           <ul>
             <li
               className={`${info.review && "infoClicked"}`}
@@ -535,7 +540,7 @@ const SingleProduct = () => {
           </div>
           <h3>محصولات برتر</h3>
           <ProductPack />
-        </div>
+        </div> */}
       </section>
     </Detail>
   );

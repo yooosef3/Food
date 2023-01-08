@@ -6,6 +6,8 @@ import { useSelector } from "react-redux";
 const You = styled.div`
   .table {
     overflow-x: auto;
+    width: 95%;
+    margin: 0 auto;
   }
   h1 {
     color: #292929;
