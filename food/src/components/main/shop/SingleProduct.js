@@ -26,7 +26,7 @@ const Detail = styled.div`
   border-bottom: 1px solid #a6a6a6;
   .product-info {
     margin: 0 auto;
-    width: 400px;
+    width: 300px;
     @media (min-width: 768px) {
       width: 600px;
     }
@@ -41,7 +41,7 @@ const Detail = styled.div`
     @media (min-width: 992px) {
       flex-direction: row;
       align-items: center;
-      gap: 50px;
+      gap: 70px;
       justify-content: center;
       padding: 0 20px;
     }
@@ -54,7 +54,7 @@ const Detail = styled.div`
     ul {
       list-style: none;
       display: flex;
-      width: 70%;
+      width: 90%;
       gap: 20px;
       margin: 0 auto;
       border-radius: 4px;
@@ -68,7 +68,7 @@ const Detail = styled.div`
         padding-bottom: 15px;
         border-bottom: 4px solid #c3c3c3;
         margin-bottom: -4px;
-        @media (min-width: 460px) {
+        @media (min-width: 640px) {
           font-size: 18px;
         }
         &:hover {
@@ -95,7 +95,7 @@ const Detail = styled.div`
   .information {
     text-align: right;
     margin: 30px auto;
-    width: 80%;
+    width: 100%;
     @media (min-width: 992px) {
       padding-left: 220px;
     }
@@ -407,13 +407,13 @@ const SingleProduct = () => {
     );
   return (
     <Detail>
-      {/* <PagesHeader
+      <PagesHeader
         headline="اطلاعات محصول"
         path="singleproduct"
         page="فروشگاه"
-      /> */}
+      />
       <section className="product-info">
-        {/* <div className="slider-info">
+        <div className="slider-info">
           <div className="product-slider">
             <DetailSlider data={data} />
           </div>
@@ -491,8 +491,8 @@ const SingleProduct = () => {
               <SocialIcons />
             </div>
           </div>
-        </div> */}
-        {/* <div className="more-info">
+        </div>
+        <div className="more-info">
           <ul>
             <li
               className={`${info.review && "infoClicked"}`}
@@ -540,7 +540,7 @@ const SingleProduct = () => {
           </div>
           <h3>محصولات برتر</h3>
           <ProductPack />
-        </div> */}
+        </div>
       </section>
     </Detail>
   );

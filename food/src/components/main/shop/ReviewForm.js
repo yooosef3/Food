@@ -12,6 +12,7 @@ const Review = styled.div`
   border-radius: 6px;
   padding: 15px;
   margin: 0 auto;
+  width: 100%;
   @media (min-width: 1000px) {
     width: 75%;
   }
