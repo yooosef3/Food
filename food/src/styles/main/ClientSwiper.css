@@ -1,6 +1,6 @@
 .clientSlider {
   height: 450px;
-  width: 98%;
+  width: 88% !important;
 }
 
 .clientSlider .clientSlide {
@@ -8,9 +8,8 @@
   height: 82% !important;
   background-color: #ffff;
   border-radius: 50px;
-  padding: 25px 20px;
+  padding: 25px 0px;
   margin: 0 auto;
-  width: 85% !important;
 }
 
 .clientSlider img {
@@ -27,7 +26,7 @@
 
 .clientSlider .clientSlide p {
   font-size: 20px;
-  max-width: 370px;
+  width: 280px;
   margin: 10px auto;
   color: #858585;
 }
@@ -76,12 +75,12 @@
 
 @media (min-width: 600px) {
   .clientSlider .clientSlide {
-    height: 70%;
+    height: 70% !important;
     padding: 25px 5px;
   }
 
   .clientSlider .clientSlide p {
-    max-width: 470px;
+    width: 450px;
   }
 }
 
@@ -124,25 +123,21 @@
     font-size: 40px;
   }
 
-  .clientSlider .clientSlide p {
-    font-size: 24px;
-  }
-
   .clientSlider .clientSlide {
     padding: 25px 5px;
   }
 
   .clientSlider .clientSlide p {
-    max-width: 570px;
+    width: 570px;
   }
 
   .clientSlider {
-    width: 85%;
+    width: 75% !important;
   }
 }
 
 @media (min-width: 1400px) {
   .clientSlider {
-    width: 70%;
+    width: 60% !important;
   }
 } 

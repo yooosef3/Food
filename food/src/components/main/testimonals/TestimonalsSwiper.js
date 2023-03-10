@@ -54,18 +54,16 @@ const TestimonalsSwiper = () => {
         <Swiper
           className='TestimonalsThumb'
           modules={[Thumbs]}
-          slidesPerView={1}
           breakpoints={{
             640: {
-              width: 640,
-              slidesPerView: 1,
+              spaceBetween: 10,
+              slidesPerView: 2,
             },
             768: {
-              width: 768,
+              spaceBetween: 20,
               slidesPerView: 3,
             },
           }}
-          spaceBetween={10}
           watchSlidesProgress
           loop={true}
           onSwiper={setThumbsSwiper}

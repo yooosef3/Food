@@ -16,8 +16,8 @@ const ClientSwiper = () => {
   return (
     <Swiper
       modules={[Navigation, Pagination, Autoplay]}
-      spaceBetween={160}
       slidesPerView={1}
+      spaceBetween={45}
       centeredSlides={true}
       loop={true}
       navigation
@@ -63,7 +63,7 @@ const ClientSwiper = () => {
         <p>
           باید بگویم که از سفارش اخیرم واقعاً تحت تأثیر قرار گرفتم. من قبلا
           محصولات مشابهی را از سایت های دیگر خریده بودم، اما این بار به دلیل
-          انتخاب و قیمت عالی شما را انتخاب کردم{" "}
+            قیمت عالی شما را انتخاب کردم{" "}
         </p>
         <div className="client">
           <div>

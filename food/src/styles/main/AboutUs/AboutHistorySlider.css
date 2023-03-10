@@ -1,6 +1,7 @@
 .aboutHistorySwiper {
   padding: 0 3% !important;
   position: relative;
+  width: 95%;
 }
 
 .aboutHistorySwiper h3 {
@@ -126,6 +127,10 @@
 }
 
 @media (min-width: 768px) {
+  .aboutHistorySwiper{
+    width: 80% ;
+  }
+
   .aboutHistorySwiper h3 {
     font-size: 22px;
   }
@@ -155,6 +160,6 @@
 @media (min-width: 1400px) {
     
     .aboutHistorySwiper {
-        width: 63% !important;
+        width: 60% !important;
     }
   }

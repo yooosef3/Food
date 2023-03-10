@@ -27,11 +27,15 @@ const LatestNewsSlider = () => {
       spaceBetween={5}
       breakpoints={{
         375: {
-          width: 375,
+          spaceBetween: 15,
           slidesPerView: 1,
         },
+        568: {
+          spaceBetween: 15,
+          slidesPerView: 2,
+        },
         768: {
-          width: 768,
+          spaceBetween: 15,
           slidesPerView: 3,
         },
       }}

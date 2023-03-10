@@ -13,12 +13,16 @@ const AboutHistorySlider = () => {
       <Swiper
         breakpoints={{
           640: {
-            width: 640,
+            spaceBetween: 15,
             slidesPerView: 1,
           },
           768: {
-            width: 768,
+            spaceBetween: 25,
             slidesPerView: 2,
+          },
+          998: {
+            spaceBetween: 45,
+            slidesPerView: 3,
           }
         }}
         navigation={true}

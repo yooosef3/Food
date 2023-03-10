@@ -27,17 +27,20 @@ const AboutTeamSlider = () => {
 
   return (
     <Swiper
-      spaceBetween={50}
       pagination={{ clickable: true }}
       modules={[Autoplay, Pagination, Navigation]}
       breakpoints={{
         640: {
-          width: 640,
+          spaceBetween: 50,
           slidesPerView: 1,
         },
         768: {
-          width: 768,
+          spaceBetween: 50,
           slidesPerView: 2,
+        },
+        998: {
+          spaceBetween: 50,
+          slidesPerView: 3,
         },
       }}
       navigation

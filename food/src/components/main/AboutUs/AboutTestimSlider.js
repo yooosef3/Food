@@ -18,17 +18,20 @@ const AboutTestimSlider = () => {
     <div>
       <Swiper
         breakpoints={{
+          350: {
+            spaceBetween: 15,
+            slidesPerView: 1,
+          },
           640: {
-            width: 640,
+            spaceBetween: 15,
             slidesPerView: 1,
           },
           768: {
-            width: 768,
+            spaceBetween: 25,
             slidesPerView: 2,
           },
         }}
         modules={[Autoplay, Pagination, Navigation]}
-        spaceBetween={50}
         navigation
         loop={true}
         autoplay={{

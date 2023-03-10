@@ -1,6 +1,6 @@
 .AboutTestimSlider {
   height: 450px;
-  width: 98%;
+  width: 95% !important;
 }
 
 .AboutTestimSlider .swiper-wrapper {
@@ -12,11 +12,10 @@
   height: 77% !important;
   background-color: #ffff;
   border-radius: 30px;
-  padding: 25px 15px;
-  margin: auto;
+  padding: 25px 0px;
+  margin: 0 auto;
   margin-bottom: 50px;
   text-align: center;
-  max-width: 85% !important;
 }
 
 .AboutTestimSlider img {
@@ -33,7 +32,7 @@
 
 .AboutTestimSlider .testimSlide p {
   font-size: 20px;
-  max-width: 370px;
+  width: 330px;
   margin: 10px auto;
   color: #858585;
 }
@@ -88,8 +87,7 @@
 
 @media (min-width: 600px) {
   .AboutTestimSlider .testimSlide {
-    width: 75% !important;
-    padding: 25px 15px;
+    padding: 25px 0px;
   }
 
   .AboutTestimSlider .testimSlide p {
@@ -125,7 +123,7 @@
   }
 
   .AboutTestimSlider .testimSlide {
-    padding: 20px 15px;
+    /* padding: 20px 15px; */
   }
 }
 
@@ -149,27 +147,27 @@
   }
 
   .AboutTestimSlider .testimSlide {
-    padding: 25px 5px;
-    width: 75% !important;
+    /* padding: 25px 5px;
+    width: 75% !important; */
   }
 
   .AboutTestimSlider .testimSlide p {
-    max-width: 570px;
+    width: 570px;
   }
 
   .AboutTestimSlider {
-    width: 85%;
+    width: 80% !important;
     margin-top: 30px;
   }
 }
 
 @media (min-width: 1400px) {
   .AboutTestimSlider {
-    width: 95%;
+    width: 95% !important;
   }
 
   .AboutTestimSlider .testimSlide {
-    padding: 25px 5px;
-    width: 47% !important;
+    /* padding: 25px 5px;
+    width: 47% !important; */
   }
 }

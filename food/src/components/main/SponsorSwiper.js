@@ -17,22 +17,27 @@ const SponsorSwiper = () => {
     <Swiper
       breakpoints={{
         350: {
-          width: 350,
+          spaceBetween: 15,
           slidesPerView: 2,
         },
 
         640: {
-          width: 640,
-          slidesPerView: 2,
+          spaceBetween: 15,
+          slidesPerView: 3,
         },
         768: {
-          width: 768,
-          slidesPerView: 3,
+          spaceBetween: 15,
+          slidesPerView: 4,
+        },
+        998: {
+          spaceBetween: 15,
+          slidesPerView: 5,
         },
       }}
       modules={[Pagination, Autoplay]}
       loop={true}
       pagination={{ clickable: true }}
+      centeredSlides={true}
       className="sponsorSlider"
     >
       <SwiperSlide>
