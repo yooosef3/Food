@@ -3,7 +3,7 @@ import { decrease, increase, removeItem } from "../../redux/cart/cartActions";
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import React from "react";
-import styles from "../../../styles/main/Cart.module.scss";
+import styles from "../../../styles/main/Cart.module.css";
 import { useDispatch } from "react-redux";
 
 const Cart = (props) => {

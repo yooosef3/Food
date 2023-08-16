@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 
 import { CategoryContext } from "../../../App";
 import Loader from "../../shared/Loader";

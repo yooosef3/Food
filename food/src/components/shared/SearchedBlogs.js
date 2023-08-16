@@ -1,8 +1,7 @@
-import { Link, useLocation } from "react-router-dom";
-
 import BlogListCard from "../main/grid/BlogListCard";
 import React from "react";
 import styled from "styled-components";
+import { useLocation } from "react-router-dom";
 
 const SearchBlog = styled.div`
   padding: 150px 15px 40px 15px;

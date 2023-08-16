@@ -1,6 +1,5 @@
 import { BLOG } from "../../../graphql/queries";
 import BlogListSidebar from "./BlogListSidebar";
-import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 import Comments from "./Comments";
 import { FaQuoteLeft } from "react-icons/fa";

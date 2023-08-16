@@ -1,5 +1,5 @@
 import "swiper/css";
-import "../../../styles/main/DetailSlider.scss";
+import "../../../styles/main/DetailSlider.css";
 
 import { Autoplay, Thumbs } from "swiper";
 import React, { useState } from "react";

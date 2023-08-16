@@ -4,7 +4,6 @@ import Loader from "../../shared/Loader";
 import { PRODUCTS } from "../../../graphql/queries";
 import PagesHeader from "../PagesHeader";
 import Product from "../products/Product";
-import { RiSearchLine } from "react-icons/ri";
 import meat from "../../../assets/images/1112951750.jpg";
 import styled from "styled-components";
 import { useQuery } from "@apollo/client";
@@ -13,7 +12,7 @@ import vegetable from "../../../assets/images/1112951441.jpg";
 const Store = styled.div`
   padding: 60px 15px;
   border-bottom: 1px solid #a9a9a9;
-  
+
   .filter {
     margin: 50px 0;
     display: flex;
@@ -112,20 +111,18 @@ const Shop = () => {
   const [category, setCategory] = useState("meat");
   const { loading, data, error } = useQuery(PRODUCTS);
 
-  
   return (
     <div>
       <PagesHeader headline={"فروشگاه"} path={"shop"} page={"فروشگاه"} />
       <Store>
-    
         <div className="filter">
-          <div className="meat" onClick={() => setCategory('meat')}>
+          <div className="meat" onClick={() => setCategory("meat")}>
             <img alt="filter" src={meat} />
             <div className="overlay">
               <h3>گوشت</h3>
             </div>
           </div>
-          <div className="vegetable" onClick={() => setCategory('vegetable')}>
+          <div className="vegetable" onClick={() => setCategory("vegetable")}>
             <img alt="filter" src={vegetable} />
             <div className="overlay">
               <h3>سبزیجات</h3>
@@ -133,9 +130,9 @@ const Shop = () => {
           </div>
         </div>
         <h1>محصولات خاص</h1>
-        <h2 style={{textAlign: 'center', color:'brown'}}>{
-          category === 'meat' ? 'گوشت' : 'سبزیجات' 
-        }</h2>
+        <h2 style={{ textAlign: "center", color: "brown" }}>
+          {category === "meat" ? "گوشت" : "سبزیجات"}
+        </h2>
         <section className="shop-products">
           {loading ? (
             <Loader />
