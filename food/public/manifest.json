@@ -32,9 +32,9 @@
   "prefer_related_applications": true,
   "protocol_handlers": [
     {
-      "protocol": "https",
-      "name": "My App",
-      "uriTemplate": "https://open?url={%s}"
+        "protocol": "web+https",
+        "name": "My App",
+        "uriTemplate": "web+https://open?url={%s}"
     }
-  ]
+]
 }
