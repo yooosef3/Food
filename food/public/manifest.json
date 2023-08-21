@@ -34,7 +34,7 @@
     {
         "protocol": "web+https",
         "name": "My App",
-        "uriTemplate": "web+https://open?url={%s}"
+        "url": "/open?url={%s}"
     }
 ]
 }
