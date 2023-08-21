@@ -26,5 +26,10 @@
         "مستقیم"
     ],
     "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 500
+    "files.autoSaveDelay": 500,
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#4B2027",
+        "titleBar.activeBackground": "#692D36",
+        "titleBar.activeForeground": "#FEFCFC"
+    }
 }

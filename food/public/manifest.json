@@ -25,9 +25,8 @@
         },
         {
             "src": "/maskable.png",
-            "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "any maskable"
+            "sizes": "500x500",
+            "type": "image/png"
         }
     ],
     "prefer_related_applications": true
